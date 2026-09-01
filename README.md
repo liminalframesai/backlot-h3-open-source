@@ -8,8 +8,9 @@ its sounds—until the film world reaches through the door.
 This repository is the compact, final-cut closure of the project: the finished 1080p
 film, every H3 source clip used by the timeline, every direct image/audio/video reference
 used to generate those sources, their exact API graphs and prompts, the available visual
-workflows, a relinkable timeline, and an independent A/V-sync audit. The other 504 local
-experiments are intentionally omitted.
+workflows, a relinkable timeline, and an independent A/V-sync audit. The other 501 local
+experiments are intentionally omitted; three first-night drafts are included to show how
+the final idea emerged.
 
 ## Watch
 
@@ -59,6 +60,8 @@ for one documented final-used workflow. For the whole film, use
 Read [`docs/TECHNIQUES.md`](docs/TECHNIQUES.md),
 [`docs/H3-PROMPTING.md`](docs/H3-PROMPTING.md), and
 [`docs/MCP-CASE-STUDY.md`](docs/MCP-CASE-STUDY.md) for the practical findings.
+The sanitized initial brief and three exploratory films are documented in
+[`docs/INITIAL-EXPLORATION.md`](docs/INITIAL-EXPLORATION.md).
 
 ## Repository map
 
@@ -66,6 +69,7 @@ Read [`docs/TECHNIQUES.md`](docs/TECHNIQUES.md),
 |---|---|
 | `media/final/` | Finished 1080p film |
 | `media/final-sources/` | The 31 unique H3 clips used in the final timeline |
+| `media/early-exploration/` | Three first-night concept drafts; none appears in the final film |
 | `assets/comfyui-input/` | All 58 direct reference assets, ready for ComfyUI input |
 | `workflows/submission/` | Annotated representative workflow and four inputs |
 | `workflows/final-sources/` | All recovered API/UI workflows and prompts |

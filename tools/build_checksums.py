@@ -31,6 +31,7 @@ def main() -> int:
         path for path in REPO.rglob("*")
         if path.is_file()
         and ".git" not in path.parts
+        and ".verification" not in path.parts
         and "__pycache__" not in path.parts
         and path.name != ".DS_Store"
         and path.suffix != ".pyc"
