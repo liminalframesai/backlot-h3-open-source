@@ -42,6 +42,34 @@ The opaque Resolve project export is not published because project databases can
 private workstation paths. The portable FCPXML plus all source files and audits provides
 the public edit closure.
 
+## Final finishing and delivery encodes
+
+Resolve produced a nearly 2 GiB finishing master with 48 kHz uncompressed stereo audio.
+The published 4K and 1080p files were then created together in one FFmpeg invocation. The
+shared branch first scales the locked 16:9 master to 3840x2160 with Lanczos, applies mild
+contrast-adaptive sharpening and temporal uniform grain, and only then splits. One branch
+is encoded directly as the 4K YouTube master; the other is Lanczos-downsampled to 1080p.
+Splitting after the noise filter gives both deliverables the same grain realization rather
+than running two unrelated random-noise passes.
+
+```sh
+ffmpeg -i backlot-final-locked-uncompressed.mov \
+  -filter_complex "[0:v]scale=3840:2160:flags=lanczos,cas=0.3,noise=alls=4:allf=t+u,split=2[v4k][v1080src];[v1080src]scale=1920:1080:flags=lanczos[v1080]" \
+  -map "[v4k]" -map 0:a:0 \
+  -c:v libx264 -crf 18 -preset slow -pix_fmt yuv420p \
+  -c:a aac -b:a 320k -ar 48000 -movflags +faststart \
+  backlot-2160p-youtube.mp4 \
+  -map "[v1080]" -map 0:a:0 \
+  -c:v libx264 -crf 18 -preset slow -pix_fmt yuv420p \
+  -c:a aac -b:a 320k -ar 48000 -movflags +faststart \
+  backlot-1080p.mp4
+```
+
+Starting from the uncompressed-audio master means each delivery file receives only one
+AAC encode rather than transcoding audio from an earlier compressed export. The large
+uncompressed source is intentionally excluded from the public package; the two outputs
+and their hashes are included.
+
 ## Verify
 
 From the repository root:

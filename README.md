@@ -19,6 +19,10 @@ the final idea emerged.
 - `backlot-2160p-youtube.mp4` — 4K YouTube master, supplied as a GitHub Release asset;
   see [`release-assets/README.md`](release-assets/README.md)
 
+Both deliverables were produced from the uncompressed Resolve master in one FFmpeg
+finishing graph so they share the same Lanczos upscale, mild sharpening, and film-grain
+pass. The exact command is in [`docs/REPRODUCIBILITY.md`](docs/REPRODUCIBILITY.md#final-finishing-and-delivery-encodes).
+
 Headphones or speakers are recommended: the edit is built around recognizable sound
 continuity between each Foley gesture and its cinematic counterpart.
 
