@@ -1,0 +1,27 @@
+subject_definitions:
+<Picture 1> is the exact first frame of [Shot 1], showing the young woman balanced outside the fully closed Foley-stage entrance immediately after the lock releases, with one hand gripping the screen-right lever handle, her other hand braced against the steel door, and the caged beacon black and unpowered.
+<Subject 1> is the young blonde woman whose facial and character reference comes from <Picture 2> and who appears as the primary subject in <Picture 1>, with wet warm golden-blonde hair, pale skin, a small pendant, a dirty tattered light cream dress, and bare feet.
+<Subject 2> is the rigid Foley-stage steel door and exterior threshold appearing in <Picture 1>, mounted on fixed screen-left hinges with its lever handle and latch on the screen-right free edge, metal kick plate, conduit, electrical boxes, and a black unpowered screen-right caged beacon.
+<Subject 3> is the large professional Foley soundstage progressively glimpsed beyond <Subject 2> and whose entrance-reverse location reference comes from <Picture 3>, with deep open concrete floor, a high dark industrial ceiling, distant monitor carts, microphones, cables, Foley pits, a central prop slab, baffles, workbenches, racks, and warm practical lights.
+<Audio 1> is the prominent non-diegetic Backlot Shadows score segment for the threshold bridge.
+
+summary:
+[keyframe completion + reference generation + audio reuse] Live-action cinematic horror, the short target video begins exactly from <Picture 1> as <Subject 1> turns the newly released lever and starts pushing <Subject 2> inward, creating the first narrow glimpse of <Subject 3> under the prominent score from <Audio 1>.
+
+retention_analysis:
+<Picture 1> ([Shot 1] first frame): fully_preserved - its exact exterior camera, two-arm heroine pose, hand on the lever, fully closed flush door, black unpowered beacon, rain, rigid facade geometry, lighting, clean texture, and first physical state are retained as frame zero.
+<Subject 1> (appears throughout [Shot 1]): fully_preserved - her identity, wet blonde hair, pendant, torn dirty cream dress, bare feet, back-facing orientation, frightened urgency, and grounded body mechanics are retained.
+<Subject 2> (door and threshold throughout [Shot 1]): fully_preserved - its rigid rectangular steel construction, fixed screen-left hinge line, screen-right free edge, lever and latch, constant dimensions, kick plate, conduit, electrical boxes, black unpowered caged beacon, and inward swing are retained.
+<Subject 3> (glimpsed at the end of [Shot 1]): fully_preserved - the entrance-reverse geography, deep concrete floor, high industrial ceiling, distant equipment, Foley work areas, and warm practical work lights establish the contiguous room directly beyond the threshold.
+<Audio 1>: partially_copy - the supplied score segment is reused 1:1 from its beginning as the prominent complete audience-only music.
+
+detailed_description:
+The target video is a live-action cinematic horror bridge at night, underexposed and slightly desaturated. Cold heavy rain remains outside while the Foley stage carries dim warm practical work light.
+[Shot 1] The shot's keyframe corresponds exactly to <Picture 1>. The scene is already in motion when the video starts. One continuous exterior wide camera holds the exact position, lens, horizon, and framing of <Picture 1>. <Subject 1> firmly turns the screen-right lever with the hand already gripping it, then transfers her weight through her bracing hand, shoulders, hips, bent front knee, and planted rear foot. <Subject 2> begins one fast grounded inward movement on its fixed screen-left hinge line. Its screen-right free edge, lever, and latch trace a short physical arc away from the exterior camera into <Subject 3>; the broad steel face foreshortens naturally. The opening grows only to approximately fifteen degrees by the final frame, revealing a narrow coherent slice of <Subject 3>. <Subject 1> remains entirely outside with both bare feet planted on the wet pavement, leaning into the first push and ready for the cut to the interior view.
+
+overall_soundscape:
+Hard exterior rain and close frightened breathing continue. The released latch turns under her hand, wet bare feet brace against pavement, and the heavy steel door produces the first grounded hinge groan as it starts inward. Dry soundstage ventilation and equipment hum begin to emerge through the narrow opening.
+
+non_diegetic_music:
+<Audio 1> is reused from its beginning as the target video's prominent complete audience-only Backlot Shadows score.
+

@@ -1,0 +1,34 @@
+subject_definitions:
+<Picture 1> is the exact first frame of [Shot 1], taken from the accepted final frame of the preceding production-credits clip and showing three centered lines of ivory typography over the continuous amber-left and blue-white-right audiovisual signal field with its central red sync point.
+<Subject 1> is the audiovisual signal environment whose visual reference comes from <Picture 1>, consisting of the near-black field, restrained calibration ticks, warm amber Foley waveform at frame-left, central red sync point, cold blue-white film-world waveform at frame-right, rain texture, lightning energy, deep blacks, and fine cinematic grain.
+<Audio 1> is the eight-second continuation of the non-diegetic score beginning at the cut from the preceding credits clip and is reused as the target video's complete final audio track.
+
+summary:
+[keyframe completion + reference generation + audio reuse] The target video begins exactly on <Picture 1>, briefly preserves the completed production credits, fades the typography away during the opening two and a half seconds, and then lets <Subject 1> continue evolving in synchronization with <Audio 1> as an uninterrupted abstract audiovisual tail.
+
+retention_analysis:
+<Picture 1> ([Shot 1] first frame): fully_preserved - its exact production-credit composition, typography, waveform geometry, amber-left and blue-white-right color division, red sync point, rain texture, calibration marks, lighting, and first physical state are retained.
+<Subject 1> (appears throughout [Shot 1]): fully_preserved - the near-black motion-graphics field, warm Foley signal, central red sync point, cold film-world signal, rain, lightning energy, deep contrast, and cinematic grain continue as the complete visual environment after the credits dissolve.
+<Audio 1>: fully_copy - <Audio 1> is reused 1:1 as the target video's complete final audio track.
+
+detailed_description:
+The target video continues the same premium cinematic horror motion-graphics sequence as the preceding credits clip. It uses a locked 16:9 composition, deep blacks, warm amber signal light, a precise red sync point, cold blue-white waveform light, rain texture, restrained lightning filaments, calibration marks, and fine photochemical grain.
+
+[Shot 1] The first frame corresponds exactly to <Picture 1>. The complete production-credit typography is initially crisp, stationary, and fully readable:
+ALL VIDEO + SOUND GENERATED LOCALLY
+WITH COMFYUI + MINIMAX H3
+COMFY H3 SYNC CHALLENGE
+
+Behind the credits, <Subject 1> is already alive with controlled motion. The warm amber waveform travels from frame-left into the red sync point with small rhythmic amplitude. From the same point, the cold blue-white waveform continues toward frame-right through falling rain, wet glass texture, and restrained branching lightning energy. The signal responds continuously to the rhythm, dynamics, and musical accents of <Audio 1>. The camera remains completely locked while the graphic energy supplies all motion.
+
+The complete credit block holds unchanged through 00:01.250. At 00:01.250, all three lines begin one smooth, unified opacity fade while retaining their exact shapes, spacing, and alignment. The lettering becomes progressively dimmer against the moving signal environment and has completely dissolved by 00:02.500. The waveform, red sync point, rain, calibration marks, and lighting continue uninterrupted beneath the fade.
+
+From 00:02.500 through 00:05.000, the now-open signal field expands visually. Amber waveform peaks travel toward the red point from frame-left. Each selected accent in <Audio 1> makes the red point emit a precise brief pulse. On frame-right, blue-white waveform peaks move outward through denser rain, with thin lightning filaments answering the stronger musical accents. The boundary at the red point remains the readable transformation from warm Foley energy into the cold film-world signal.
+
+From 00:05.000 through 00:08.000, the motion becomes broader and more spacious while continuing to follow <Audio 1>. The warm side breathes with slower amplitude changes; the cold side carries longer waveform arcs, falling rain, and occasional soft lightning flickers. Fine grain and calibration ticks remain stable. The final frame contains the active unresolved signal environment at full cinematic contrast, with the red sync point still alive and the motion ready to continue into an editorial fade or a subsequent outro scene.
+
+overall_soundscape:
+N/A
+
+non_diegetic_music:
+<Audio 1> is directly reused 1:1 as the target video's complete final non-diegetic score.

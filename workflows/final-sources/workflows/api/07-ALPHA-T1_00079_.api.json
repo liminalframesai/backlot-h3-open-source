@@ -1,0 +1,472 @@
+{
+  "1": {
+    "inputs": {
+      "unet_name": "minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+      "weight_dtype": "default"
+    },
+    "class_type": "UNETLoader",
+    "_meta": {
+      "title": "H3 diffusion model"
+    }
+  },
+  "2": {
+    "inputs": {
+      "lora_name": "minimax_h3_ref2v_lightx2v_turbo_4step_v0.1_resized_avg_rank_20_bf16.safetensors",
+      "strength_model": 0.5,
+      "model": [
+        "1",
+        0
+      ]
+    },
+    "class_type": "LoraLoaderModelOnly",
+    "_meta": {
+      "title": "Turbo LoRA (4-step) @ 0.5"
+    }
+  },
+  "3": {
+    "inputs": {
+      "enabled": true,
+      "model": [
+        "2",
+        0
+      ]
+    },
+    "class_type": "MiniMaxH3FusedModulation",
+    "_meta": {
+      "title": "Fused Modulation"
+    }
+  },
+  "4": {
+    "inputs": {
+      "enabled": true,
+      "tau": 1.3,
+      "min_tokens": 4096,
+      "strict": false,
+      "thresh_type": "diag",
+      "int8_qk": false,
+      "int8_pv": false,
+      "sink_conditioning": "exact_kv",
+      "dense_blocks": "",
+      "model": [
+        "3",
+        0
+      ]
+    },
+    "class_type": "MiniMaxH3MemoryEfficientSolAttentionPatch",
+    "_meta": {
+      "title": "Sol-Attn"
+    }
+  },
+  "5": {
+    "inputs": {
+      "clip_name": "qwen3vl-32B-MiniMax-H3-Q4_K_M.gguf",
+      "type": "minimax"
+    },
+    "class_type": "CLIPLoaderGGUF",
+    "_meta": {
+      "title": "H3 text encoder (GGUF)"
+    }
+  },
+  "6": {
+    "inputs": {
+      "vae_name": "minimax_h3_video_vae_fp16.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "H3 video VAE"
+    }
+  },
+  "7": {
+    "inputs": {
+      "vae_name": "minimax_h3_audio_vae_fp32.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "H3 audio VAE"
+    }
+  },
+  "9": {
+    "inputs": {
+      "aspect_ratio": "16:9 (Widescreen)",
+      "megapixels": 0.6,
+      "multiple": 32
+    },
+    "class_type": "ResolutionSelector",
+    "_meta": {
+      "title": "Resolution (0.27 MP = 704x384)"
+    }
+  },
+  "10": {
+    "inputs": {
+      "value": "subject_definitions:\n<Picture 1> is the first frame of [Shot 1], showing the Foley soundstage from inside with the young woman standing in the open doorway and the foley crew looking at her.\n<Picture 2> is the keyframe for [Shot 2], showing the the terrorizing villain behind the young woman with his hand on her shoulder.\n<Picture 3> is the keyframe for [Shot 3], showing the young woman being dragged out of the room. \n<Subject 1> is the young blonde woman whose facial and character reference comes from <Picture 4> and who appears in the doorway in <Picture 1>, <Picture 2>, and being dragged away in <Picture 3>, with wet blonde hair and the tattered, dirty light dress and bare feet.\n<Subject 2> is the middle-aged man whose facial and character reference comes from <Pictue 5> and who appears standing in <Picture 1>, <Picture 2>, and <Picture 3> with brown hair and wearing a grey-green long-sleeved shirt and jeans.\n<Subject 3> is the middle-aged man whose facial and character reference comes from <Pictue 6> and who appears standing in <Picture 1>, <Picture 2>, and <Picture 3>, with brown curly hair and a beard and wearing a maroon shirt with the sleeves rolled up and jeans.\n<Subject 4> is the middle-aged man whose facial and character reference comes from <Pictue 7> and who appears standing in <Picture 1>, <Picture 2>, and <Picture 3>, with grey hair and wearing a white striped shirt with the sleeves and jeans.\n<Subject 5> is the middle-aged man whose facial and character reference comes from <Pictue 8> and who appears standing in <Picture 1>, <Picture 2>, and <Picture 3>, with dark brown hair and wearing a black t-shirt and black cargo pants.\n<Subject 6> is the villain who appears standing behind the woman in <Picture 2> with his hand on her shoulder, holding the long weapon in his free hand.\n<Audio 1> is the non-diegetic music track for the shot.\n<Audio 2> is the voice-timbre reference for <Subject 1> (S1).\n\nsummary:\n[keyframe completion + reference generation + audio reference] Live-action cinematic horror, the target video shows <Subject 1> standing in the doorway, while <Subject 2>, <Subject 3>, <Subject 4>, and <Subject 5> look at her while lightning flashes.\n\nretention_analysis:\n<Picture 1> ([Shot 1] first frame): fully_preserved - the scared young woman in the doorway, strewn equipment throughout, and four people in their working environment are retained.\n<Picture 2> ([Shot 2] keyframe): fully_preserved - the scared young woman in the doorway, the villainous monster behind her with his hand on her shoulder, and four onlookers are retained.\n<Picture 3> ([Shot 3] keyframe): fully_preserved - the young woman halfway out the doorway as she is being pulled away is retained until pulled away, and the room, equipment, and other occupants are retained.\n<Subject 1> (appears in [Shot 1], [Shot 2], [Shot 3]): fully_preserved - the blond womans's identity, wet hair, tattered dress, and bare feet are retained.\n<Subject 2> (appears in [Shot 1], [Shot 2], [Shot 3]): fully_preserved - the man's identity, brown hair and grey-green long-sleeved shirt and jeans are retained.\n<Subject 3> (appears in [Shot 1], [Shot 2], [Shot 3]): fully_preserved - the man's identity, brown curly hair, beard, maroon shirt, and jeans are retained.\n<Subject 4> (appears in [Shot 1], [Shot 2], [Shot 3]): fully_preserved - the man's identity, grey hair, white striped shirt, and jeans are retained.\n<Subject 5> (appears in [Shot 1], [Shot 2], [Shot 3]): fully_preserved - the man's identity, dark brown hair, black t-shirt, and black cargo pants and are retained.\n<Subject 6> (appears in [Shot 2]): fully_preserved - the man's identity, weapon, and menacing look are retained.\n<Audio 1>: reference - the beginning of <Audio 1> is the music for the audience-only score.\n<Audio 2>: reference - the target speaker follows <Audio 2>'s voice timbre and fearful delivery without copying the original signal.\n\ndetailed_description:\nThe target video is live-action cinematic horror realism style, underexposed dark lighting and a slightly desaturated color palette.\n[Shot 1] The shot's keyframe corresponds to <Picture 1>. The young woman <Subject 1> stands in the doorway of the foley soundstage as shown in <Picture 1>, preserving her appearance, clothing, and location. <Subject 2>, <Subject 3>, <Subject 4>, and <Subject 5> stand near the equipment as shown in <Picture 1>, preserving their appearances and clothing. The camera pushes in with small amplitude at slow speed toward <Subject 1> in the doorway as rain falls behind her. At 00:01.000 a incredibly huge burst of lightning strikes just outside the door behind the woman. <Subject 2>, <Subject 3>, <Subject 4>, and <Subject 5> flinch in reaction to the lightning. The brightness of the lightning flash takes the entire frame of the target video to bright white light, with a couple flashes to black mixed in and the lightning bolt itself illuminated in alternating white and black against these background, mimicking human percpetion of fast moving light. Cut to black at 00:01.750. \n\n[Shot 2] At 00:02.000, cut to the wide doorway view with <Subject 6> behind <Subject 1> in the doorway. The shot's keyframe corresponds to <Picture 2> with the villain <Subject 6> now standing behind <Subject 1> in the open doorway.  <Subject 1> (S1), the young woman in the white dress from Shot 1, feels the hand on her shoulder. The camera pushes in with small amplitude at slow speed toward <Subject 1> and <Subject 6> in the doorway. <Subject 1> (S1) screams in terror in the timbre and voice of <Audio 2>. At 00:02.500 an incredibly huge burst of lightning strikes just outside the door behind the woman. <Subject 2>, <Subject 3>, <Subject 4>, and <Subject 5> flinch in reaction to the lightning. The brightness of the lightning flash takes the entire frame of the target video to bright white light, with a couple flashes to black mixed in and the lightning bolt itself illuminated in alternating white and black against these background, mimicking human percpetion of fast moving light. Cut to black at 00:02.750.\n\n[Shot 3] At 00:03.00, cut to the wide doorway view with <Subject 1> being dragged out the doorway. The shot's keyframe corresponds to <Picture 3> with the girl <Subject 1> being pulled out the doorway. The camera pushes in with small amplitude at slow speed toward the doorway. <Subject 1> is being forcibly dragged away and her feet twitch and kick as she struggles until her feet disappear beyond the door-frame. <Subject 2>, <Subject 3>, <Subject 4>, and <Subject 5> start to move toward her, <Subject 2> first, then <Subject 3> and <Subject 5> at the same time with <Subject 4> following closely behind. Fade to black.\n\noverall_soundscape:\nExtremely loud thunder accompanies each lightning strike. Dry soundstage room tone with low ventilation below the silence continues throughout the scene. Hard exterior rain is audible throughout the scene and intensifies after each lightning strike.\n\nnon_diegetic_music:\n<Audio 1> is the music for the audience-only score. Intensify and accompany each lightning beat and thunder, then dissipating in sync with the fade.\n"
+    },
+    "class_type": "PrimitiveStringMultiline",
+    "_meta": {
+      "title": "PROMPT (H3 template)"
+    }
+  },
+  "11": {
+    "inputs": {
+      "value": 5.0
+    },
+    "class_type": "PrimitiveFloat",
+    "_meta": {
+      "title": "Duration (seconds)"
+    }
+  },
+  "12": {
+    "inputs": {
+      "expression": "max(5, round(a * 24)) + (5 - (max(5, round(a * 24)) % 17)) % 17",
+      "values.a": [
+        "11",
+        0
+      ]
+    },
+    "class_type": "ComfyMathExpression",
+    "_meta": {
+      "title": "frames = H3 17k+5 law"
+    }
+  },
+  "14": {
+    "inputs": {
+      "model": [
+        "4",
+        0
+      ],
+      "conditioning": [
+        "24",
+        0
+      ]
+    },
+    "class_type": "BasicGuider",
+    "_meta": {
+      "title": "Guider (CFG 1)"
+    }
+  },
+  "15": {
+    "inputs": {
+      "sampler_name": "euler"
+    },
+    "class_type": "KSamplerSelect",
+    "_meta": {
+      "title": "KSamplerSelect"
+    }
+  },
+  "16": {
+    "inputs": {
+      "scheduler": "bong_tangent",
+      "steps": 12,
+      "denoise": 1.0,
+      "model": [
+        "4",
+        0
+      ]
+    },
+    "class_type": "BasicScheduler",
+    "_meta": {
+      "title": "12 steps"
+    }
+  },
+  "17": {
+    "inputs": {
+      "noise_seed": 744362410625634
+    },
+    "class_type": "RandomNoise",
+    "_meta": {
+      "title": "Seed"
+    }
+  },
+  "18": {
+    "inputs": {
+      "noise": [
+        "17",
+        0
+      ],
+      "guider": [
+        "14",
+        0
+      ],
+      "sampler": [
+        "15",
+        0
+      ],
+      "sigmas": [
+        "16",
+        0
+      ],
+      "latent_image": [
+        "24",
+        1
+      ]
+    },
+    "class_type": "SamplerCustomAdvanced",
+    "_meta": {
+      "title": "Sample (single H3 pass)"
+    }
+  },
+  "19": {
+    "inputs": {
+      "samples": [
+        "18",
+        0
+      ],
+      "vae": [
+        "6",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "Decode video"
+    }
+  },
+  "20": {
+    "inputs": {
+      "samples": [
+        "18",
+        0
+      ],
+      "vae": [
+        "7",
+        0
+      ]
+    },
+    "class_type": "VAEDecodeAudio",
+    "_meta": {
+      "title": "Decode audio"
+    }
+  },
+  "21": {
+    "inputs": {
+      "fps": 24.0,
+      "bit_depth": 8,
+      "color_space": "sRGB",
+      "images": [
+        "19",
+        0
+      ],
+      "audio": [
+        "20",
+        0
+      ]
+    },
+    "class_type": "CreateVideo",
+    "_meta": {
+      "title": "Create video (24 fps)"
+    }
+  },
+  "22": {
+    "inputs": {
+      "filename_prefix": "video/ALPHA-T1",
+      "format": "auto",
+      "format.codec": "auto",
+      "codec": "auto",
+      "video-preview": "",
+      "video": [
+        "21",
+        0
+      ]
+    },
+    "class_type": "SaveVideo",
+    "_meta": {
+      "title": "Save"
+    }
+  },
+  "24": {
+    "inputs": {
+      "prompt": [
+        "10",
+        0
+      ],
+      "width": [
+        "9",
+        0
+      ],
+      "height": [
+        "9",
+        1
+      ],
+      "length": [
+        "12",
+        1
+      ],
+      "ref_image_size": "match",
+      "clip": [
+        "5",
+        0
+      ],
+      "vae": [
+        "6",
+        0
+      ],
+      "audio_vae": [
+        "7",
+        0
+      ],
+      "ref_images.ref_image_0": [
+        "33",
+        0
+      ],
+      "ref_images.ref_image_1": [
+        "35",
+        0
+      ],
+      "ref_images.ref_image_2": [
+        "36",
+        0
+      ],
+      "ref_images.ref_image_3": [
+        "31",
+        0
+      ],
+      "ref_images.ref_image_4": [
+        "28",
+        0
+      ],
+      "ref_images.ref_image_5": [
+        "30",
+        0
+      ],
+      "ref_images.ref_image_6": [
+        "32",
+        0
+      ],
+      "ref_images.ref_image_7": [
+        "27",
+        0
+      ],
+      "ref_audios.ref_audio_0": [
+        "29",
+        0
+      ],
+      "ref_audios.ref_audio_1": [
+        "34",
+        0
+      ]
+    },
+    "class_type": "MiniMaxH3ReferenceToVideo",
+    "_meta": {
+      "title": "MiniMax H3 Reference to Video"
+    }
+  },
+  "27": {
+    "inputs": {
+      "image": "monitor-operator-character-sheet.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    },
+    "is_changed": [
+      "e2b9a212d15aa99647321efce81e59e545b83aebb8e2c7be365a056dedc567e7"
+    ]
+  },
+  "28": {
+    "inputs": {
+      "image": "foley-lead-A-sheet.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    },
+    "is_changed": [
+      "55e9e3075bedadc60ccacb6b06c966b90ff31559e8cebc636009aefd82f2767f"
+    ]
+  },
+  "29": {
+    "inputs": {
+      "audio": "music-s09.wav"
+    },
+    "class_type": "LoadAudio",
+    "_meta": {
+      "title": "Load Audio"
+    },
+    "is_changed": [
+      "e3cef660dd7dfad70ca8fcbbca50dce4a6495f797a3929f04a4c69b894d1b509"
+    ]
+  },
+  "30": {
+    "inputs": {
+      "image": "foley-lead-B-sheet.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    },
+    "is_changed": [
+      "01dce31b2ef5a6f2fe2e3cce034b8649e97e6f3756d109ea477be866906519cb"
+    ]
+  },
+  "31": {
+    "inputs": {
+      "image": "lead-actress-character-sheet.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    },
+    "is_changed": [
+      "1891aa540dc6d3413f97147afb41846c589e21c6e3ed42cd6a08def8f123f7f0"
+    ]
+  },
+  "32": {
+    "inputs": {
+      "image": "studio-operator-grayer-hair-sheet.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    },
+    "is_changed": [
+      "276b9dc5705e1e91214ebd2748e78cf0f73111b0d81c97205803670eb7cd499b"
+    ]
+  },
+  "33": {
+    "inputs": {
+      "image": "reference-img1 (1).png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    },
+    "is_changed": [
+      "4458267a92c122f034af91e78a30d723a266b23aa463a662ad445a869e5662be"
+    ]
+  },
+  "34": {
+    "inputs": {
+      "audio": "heroine-s10a-i2v-t06-primary-anchor-v2.wav"
+    },
+    "class_type": "LoadAudio",
+    "_meta": {
+      "title": "Load Audio"
+    },
+    "is_changed": [
+      "cc255b462e60d098b53df9f523bbd5d0f0629aed4dad902ceb670dfb439b60e8"
+    ]
+  },
+  "35": {
+    "inputs": {
+      "image": "magnific_add-the-character-in-img2_hu5FyGWvqL.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    },
+    "is_changed": [
+      "85e9c81e8abe47f516ec0a34502be8cbbdebf940dcb69aa092c9490902337734"
+    ]
+  },
+  "36": {
+    "inputs": {
+      "image": "magnific_turn-the-woman-that-is-be_EbxkJCvuuO.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    },
+    "is_changed": [
+      "fb7f179591b4b868ee0ab2d5276cda3d6b9743d996af42ab604d4991fc836c10"
+    ]
+  }
+}

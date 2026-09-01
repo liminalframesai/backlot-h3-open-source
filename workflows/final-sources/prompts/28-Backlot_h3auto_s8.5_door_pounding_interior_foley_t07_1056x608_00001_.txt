@@ -1,0 +1,26 @@
+subject_definitions:
+<Subject 1> is the professional foley soundstage whose location reference comes from <Picture 1>, including its warm practical work light, material pits, microphone stands, prop workbenches, shelves, monitor cart, and working-room depth.
+<Subject 2> is the short-haired middle-aged male foley performer whose character reference comes from <Picture 2>, wearing his green work jacket, grey shirt, dark jeans, brown work boots, and black over-ear headphones.
+<Subject 3> is a purpose-built Foley resonance panel: a chest-high rectangular slab of layered weathered timber suspended vertically inside a welded steel rolling rack, with its raw outer edges visible, open air behind it, large spring clamps at the corners, adjustable tension rods, two sandbagged diagonal braces, a contact microphone taped to its rear face, and a shotgun microphone aimed at the impact area.
+<Audio 1> is the complete dry three-impact Foley soundtrack from the accepted prior Scene 8.5 take.
+
+summary:
+[reference generation + audio reuse] Live-action cinematic documentary style, the target video shows <Subject 2> performing the three impacts in <Audio 1> on the purpose-built <Subject 3> inside <Subject 1>, photographed from the open side of the rig so its fabricated construction and sound-recording technique are immediately readable.
+
+retention_analysis:
+<Subject 1> (location throughout [Shot 1] and [Shot 2]): fully_preserved - the professional soundstage, practical work light, material pits, microphones, prop benches, shelves, monitor cart, and working-room depth are retained.
+<Subject 2> (appears throughout [Shot 1] and [Shot 2]): fully_preserved - his identity, short hair, green jacket, grey shirt, dark jeans, brown boots, headphones, and focused working posture are retained.
+<Subject 3> (primary Foley device throughout [Shot 1] and [Shot 2]): fully_preserved - the exposed timber slab, open-backed rolling rack, spring clamps, tension rods, sandbagged braces, contact microphone, and shotgun microphone are retained as one stable practical rig.
+<Audio 1>: fully_copy - <Audio 1> is reused 1:1 as the target video's complete final synchronized audio track.
+
+detailed_description:
+The target video is live-action cinematic realism in a working-documentary style, slightly underexposed and slightly desaturated, with warm practical soundstage light.
+[Shot 1] A medium low three-quarter view from the open rear side of <Subject 3> establishes <Subject 1>, <Subject 2>, and the resonance rig. The timber slab occupies the right half of frame while open air, the rear contact microphone, tension rods, steel rack, diagonal braces, sandbags, casters, and the performer on the opposite side remain visible together. <Subject 2> plants both boots and loads his right fist beside his shoulder. He drives two forceful, compact body blows into the slab in exact synchronization with the first two impacts in <Audio 1> at approximately 00:00.950 and 00:02.150. At each contact his hips and shoulder move through the strike, the knuckles meet the timber squarely, the slab flexes inside the clamps, and his fist rebounds into open space.
+[Shot 2] At 00:03.200 a hard cut moves to a tight side profile that layers <Subject 2>'s face and headphones, his loaded shoulder and striking fist, the raw timber edge, rear contact microphone, one spring clamp, and one diagonal brace in the same composition. His weight settles over the rear boot and his right fist draws back. At approximately 00:04.550 his whole body drives the final heavy contact in exact synchronization with the third impact in <Audio 1>. The timber slab bows within the steel rack, the clamp and tension rod oscillate, the brace shudders against its sandbag, and his fist rebounds sharply. He then holds still and listens through his headphones while the copied decay finishes.
+
+overall_soundscape:
+<Audio 1> is reused 1:1 as the target video's complete final synchronized audio track.
+
+non_diegetic_music:
+N/A
+

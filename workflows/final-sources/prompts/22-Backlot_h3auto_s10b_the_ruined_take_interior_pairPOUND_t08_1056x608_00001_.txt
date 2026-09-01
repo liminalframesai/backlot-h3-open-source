@@ -1,0 +1,33 @@
+subject_definitions:
+<Picture 1> is the exact first frame of [Shot 1], showing the interior foley stage and the inside face of the exterior door during a door-effect performance.
+<Subject 1> is the professional foley soundstage whose location reference comes from <Picture 2> and which appears in <Picture 1>, including the foley pit, door-effect rig, monitor cart, microphones, equipment, work lights, and inside face of the exterior stage door.
+<Subject 2> is the middle-aged male foley performer with short hair whose character reference comes from <Picture 3> and who appears in <Picture 1>, wearing his green work jacket, headphones, and jeans.
+<Subject 3> is the middle-aged male foley performer with curly hair and a beard whose character reference comes from <Picture 4> and who appears in <Picture 1>, wearing his rust work shirt over a navy T-shirt and jeans.
+<Subject 4> (S1) is the older male director and studio operator whose character reference comes from <Picture 5> and who appears in <Picture 1>, preserving his grey hair, face, and practical wardrobe. His speaking voice is referenced by <Audio 1>: an older American man with a neutral-to-West-Coast General American accent, slightly weathered dry baritone, and effortless set authority.
+<Subject 5> is the male monitor operator whose character reference comes from <Picture 6> and who appears in <Picture 1>, preserving his face, hair, and practical soundstage wardrobe.
+<Audio 1> is the voice identity, accent, register, and clipped frustrated delivery reference for <Subject 4> (S1).
+
+summary:
+[keyframe completion + reference generation + audio reference] Live-action cinematic documentary style, the target video begins exactly from <Picture 1> entirely inside <Subject 1>, where a performed door-pounding effect is ruined by slightly offset real pounding through the exterior door and <Subject 4> (S1) stops the take.
+
+retention_analysis:
+<Picture 1> ([Shot 1] first frame): fully_preserved - its interior soundstage geography, crew blocking, foley door rig, exterior door position, lighting, and first physical state are retained as frame zero.
+<Subject 1> (location throughout [Shot 1], [Shot 2], [Shot 3]): fully_preserved - the professional stage geography, foley pit, door-effect rig, monitor cart, microphones, equipment, work lights, and inside exterior-door position are retained.
+<Subject 2> (appears throughout [Shot 1], [Shot 2], [Shot 3]): fully_preserved - his identity, short hair, green jacket, headphones, and jeans are retained.
+<Subject 3> (appears throughout [Shot 1], [Shot 2], [Shot 3]): fully_preserved - his identity, curly hair, beard, rust shirt, navy T-shirt, and jeans are retained.
+<Subject 4> (S1) (appears and speaks in [Shot 1], [Shot 2], [Shot 3]): fully_preserved - his older grey-haired identity, practical wardrobe, weathered American baritone, and clipped authority are retained.
+<Subject 5> (appears throughout [Shot 1], [Shot 2], [Shot 3]): fully_preserved - his identity and practical soundstage wardrobe are retained.
+<Audio 1>: reference - the director's voice identity, American accent, weathered baritone register, pace, and clipped frustrated delivery guide his newly generated line.
+
+detailed_description:
+The target video is live-action cinematic realism in a working-documentary style, slightly underexposed and slightly desaturated. Every camera position and action stays inside the soundstage while the actual exterior door remains closed.
+[Shot 1] The shot's keyframe corresponds exactly to <Picture 1>. The scene is already in motion when the video starts. A medium moving camera shows <Subject 2> performing a door-pounding effect on the practical rig in the foley pit while <Subject 3> handles a secondary brace. <Subject 4> (S1) and <Subject 5> watch the monitor cart. Every crew member has subtle working motion.
+[Shot 2] At 00:02.000, real pounding arrives through the actual exterior stage door slightly after the performed hits, creating a clearly doubled effect. The camera whips with medium amplitude toward the inside face of that exterior door as it shudders. <Subject 2> freezes mid-gesture; <Subject 3> looks to the real door; <Subject 5> lifts his head from the monitor; <Subject 4> (S1) turns sharply and raises one hand.
+[Shot 3] At 00:04.400, the shot cuts to a dynamic medium close-up of <Subject 4> (S1) at the cart. His raised hand stops the room and he calls <d>[English] Cut!</d> in the clipped frustrated voice referenced by <Audio 1>. The camera makes a small-amplitude quick push to his face, then cuts at 00:05.600 to reaction details of <Subject 2>, <Subject 3>, and <Subject 5> listening toward the actual closed exterior door.
+
+overall_soundscape:
+Dry stage room tone and cart fan continue. The foley rig creates two close performed door pounds in the pit; the actual exterior door answers each with a second muffled thud after a tiny imperfect lag, making the doubled sound unmistakable. The performed effect stops mid-gesture. A thin unintelligible exterior voice and rain remain acoustically behind the closed real door. <Subject 4> (S1) says <d>[English] Cut!</d> dry and loud with exact lip synchronization, and the room falls quiet behind his raised hand.
+
+non_diegetic_music:
+N/A
+

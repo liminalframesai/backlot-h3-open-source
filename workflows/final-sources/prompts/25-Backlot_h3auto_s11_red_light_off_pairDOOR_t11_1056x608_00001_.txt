@@ -1,0 +1,28 @@
+subject_definitions:
+<Picture 1> is the exact first frame of [Shot 1], showing the young woman at the locked Foley-stage exterior door in hard rain, with the red caged beacon illuminated screen-right, the lever handle screen-right, and the fixed hinge side screen-left.
+<Subject 1> is the young blonde woman whose facial and character reference comes from <Picture 2> and who appears in <Picture 1>, with wet warm golden-blonde hair, pale skin, a small pendant, a dirt-stained tattered light cream dress, and bare feet.
+<Subject 2> is the Foley-stage exterior door whose design and spatial reference comes from <Picture 3> and which appears in <Picture 1>: a rigid dark steel door with its fixed hinges screen-left, lever and latch screen-right, and red caged beacon screen-right.
+<Audio 1> is a non-diegetic excerpt of the Backlot Shadows score for the released-door beat.
+
+summary:
+[keyframe completion + reference generation + audio reuse] Live-action cinematic horror, the target video begins exactly from <Picture 1> as the red beacon beside <Subject 2> switches off, <Subject 1> discovers that the lever now works, and she begins pushing the heavy door inward into the soundstage.
+
+retention_analysis:
+<Picture 1> ([Shot 1] first frame): fully_preserved - its exact rainy exterior, camera position, heroine blocking, rigid door geometry, screen-right beacon and lever, screen-left hinges, lighting, and first physical state are retained as frame zero.
+<Subject 1> (appears throughout [Shot 1], [Shot 2], [Shot 3], [Shot 4]): fully_preserved - her facial identity, wet blonde hair, pendant, dirty torn cream dress, bare feet, and frightened urgency are retained.
+<Subject 2> (appears throughout [Shot 1], [Shot 2], [Shot 3], [Shot 4]): fully_preserved - its steel construction, lettering, fixed screen-left hinges, screen-right lever and latch, screen-right beacon, facade position, and constant physical dimensions are retained.
+<Audio 1>: partially_copy - the supplied score segment is reused 1:1 from its beginning as the complete audience-only music.
+
+detailed_description:
+The target video is live-action cinematic horror realism at night, underexposed and desaturated toward cold green-grey with hard rain and wet reflections.
+[Shot 1] The shot's keyframe corresponds exactly to <Picture 1>. The scene is already in motion when the video starts. Hold the exterior wide briefly as <Subject 1> keeps both hands against <Subject 2>.
+[Shot 2] At 00:00.350, the shot cuts to a tight close-up of the rain-beaded red caged beacon mounted screen-right. Its red filament and red wash switch off decisively in one instant, leaving its lens opaque black.
+[Shot 3] At 00:01.200, the shot cuts to a tight detail of <Subject 1>'s wet hand closing around the screen-right lever. She presses it fully downward. The lever, spindle, latch, and her grip move together as one solid mechanical action. The latch retracts cleanly from the strike plate with a hard click.
+[Shot 4] At 00:02.350, the shot cuts back to the exterior wide established by <Picture 1>. The caged beacon remains dark. Her near hand holds the lever down while her far palm presses flat against the door. She plants her bare feet, bends her front knee, and transfers her weight forward. The rigid door leaf pivots on its fixed screen-left hinges and its screen-right handle edge begins receding away from the exterior camera into the soundstage. By the final frame it has opened inward only about eight degrees, creating a narrow warm vertical opening at the screen-right jamb while she maintains her forward push.
+
+overall_soundscape:
+Hard rain fills the stereo field and her frightened breathing is close and centered. The beacon's faint electrical hum stops exactly when its light extinguishes. The lever reaches its stop with one hard metallic clack, the latch retracts, wet bare feet grip pavement, and the heavy steel door gives one low hinge groan as it begins moving inward.
+
+non_diegetic_music:
+<Audio 1> is reused from its beginning as the complete audience-only score beneath rain, breathing, the extinguished electrical hum, latch release, body effort, and first inward hinge sound.
+

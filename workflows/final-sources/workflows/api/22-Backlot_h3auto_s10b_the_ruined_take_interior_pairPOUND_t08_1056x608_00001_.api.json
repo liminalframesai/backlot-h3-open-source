@@ -1,0 +1,384 @@
+{
+  "92": {
+    "inputs": {
+      "filename_prefix": "video/Backlot_h3auto_s10b_the_ruined_take_interior_pairPOUND_t08_1056x608",
+      "format": "mp4",
+      "codec": "h264",
+      "video": [
+        "130",
+        0
+      ],
+      "codec.encoding": "auto"
+    },
+    "class_type": "SaveVideo",
+    "_meta": {
+      "title": "Save Video"
+    }
+  },
+  "119": {
+    "inputs": {
+      "vae_name": "minimax_h3_video_vae_fp16.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "Load VAE"
+    }
+  },
+  "120": {
+    "inputs": {
+      "vae_name": "minimax_h3_audio_vae_fp32.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "Load VAE"
+    }
+  },
+  "121": {
+    "inputs": {
+      "samples": [
+        "125",
+        0
+      ],
+      "vae": [
+        "120",
+        0
+      ]
+    },
+    "class_type": "VAEDecodeAudio",
+    "_meta": {
+      "title": "VAE Decode Audio"
+    }
+  },
+  "122": {
+    "inputs": {
+      "samples": [
+        "125",
+        0
+      ],
+      "vae": [
+        "119",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "123": {
+    "inputs": {
+      "sampler_name": "euler"
+    },
+    "class_type": "KSamplerSelect",
+    "_meta": {
+      "title": "KSamplerSelect"
+    }
+  },
+  "124": {
+    "inputs": {
+      "scheduler": "bong_tangent",
+      "denoise": 1.0,
+      "model": [
+        "127",
+        0
+      ],
+      "steps": [
+        "142",
+        0
+      ]
+    },
+    "class_type": "BasicScheduler",
+    "_meta": {
+      "title": "BasicScheduler"
+    }
+  },
+  "125": {
+    "inputs": {
+      "noise": [
+        "129",
+        0
+      ],
+      "guider": [
+        "126",
+        0
+      ],
+      "sampler": [
+        "123",
+        0
+      ],
+      "sigmas": [
+        "124",
+        0
+      ],
+      "latent_image": [
+        "136",
+        1
+      ]
+    },
+    "class_type": "SamplerCustomAdvanced",
+    "_meta": {
+      "title": "SamplerCustomAdvanced"
+    }
+  },
+  "126": {
+    "inputs": {
+      "model": [
+        "141",
+        0
+      ],
+      "conditioning": [
+        "136",
+        0
+      ]
+    },
+    "class_type": "BasicGuider",
+    "_meta": {
+      "title": "Basic Guider"
+    }
+  },
+  "127": {
+    "inputs": {
+      "unet_name": "minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+      "weight_dtype": "default"
+    },
+    "class_type": "UNETLoader",
+    "_meta": {
+      "title": "Load Diffusion Model"
+    }
+  },
+  "128": {
+    "inputs": {
+      "clip_name": "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+      "type": "minimax",
+      "device": "default"
+    },
+    "class_type": "CLIPLoader",
+    "_meta": {
+      "title": "Load CLIP"
+    }
+  },
+  "129": {
+    "inputs": {
+      "noise_seed": 42285774265
+    },
+    "class_type": "RandomNoise",
+    "_meta": {
+      "title": "RandomNoise"
+    }
+  },
+  "130": {
+    "inputs": {
+      "fps": 24.0,
+      "bit_depth": 8,
+      "images": [
+        "122",
+        0
+      ],
+      "audio": [
+        "121",
+        0
+      ]
+    },
+    "class_type": "CreateVideo",
+    "_meta": {
+      "title": "Create Video"
+    }
+  },
+  "136": {
+    "inputs": {
+      "clip": [
+        "128",
+        0
+      ],
+      "vae": [
+        "119",
+        0
+      ],
+      "prompt": "subject_definitions:\n<Picture 1> is the exact first frame of [Shot 1], showing the interior foley stage and the inside face of the exterior door during a door-effect performance.\n<Subject 1> is the professional foley soundstage whose location reference comes from <Picture 2> and which appears in <Picture 1>, including the foley pit, door-effect rig, monitor cart, microphones, equipment, work lights, and inside face of the exterior stage door.\n<Subject 2> is the middle-aged male foley performer with short hair whose character reference comes from <Picture 3> and who appears in <Picture 1>, wearing his green work jacket, headphones, and jeans.\n<Subject 3> is the middle-aged male foley performer with curly hair and a beard whose character reference comes from <Picture 4> and who appears in <Picture 1>, wearing his rust work shirt over a navy T-shirt and jeans.\n<Subject 4> (S1) is the older male director and studio operator whose character reference comes from <Picture 5> and who appears in <Picture 1>, preserving his grey hair, face, and practical wardrobe. His speaking voice is referenced by <Audio 1>: an older American man with a neutral-to-West-Coast General American accent, slightly weathered dry baritone, and effortless set authority.\n<Subject 5> is the male monitor operator whose character reference comes from <Picture 6> and who appears in <Picture 1>, preserving his face, hair, and practical soundstage wardrobe.\n<Audio 1> is the voice identity, accent, register, and clipped frustrated delivery reference for <Subject 4> (S1).\n\nsummary:\n[keyframe completion + reference generation + audio reference] Live-action cinematic documentary style, the target video begins exactly from <Picture 1> entirely inside <Subject 1>, where a performed door-pounding effect is ruined by slightly offset real pounding through the exterior door and <Subject 4> (S1) stops the take.\n\nretention_analysis:\n<Picture 1> ([Shot 1] first frame): fully_preserved - its interior soundstage geography, crew blocking, foley door rig, exterior door position, lighting, and first physical state are retained as frame zero.\n<Subject 1> (location throughout [Shot 1], [Shot 2], [Shot 3]): fully_preserved - the professional stage geography, foley pit, door-effect rig, monitor cart, microphones, equipment, work lights, and inside exterior-door position are retained.\n<Subject 2> (appears throughout [Shot 1], [Shot 2], [Shot 3]): fully_preserved - his identity, short hair, green jacket, headphones, and jeans are retained.\n<Subject 3> (appears throughout [Shot 1], [Shot 2], [Shot 3]): fully_preserved - his identity, curly hair, beard, rust shirt, navy T-shirt, and jeans are retained.\n<Subject 4> (S1) (appears and speaks in [Shot 1], [Shot 2], [Shot 3]): fully_preserved - his older grey-haired identity, practical wardrobe, weathered American baritone, and clipped authority are retained.\n<Subject 5> (appears throughout [Shot 1], [Shot 2], [Shot 3]): fully_preserved - his identity and practical soundstage wardrobe are retained.\n<Audio 1>: reference - the director's voice identity, American accent, weathered baritone register, pace, and clipped frustrated delivery guide his newly generated line.\n\ndetailed_description:\nThe target video is live-action cinematic realism in a working-documentary style, slightly underexposed and slightly desaturated. Every camera position and action stays inside the soundstage while the actual exterior door remains closed.\n[Shot 1] The shot's keyframe corresponds exactly to <Picture 1>. The scene is already in motion when the video starts. A medium moving camera shows <Subject 2> performing a door-pounding effect on the practical rig in the foley pit while <Subject 3> handles a secondary brace. <Subject 4> (S1) and <Subject 5> watch the monitor cart. Every crew member has subtle working motion.\n[Shot 2] At 00:02.000, real pounding arrives through the actual exterior stage door slightly after the performed hits, creating a clearly doubled effect. The camera whips with medium amplitude toward the inside face of that exterior door as it shudders. <Subject 2> freezes mid-gesture; <Subject 3> looks to the real door; <Subject 5> lifts his head from the monitor; <Subject 4> (S1) turns sharply and raises one hand.\n[Shot 3] At 00:04.400, the shot cuts to a dynamic medium close-up of <Subject 4> (S1) at the cart. His raised hand stops the room and he calls <d>[English] Cut!</d> in the clipped frustrated voice referenced by <Audio 1>. The camera makes a small-amplitude quick push to his face, then cuts at 00:05.600 to reaction details of <Subject 2>, <Subject 3>, and <Subject 5> listening toward the actual closed exterior door.\n\noverall_soundscape:\nDry stage room tone and cart fan continue. The foley rig creates two close performed door pounds in the pit; the actual exterior door answers each with a second muffled thud after a tiny imperfect lag, making the doubled sound unmistakable. The performed effect stops mid-gesture. A thin unintelligible exterior voice and rain remain acoustically behind the closed real door. <Subject 4> (S1) says <d>[English] Cut!</d> dry and loud with exact lip synchronization, and the room falls quiet behind his raised hand.\n\nnon_diegetic_music:\nN/A\n",
+      "width": 1056,
+      "height": 608,
+      "length": 175,
+      "audio_vae": [
+        "120",
+        0
+      ],
+      "ref_image_size": "match",
+      "ref_images.ref_image_0": [
+        "15620",
+        0
+      ],
+      "ref_images.ref_image_1": [
+        "15621",
+        0
+      ],
+      "ref_images.ref_image_2": [
+        "15622",
+        0
+      ],
+      "ref_images.ref_image_3": [
+        "15623",
+        0
+      ],
+      "ref_images.ref_image_4": [
+        "15624",
+        0
+      ],
+      "ref_images.ref_image_5": [
+        "15625",
+        0
+      ],
+      "ref_audios.ref_audio_0": [
+        "23760",
+        0
+      ]
+    },
+    "class_type": "MiniMaxH3ReferenceToVideo",
+    "_meta": {
+      "title": "MiniMax H3 Reference to Video"
+    }
+  },
+  "141": {
+    "inputs": {
+      "switch": [
+        "146",
+        0
+      ],
+      "on_false": [
+        "127",
+        0
+      ],
+      "on_true": [
+        "145",
+        0
+      ]
+    },
+    "class_type": "ComfySwitchNode",
+    "_meta": {
+      "title": "If/Else Switch (model)"
+    }
+  },
+  "142": {
+    "inputs": {
+      "switch": [
+        "146",
+        0
+      ],
+      "on_false": [
+        "143",
+        0
+      ],
+      "on_true": [
+        "144",
+        0
+      ]
+    },
+    "class_type": "ComfySwitchNode",
+    "_meta": {
+      "title": "If/Else Switch (Steps)"
+    }
+  },
+  "143": {
+    "inputs": {
+      "value": 20
+    },
+    "class_type": "PrimitiveInt",
+    "_meta": {
+      "title": "Int (Full)"
+    }
+  },
+  "144": {
+    "inputs": {
+      "value": 4
+    },
+    "class_type": "PrimitiveInt",
+    "_meta": {
+      "title": "Int (Lightning LoRA)"
+    }
+  },
+  "145": {
+    "inputs": {
+      "lora_name": "minimax_h3_ref2v_turbo_4step_v0.1_comfyui_bf16.safetensors",
+      "strength_model": 1.0,
+      "model": [
+        "127",
+        0
+      ]
+    },
+    "class_type": "LoraLoaderModelOnly",
+    "_meta": {
+      "title": "Load LoRA"
+    }
+  },
+  "146": {
+    "inputs": {
+      "value": false
+    },
+    "class_type": "PrimitiveBoolean",
+    "_meta": {
+      "title": "Boolean (Enable Lightning LoRA)"
+    }
+  },
+  "15620": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "h3overnight_s10b_openframe.png"
+    },
+    "is_changed": [
+      "5897c4f9ff0c6a60d147943a842998b1f55cc516f4e4654c925750cba0c63dac"
+    ]
+  },
+  "15621": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "foley-stage-interior-master-v1.png"
+    },
+    "is_changed": [
+      "80b6127cde52a18b542ba1b0607a630a542b88ec3a62e3014d49ffd554dc4b11"
+    ]
+  },
+  "15622": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "foley-lead-A-sheet.png"
+    },
+    "is_changed": [
+      "55e9e3075bedadc60ccacb6b06c966b90ff31559e8cebc636009aefd82f2767f"
+    ]
+  },
+  "15623": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "foley-lead-B-sheet.png"
+    },
+    "is_changed": [
+      "01dce31b2ef5a6f2fe2e3cce034b8649e97e6f3756d109ea477be866906519cb"
+    ]
+  },
+  "15624": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "studio-operator-grayer-hair-sheet.png"
+    },
+    "is_changed": [
+      "276b9dc5705e1e91214ebd2748e78cf0f73111b0d81c97205803670eb7cd499b"
+    ]
+  },
+  "15625": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "monitor-operator-character-sheet.png"
+    },
+    "is_changed": [
+      "e2b9a212d15aa99647321efce81e59e545b83aebb8e2c7be365a056dedc567e7"
+    ]
+  },
+  "23760": {
+    "class_type": "LoadAudio",
+    "inputs": {
+      "audio": "director-s10b-anchor-v1.wav"
+    },
+    "is_changed": [
+      "99a96337d177c27ab9a94026d9deb2cad59edb3f614ef2f634af43d5f839b62a"
+    ]
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "id": "4d57bb39-89f5-467a-a849-cf4a21ac3c68",
+  "revision": 0,
+  "last_node_id": 1,
+  "last_link_id": 0,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "FFmpegEdgeMotionCarrier",
+      "pos": [180, 140],
+      "size": [390, 286],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "comfy_input_path",
+          "type": "STRING",
+          "links": null,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "FFmpegEdgeMotionCarrier"
+      },
+      "widgets_values": [
+        "source.mp4",
+        0.1,
+        0.4,
+        true,
+        "copy",
+        "motion-edge",
+        18,
+        "slow"
+      ]
+    }
+  ],
+  "links": [],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 1,
+      "offset": [0, 0]
+    }
+  },
+  "version": 0.4
+}

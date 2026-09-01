@@ -1,0 +1,377 @@
+{
+  "1": {
+    "inputs": {
+      "unet_name": "minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+      "weight_dtype": "default"
+    },
+    "class_type": "UNETLoader",
+    "_meta": {
+      "title": "H3 diffusion model"
+    }
+  },
+  "2": {
+    "inputs": {
+      "lora_name": "minimax_h3_ref2v_lightx2v_turbo_4step_v0.1_resized_avg_rank_20_bf16.safetensors",
+      "strength_model": 0.5,
+      "model": [
+        "1",
+        0
+      ]
+    },
+    "class_type": "LoraLoaderModelOnly",
+    "_meta": {
+      "title": "Turbo LoRA (4-step) @ 0.5"
+    }
+  },
+  "3": {
+    "inputs": {
+      "enabled": true,
+      "model": [
+        "2",
+        0
+      ]
+    },
+    "class_type": "MiniMaxH3FusedModulation",
+    "_meta": {
+      "title": "Fused Modulation"
+    }
+  },
+  "4": {
+    "inputs": {
+      "enabled": true,
+      "tau": 1.3,
+      "min_tokens": 4096,
+      "strict": false,
+      "thresh_type": "diag",
+      "int8_qk": false,
+      "int8_pv": false,
+      "sink_conditioning": "exact_kv",
+      "dense_blocks": "",
+      "model": [
+        "3",
+        0
+      ]
+    },
+    "class_type": "MiniMaxH3MemoryEfficientSolAttentionPatch",
+    "_meta": {
+      "title": "Sol-Attn"
+    }
+  },
+  "5": {
+    "inputs": {
+      "clip_name": "qwen3vl-32B-MiniMax-H3-Q4_K_M.gguf",
+      "type": "minimax"
+    },
+    "class_type": "CLIPLoaderGGUF",
+    "_meta": {
+      "title": "H3 text encoder (GGUF)"
+    }
+  },
+  "6": {
+    "inputs": {
+      "vae_name": "minimax_h3_video_vae_fp16.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "H3 video VAE"
+    }
+  },
+  "7": {
+    "inputs": {
+      "vae_name": "minimax_h3_audio_vae_fp32.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "H3 audio VAE"
+    }
+  },
+  "9": {
+    "inputs": {
+      "aspect_ratio": "16:9 (Widescreen)",
+      "megapixels": 0.8,
+      "multiple": 32
+    },
+    "class_type": "ResolutionSelector",
+    "_meta": {
+      "title": "Resolution (0.27 MP = 704x384)"
+    }
+  },
+  "10": {
+    "inputs": {
+      "value": "subject_definitions:\n<Picture 1> is the exact last frame of [Shot 1], showing the completed BACKLOT title card with an amber audio waveform at frame-left, a small red sync point at center, a blue-white waveform with rain and lightning energy at frame-right, and the title typography centered between them.\n<Subject 1> is the audiovisual signal environment whose visual reference comes from <Picture 1>, consisting of the near-black field, restrained calibration ticks, warm amber Foley signal at frame-left, central red sync point, cold blue-white film-world signal at frame-right, rain texture, lightning energy, deep blacks, and fine cinematic grain.\n<Audio 1> is the six-second non-diegetic score excerpt for the target video and is reused as its complete final audio track.\n\nsummary:\n[keyframe completion + reference generation + audio reuse] The target video begins in black, reveals <Subject 1> in exact synchronization with <Audio 1>, introduces the BACKLOT title as the warm Foley signal breaches into the cold film-world signal, and ends exactly on <Picture 1>.\n\nretention_analysis:\n<Picture 1> ([Shot 1] last frame): fully_preserved - its complete composition, exact typography, signal shapes, amber-left and blue-white-right color division, red sync point, rain texture, calibration marks, lighting, and final physical state are retained.\n<Subject 1> (appears in [Shot 1]): fully_preserved - the near-black motion-graphics field, warm-to-cold audiovisual signal transformation, red sync point, rain, lightning energy, deep contrast, and cinematic grain are retained throughout the reveal.\n<Audio 1>: fully_copy - <Audio 1> is reused 1:1 as the target video's complete final audio track.\n\ndetailed_description:\nThe target video is a premium cinematic horror title sequence in a restrained abstract audiovisual style. The frame remains a locked 16:9 composition with deep blacks, precise ivory typography, fine photochemical grain, and controlled warm-amber and cold-blue-white signal light.\n\n[Shot 1] The video begins on a pure black frame. During the opening high-string rise in <Audio 1>, an extremely faint amber horizontal trace becomes visible at frame-left while a nearly imperceptible cold rain texture gathers at frame-right. The center remains dark and empty, creating one full second of visual tension after the preceding drag-away scene.\n\nAt the first strong musical impact in <Audio 1>, within the first second, the small red sync point ignites at the exact center of frame. The impact sends a warm amber waveform from frame-left toward the red point. At the same instant, a cold blue-white signal erupts from the point toward frame-right, combining an audio waveform, restrained lightning filaments, and rain streaks. The two signals remain parts of one continuous horizontal energy line, with the warm Foley world visibly transforming into the cold film world at the red sync point.\n\nAt 00:01.200, the complete word BACKLOT appears at center as a single clean exposure reveal, its full ivory condensed letterforms already formed and perfectly stable. Beneath it, A LIMINAL FRAMES PRODUCTION appears as one complete, smaller, widely tracked line. The full visible typography reads exactly:\nBACKLOT\nA LIMINAL FRAMES PRODUCTION\n\nFrom 00:01.500 through 00:04.800, both lines remain crisp and continuously readable. The camera stays locked. The amber waveform breathes with small amplitude to the rhythm of <Audio 1>; the central red point pulses subtly on musical accents; the blue-white waveform travels gently while rain moves downward and occasional lightning energy flickers within the cold side. Signal motion remains behind and around the lettering while the type holds still.\n\nAt 00:04.800, all movement gradually settles. The waveforms, rain, red sync point, calibration ticks, title scale, spacing, and lighting converge precisely toward <Picture 1>. The shot ends exactly on <Picture 1> as the literal final frame, preserving every pixel-level design relationship and the complete readable title card.\n\noverall_soundscape:\nN/A\n\nnon_diegetic_music:\n<Audio 1> is directly reused 1:1 as the target video's complete final non-diegetic score."
+    },
+    "class_type": "PrimitiveStringMultiline",
+    "_meta": {
+      "title": "PROMPT"
+    }
+  },
+  "11": {
+    "inputs": {
+      "value": 6.0
+    },
+    "class_type": "PrimitiveFloat",
+    "_meta": {
+      "title": "Duration (seconds)"
+    }
+  },
+  "12": {
+    "inputs": {
+      "expression": "max(5, round(a * 24)) + (5 - (max(5, round(a * 24)) % 17)) % 17",
+      "values.a": [
+        "11",
+        0
+      ]
+    },
+    "class_type": "ComfyMathExpression",
+    "_meta": {
+      "title": "frames = H3 17k+5 law"
+    }
+  },
+  "14": {
+    "inputs": {
+      "model": [
+        "4",
+        0
+      ],
+      "conditioning": [
+        "24",
+        0
+      ]
+    },
+    "class_type": "BasicGuider",
+    "_meta": {
+      "title": "Guider (CFG 1)"
+    }
+  },
+  "15": {
+    "inputs": {
+      "sampler_name": "euler"
+    },
+    "class_type": "KSamplerSelect",
+    "_meta": {
+      "title": "KSamplerSelect"
+    }
+  },
+  "16": {
+    "inputs": {
+      "scheduler": "bong_tangent",
+      "steps": 12,
+      "denoise": 1.0,
+      "model": [
+        "4",
+        0
+      ]
+    },
+    "class_type": "BasicScheduler",
+    "_meta": {
+      "title": "12 steps"
+    }
+  },
+  "17": {
+    "inputs": {
+      "noise_seed": 314975840348460
+    },
+    "class_type": "RandomNoise",
+    "_meta": {
+      "title": "Seed"
+    }
+  },
+  "18": {
+    "inputs": {
+      "noise": [
+        "17",
+        0
+      ],
+      "guider": [
+        "14",
+        0
+      ],
+      "sampler": [
+        "15",
+        0
+      ],
+      "sigmas": [
+        "16",
+        0
+      ],
+      "latent_image": [
+        "24",
+        1
+      ]
+    },
+    "class_type": "SamplerCustomAdvanced",
+    "_meta": {
+      "title": "Sample (single H3 pass)"
+    }
+  },
+  "19": {
+    "inputs": {
+      "samples": [
+        "18",
+        0
+      ],
+      "vae": [
+        "6",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "Decode video"
+    }
+  },
+  "20": {
+    "inputs": {
+      "samples": [
+        "18",
+        0
+      ],
+      "vae": [
+        "7",
+        0
+      ]
+    },
+    "class_type": "VAEDecodeAudio",
+    "_meta": {
+      "title": "Decode audio"
+    }
+  },
+  "21": {
+    "inputs": {
+      "fps": 24.0,
+      "bit_depth": 8,
+      "color_space": "sRGB",
+      "images": [
+        "19",
+        0
+      ],
+      "audio": [
+        "20",
+        0
+      ]
+    },
+    "class_type": "CreateVideo",
+    "_meta": {
+      "title": "Create video (24 fps)"
+    }
+  },
+  "22": {
+    "inputs": {
+      "filename_prefix": "video/ALPHA-T1",
+      "format": "auto",
+      "format.codec": "auto",
+      "codec": "auto",
+      "video-preview": "",
+      "video": [
+        "21",
+        0
+      ]
+    },
+    "class_type": "SaveVideo",
+    "_meta": {
+      "title": "Save"
+    }
+  },
+  "24": {
+    "inputs": {
+      "prompt": [
+        "10",
+        0
+      ],
+      "width": [
+        "9",
+        0
+      ],
+      "height": [
+        "9",
+        1
+      ],
+      "length": [
+        "12",
+        1
+      ],
+      "ref_image_size": "match",
+      "clip": [
+        "5",
+        0
+      ],
+      "vae": [
+        "6",
+        0
+      ],
+      "audio_vae": [
+        "7",
+        0
+      ],
+      "ref_images.ref_image_0": [
+        "33",
+        0
+      ],
+      "ref_audios.ref_audio_0": [
+        "34",
+        0
+      ]
+    },
+    "class_type": "MiniMaxH3ReferenceToVideo",
+    "_meta": {
+      "title": "MiniMax H3 Reference to Video"
+    }
+  },
+  "33": {
+    "inputs": {
+      "image": "Backlot-card1.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    },
+    "is_changed": [
+      "0f697dd37c99542f628ce48a1aef9a055ef3710753f2232dbecdaf4cd78ccd4d"
+    ]
+  },
+  "34": {
+    "inputs": {
+      "audio": "Backlot Shadows Ending pt-1.wav"
+    },
+    "class_type": "LoadAudio",
+    "_meta": {
+      "title": "Load Audio"
+    },
+    "is_changed": [
+      "7128804fabc7f6c4937d38adf15b5b7a85f00c3ffc263c859afb0350e99aef07"
+    ]
+  },
+  "35": {
+    "inputs": {
+      "image": "Backlot-card2.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    },
+    "is_changed": [
+      "dfdf4eac258d30188c69b463c258998ab4b809f4add9ad819918c267eed72b0a"
+    ]
+  },
+  "37": {
+    "inputs": {
+      "value": "subject_definitions:\n<Picture 1> is the exact last frame of [Shot 1], showing the completed production credits card with the amber audio waveform at frame-left, the small red sync point at center, the blue-white waveform with rain and lightning energy at frame-right, and three centered lines of ivory typography.\n<Picture 2> is the exact first frame of [Shot 1], showing the accepted final frame from the preceding BACKLOT title clip with its amber-left and blue-white-right signal field, central red sync point, and completed BACKLOT title typography.\n<Subject 1> is the continuous audiovisual signal environment whose visual reference comes from <Picture 1> and <Picture 2>, consisting of the near-black field, restrained calibration ticks, warm amber Foley signal at frame-left, central red sync point, cold blue-white film-world signal at frame-right, rain texture, lightning energy, deep blacks, and fine cinematic grain.\n<Audio 1> is the six-second non-diegetic score excerpt for the target video and is reused as its complete final audio track.\n\nsummary:\n[keyframe completion + reference generation + audio reuse] The target video begins exactly on <Picture 2>, carries <Subject 1> continuously across the transition from the BACKLOT title to the production credits, synchronizes the signal transformation with <Audio 1>, and ends exactly on <Picture 1>.\n\nretention_analysis:\n<Picture 1> ([Shot 1] last frame): fully_preserved - its complete composition, exact three-line typography, signal shapes, amber-left and blue-white-right color division, red sync point, rain texture, calibration marks, lighting, and final physical state are retained.\n<Picture 2> ([Shot 1] first frame): fully_preserved - its complete accepted title-card composition, exact typography, signal field, red sync point, color, lighting, and first physical state are retained.\n<Subject 1> (appears in [Shot 1]): fully_preserved - the near-black motion-graphics field and the continuous warm-Foley-to-cold-film-world signal system remain visually coherent across the entire transition.\n<Audio 1>: fully_copy - <Audio 1> is reused 1:1 as the target video's complete final audio track.\n\ndetailed_description:\nThe target video continues the same premium cinematic horror title sequence as the preceding clip, using restrained abstract audiovisual motion graphics. The locked 16:9 composition, deep blacks, ivory condensed typography, warm amber signal, central red sync point, cold blue-white signal, rain texture, calibration marks, and fine photochemical grain remain continuous.\n\n[Shot 1] The first frame corresponds exactly to <Picture 2>. The completed BACKLOT title and A LIMINAL FRAMES PRODUCTION line hold perfectly still and fully readable while the waveform field continues moving with small amplitude. The warm amber Foley signal travels from frame-left into the red sync point; the cold blue-white film-world signal continues from the point toward frame-right with falling rain and restrained lightning filaments. The camera remains locked.\n\nAt the first clear musical accent in <Audio 1>, near the end of the opening second, the red sync point contracts brightly and releases one precise horizontal pulse across the frame. The BACKLOT title and production line dim together as complete intact typography, disappearing through one smooth exposure change while the continuous signal line remains visible. The black interval created by the pulse is brief and rhythmic.\n\nAt 00:01.500, the first credits line appears as a complete stable line of ivory condensed type: ALL VIDEO + SOUND GENERATED LOCALLY. At 00:01.750, the larger central line appears intact: WITH COMFYUI + MINIMAX H3. At 00:02.000, the smaller widely tracked final line appears intact: COMFY H3 SYNC CHALLENGE. The three lines establish their final hierarchy immediately and remain perfectly stable and readable.\n\nFrom 00:02.000 through 00:04.800, the credits hold. Behind them, the amber waveform responds subtly to <Audio 1>, the central red sync point marks selected musical accents, and the blue-white signal carries greater visual energy through traveling waveform peaks, rain streaks, and brief restrained lightning filaments. The warm and cold sides stay joined as a single synchronized signal, preserving the visual idea that the Foley world is becoming the film world.\n\nAt 00:04.800, signal movement eases progressively toward stillness. The three text lines, waveform geometry, red sync point, rain pattern, calibration ticks, spacing, contrast, and color balance converge exactly toward <Picture 1>. The shot ends exactly on <Picture 1> as the literal final frame with the complete production credits fully readable.\n\noverall_soundscape:\nN/A\n\nnon_diegetic_music:\n<Audio 1> is directly reused 1:1 as the target video's complete final non-diegetic score."
+    },
+    "class_type": "PrimitiveStringMultiline",
+    "_meta": {
+      "title": "PROMPT 2"
+    }
+  },
+  "38": {
+    "inputs": {
+      "audio": "Backlot Shadows Ending pt-2.wav"
+    },
+    "class_type": "LoadAudio",
+    "_meta": {
+      "title": "Load Audio"
+    },
+    "is_changed": [
+      "cae82d4dfe05c7a200c8b2ffa7104edac6cc1e0189f4179b0313a3e48e8f5f2e"
+    ]
+  }
+}

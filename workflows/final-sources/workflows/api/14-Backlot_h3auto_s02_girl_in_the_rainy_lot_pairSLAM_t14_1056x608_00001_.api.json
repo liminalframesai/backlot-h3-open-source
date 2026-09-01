@@ -1,0 +1,345 @@
+{
+  "92": {
+    "inputs": {
+      "filename_prefix": "video/Backlot_h3auto_s02_girl_in_the_rainy_lot_pairSLAM_t14_1056x608",
+      "format": "mp4",
+      "codec": "h264",
+      "video": [
+        "130",
+        0
+      ],
+      "codec.encoding": "auto"
+    },
+    "class_type": "SaveVideo",
+    "_meta": {
+      "title": "Save Video"
+    }
+  },
+  "119": {
+    "inputs": {
+      "vae_name": "minimax_h3_video_vae_fp16.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "Load VAE"
+    }
+  },
+  "120": {
+    "inputs": {
+      "vae_name": "minimax_h3_audio_vae_fp32.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "Load VAE"
+    }
+  },
+  "121": {
+    "inputs": {
+      "samples": [
+        "125",
+        0
+      ],
+      "vae": [
+        "120",
+        0
+      ]
+    },
+    "class_type": "VAEDecodeAudio",
+    "_meta": {
+      "title": "VAE Decode Audio"
+    }
+  },
+  "122": {
+    "inputs": {
+      "samples": [
+        "125",
+        0
+      ],
+      "vae": [
+        "119",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "123": {
+    "inputs": {
+      "sampler_name": "euler"
+    },
+    "class_type": "KSamplerSelect",
+    "_meta": {
+      "title": "KSamplerSelect"
+    }
+  },
+  "124": {
+    "inputs": {
+      "scheduler": "bong_tangent",
+      "denoise": 1.0,
+      "model": [
+        "127",
+        0
+      ],
+      "steps": [
+        "142",
+        0
+      ]
+    },
+    "class_type": "BasicScheduler",
+    "_meta": {
+      "title": "BasicScheduler"
+    }
+  },
+  "125": {
+    "inputs": {
+      "noise": [
+        "129",
+        0
+      ],
+      "guider": [
+        "126",
+        0
+      ],
+      "sampler": [
+        "123",
+        0
+      ],
+      "sigmas": [
+        "124",
+        0
+      ],
+      "latent_image": [
+        "136",
+        1
+      ]
+    },
+    "class_type": "SamplerCustomAdvanced",
+    "_meta": {
+      "title": "SamplerCustomAdvanced"
+    }
+  },
+  "126": {
+    "inputs": {
+      "model": [
+        "141",
+        0
+      ],
+      "conditioning": [
+        "136",
+        0
+      ]
+    },
+    "class_type": "BasicGuider",
+    "_meta": {
+      "title": "Basic Guider"
+    }
+  },
+  "127": {
+    "inputs": {
+      "unet_name": "minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+      "weight_dtype": "default"
+    },
+    "class_type": "UNETLoader",
+    "_meta": {
+      "title": "Load Diffusion Model"
+    }
+  },
+  "128": {
+    "inputs": {
+      "clip_name": "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+      "type": "minimax",
+      "device": "default"
+    },
+    "class_type": "CLIPLoader",
+    "_meta": {
+      "title": "Load CLIP"
+    }
+  },
+  "129": {
+    "inputs": {
+      "noise_seed": 7042586732
+    },
+    "class_type": "RandomNoise",
+    "_meta": {
+      "title": "RandomNoise"
+    }
+  },
+  "130": {
+    "inputs": {
+      "fps": 24.0,
+      "bit_depth": 8,
+      "images": [
+        "122",
+        0
+      ],
+      "audio": [
+        "121",
+        0
+      ]
+    },
+    "class_type": "CreateVideo",
+    "_meta": {
+      "title": "Create Video"
+    }
+  },
+  "136": {
+    "inputs": {
+      "clip": [
+        "128",
+        0
+      ],
+      "vae": [
+        "119",
+        0
+      ],
+      "prompt": "subject_definitions:\n<Picture 1> is the exact first frame of [Shot 1], showing the young woman beside a solid gate in the rainy backlot.\n<Subject 1> is the young blonde woman whose facial and character reference comes from <Picture 2> and who appears as the primary subject in <Picture 1>, with wet warm golden-blonde hair, pale skin, a dirt-stained and tattered light cream dress, a small pendant, and bare feet.\n<Audio 1> is the synchronized full audio of the selected earlier take of this scene and supplies the gate impacts, latch strain, exterior rain, breath, and first running steps.\n<Audio 2> is a non-diegetic excerpt of the Backlot Shadows score for this shot.\n\nsummary:\n[keyframe completion + reference generation + audio reuse] Live-action cinematic horror, the target video begins exactly from <Picture 1> as an unseen force hits the solid gate, <Subject 1> freezes and ducks at the second impact, then runs quickly away before the shot cuts behind her.\n\nretention_analysis:\n<Picture 1> ([Shot 1] first frame): fully_preserved - the exact rainy backlot, solid gate, camera position, lighting, blocking, and first physical state are retained as frame zero.\n<Subject 1> (appears in [Shot 1], [Shot 2], [Shot 3]): fully_preserved - her facial identity, wet warm golden-blonde hair, pale skin, pendant, torn dirty cream dress, and bare feet are retained.\n<Audio 1>: partially_copy - the heavy gate impacts, metallic rattle, latch strain, wide rain, frightened breath, and first splashing running steps are reused 1:1; any musical content is not copied.\n<Audio 2>: partially_copy - the supplied score excerpt is reused 1:1 from its beginning as the complete audience-only score beneath the scene.\n\ndetailed_description:\nThe target video is live-action cinematic horror realism at night, underexposed and heavily desaturated toward cold green-grey, with hard visible rain, wet reflective ground, and weak dirty practical light.\n[Shot 1] The shot's keyframe corresponds exactly to <Picture 1>. The scene is already in motion when the video starts. <Subject 1> stands on the camera side of the tall solid gate. Its tall opaque surface fills the vertical sightline while the impact source remains concealed on the far side. A heavy impact makes the gate shudder subtly and the latch strain. The camera makes a small-amplitude, slow push toward her as she freezes and listens.\n[Shot 2] At 00:01.500, a second heavy impact hits. The gate shudders again. <Subject 1> flinches, ducks instinctively for one brief beat, then immediately turns and launches into a full panicked run away from the gate. Her bare feet splash through standing water as she accelerates into an uninterrupted sure-footed sprint.\n[Shot 3] At 00:03.300, the shot cuts to a moving rear three-quarter view behind <Subject 1>. The handheld camera follows at running speed with medium amplitude as she runs deeper down the deserted backlot street, getting slightly smaller in frame. Her soaked hair and torn dress stream behind her in the hard rain. She remains the sole visible person as the solid gate recedes behind her.\n\noverall_soundscape:\nThe heavy gate impacts, latch strain, metallic rattle, exterior rain, frightened breath, and first splashing steps from <Audio 1> are retained directly and synchronized to the corresponding visible actions. Rain fills the stereo field continuously. Her breathing stays close and centered, then travels with her after the rear cut.\n\nnon_diegetic_music:\n<Audio 2> is reused from its beginning as the complete audience-only score under the target video. It remains distinct from the diegetic gate, rain, breath, and footstep sounds copied from <Audio 1>.\n",
+      "width": 1056,
+      "height": 608,
+      "length": 158,
+      "audio_vae": [
+        "120",
+        0
+      ],
+      "ref_image_size": "match",
+      "ref_images.ref_image_0": [
+        "17890",
+        0
+      ],
+      "ref_images.ref_image_1": [
+        "17891",
+        0
+      ],
+      "ref_audios.ref_audio_0": [
+        "22150",
+        0
+      ],
+      "ref_audios.ref_audio_1": [
+        "22151",
+        0
+      ]
+    },
+    "class_type": "MiniMaxH3ReferenceToVideo",
+    "_meta": {
+      "title": "MiniMax H3 Reference to Video"
+    }
+  },
+  "141": {
+    "inputs": {
+      "switch": [
+        "146",
+        0
+      ],
+      "on_false": [
+        "127",
+        0
+      ],
+      "on_true": [
+        "145",
+        0
+      ]
+    },
+    "class_type": "ComfySwitchNode",
+    "_meta": {
+      "title": "If/Else Switch (model)"
+    }
+  },
+  "142": {
+    "inputs": {
+      "switch": [
+        "146",
+        0
+      ],
+      "on_false": [
+        "143",
+        0
+      ],
+      "on_true": [
+        "144",
+        0
+      ]
+    },
+    "class_type": "ComfySwitchNode",
+    "_meta": {
+      "title": "If/Else Switch (Steps)"
+    }
+  },
+  "143": {
+    "inputs": {
+      "value": 20
+    },
+    "class_type": "PrimitiveInt",
+    "_meta": {
+      "title": "Int (Full)"
+    }
+  },
+  "144": {
+    "inputs": {
+      "value": 4
+    },
+    "class_type": "PrimitiveInt",
+    "_meta": {
+      "title": "Int (Lightning LoRA)"
+    }
+  },
+  "145": {
+    "inputs": {
+      "lora_name": "minimax_h3_ref2v_turbo_4step_v0.1_comfyui_bf16.safetensors",
+      "strength_model": 1.0,
+      "model": [
+        "127",
+        0
+      ]
+    },
+    "class_type": "LoraLoaderModelOnly",
+    "_meta": {
+      "title": "Load LoRA"
+    }
+  },
+  "146": {
+    "inputs": {
+      "value": false
+    },
+    "class_type": "PrimitiveBoolean",
+    "_meta": {
+      "title": "Boolean (Enable Lightning LoRA)"
+    }
+  },
+  "17890": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "h3flag_b8c1a7e0_s02_openframe.png"
+    },
+    "is_changed": [
+      "6569109bfd0cad06fa2dc90fdda71eaaaa71c64f4addb8415ab3e40cb9388a9b"
+    ]
+  },
+  "17891": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "lead-actress-character-sheet.png"
+    },
+    "is_changed": [
+      "1891aa540dc6d3413f97147afb41846c589e21c6e3ed42cd6a08def8f123f7f0"
+    ]
+  },
+  "22150": {
+    "class_type": "LoadAudio",
+    "inputs": {
+      "audio": "s02-primary-t12-full.wav"
+    },
+    "is_changed": [
+      "4b63594c3d445fa0bc7f895937b3a4c8b094ad2253f0d1d0ad09a0cd75e94fda"
+    ]
+  },
+  "22151": {
+    "class_type": "LoadAudio",
+    "inputs": {
+      "audio": "music-s02.wav"
+    },
+    "is_changed": [
+      "f2b1855335bf53193f53444e7e4188a63b3834375a35dab9153914a2294bdd5f"
+    ]
+  }
+}

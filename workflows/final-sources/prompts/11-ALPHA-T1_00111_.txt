@@ -1,0 +1,25 @@
+subject_definitions:
+<Subject 1> is the middle-aged man in <Picture 1> with grey hair, headphones hanging around his neck, and a grey shirt and dark jeans.
+<Subject 2> is the man in <Picture 2> with brown hair, a short brown beard, headhpones, a green shirt, and dark jeans.
+<Subject 3> is the professional soundstage shown in <Picture 3> with miscellaneous equipment, microphones, and a computer cart. 
+<Audio 1> is a predefined audio track and is reused in the target video.
+
+summary:
+[reference generation + audio reuse] The target video is synced to the sound of <Audio 1>. It shows <Subject 1> using a clapboard to start a scene in <Subject 3> with <Subject 2> behind him.
+
+retention_analysis:
+<Subject 1> (appears in [Shot 1]): partially_preserved - the man's grey hair, headphones around his neck, and grey shirt and jeans are retained.
+<Subject 2> (appears in [Shot 1]): partially_preserved - the man's brown hair, headhpones, green shirt, and dark jeans are retained.
+<Subject 3> (location for [Shot 1]): partially_preserved - the location serves as a backdrop for the action and is retained.
+<Audio 1>: fully_copy - <Audio 1> is reused 1:1 as the target video's complete final audio track.
+
+detailed_description:
+The target video is live-action cinematic realism in a working-documentary style, slightly underexposed and slightly desaturated.
+[Shot 1] A medium shot establishes <Subject 3> and opens on <Subject 1> holding an open clapboard. <Subject 2> has his right hand on the mock door-frame equipment seen in <Subject 3> and is behind <Subject 1>. From out of frame we hear a voice from <Audio 1> say <d>[English] Quiet, please.</d>. Perfectly synchronized with the clapboard clack from <Audio 1>, the <Subject 1> claps the clapboard in a swift fluid motion. After the clap <Subject 1> holds position with the clapboard closed.
+
+overall_soundscape:
+<Audio 1> is reused 1:1 as the target video's complete final audio track, including its soundstage room tone, spoken cue, and clapboard crack.
+
+non_diegetic_music:
+N/A
+

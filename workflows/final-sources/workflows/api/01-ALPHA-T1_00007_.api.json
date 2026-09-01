@@ -1,0 +1,344 @@
+{
+  "1": {
+    "inputs": {
+      "unet_name": "minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+      "weight_dtype": "default"
+    },
+    "class_type": "UNETLoader",
+    "_meta": {
+      "title": "H3 diffusion model"
+    }
+  },
+  "2": {
+    "inputs": {
+      "lora_name": "minimax_h3_ref2v_lightx2v_turbo_4step_v0.1_resized_avg_rank_20_bf16.safetensors",
+      "strength_model": 0.5,
+      "model": [
+        "1",
+        0
+      ]
+    },
+    "class_type": "LoraLoaderModelOnly",
+    "_meta": {
+      "title": "Turbo LoRA (4-step) @ 0.5"
+    }
+  },
+  "3": {
+    "inputs": {
+      "enabled": true,
+      "model": [
+        "2",
+        0
+      ]
+    },
+    "class_type": "MiniMaxH3FusedModulation",
+    "_meta": {
+      "title": "Fused Modulation"
+    }
+  },
+  "4": {
+    "inputs": {
+      "enabled": true,
+      "tau": 1.3,
+      "min_tokens": 4096,
+      "strict": false,
+      "thresh_type": "diag",
+      "int8_qk": false,
+      "int8_pv": false,
+      "sink_conditioning": "exact_kv",
+      "dense_blocks": "",
+      "model": [
+        "3",
+        0
+      ]
+    },
+    "class_type": "MiniMaxH3MemoryEfficientSolAttentionPatch",
+    "_meta": {
+      "title": "Sol-Attn"
+    }
+  },
+  "5": {
+    "inputs": {
+      "clip_name": "qwen3vl-32B-MiniMax-H3-Q4_K_M.gguf",
+      "type": "minimax"
+    },
+    "class_type": "CLIPLoaderGGUF",
+    "_meta": {
+      "title": "H3 text encoder (GGUF)"
+    }
+  },
+  "6": {
+    "inputs": {
+      "vae_name": "minimax_h3_video_vae_fp16.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "H3 video VAE"
+    }
+  },
+  "7": {
+    "inputs": {
+      "vae_name": "minimax_h3_audio_vae_fp32.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "H3 audio VAE"
+    }
+  },
+  "8": {
+    "inputs": {
+      "image": "film-world-look-frame.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Reference Image"
+    },
+    "is_changed": [
+      "b4df00c4b72050b3f80b4993747387babe3a0ea7ab478bb0a3ab8188f4950d8b"
+    ]
+  },
+  "9": {
+    "inputs": {
+      "aspect_ratio": "16:9 (Widescreen)",
+      "megapixels": 1.0,
+      "multiple": 32
+    },
+    "class_type": "ResolutionSelector",
+    "_meta": {
+      "title": "Resolution (0.27 MP = 704x384)"
+    }
+  },
+  "10": {
+    "inputs": {
+      "value": "subject_definitions:\n<Picture 1> is the first frame of [Shot 1], showing the blonde girl in the white dress running in the rain.\n<Audio 1> is the non-diegetic music track for the shot.\n\nsummary:\n[keyframe completion + audio reference] Live-action cinematic horror, the target video shows a scared woman running through the rain.\n\nretention_analysis:\n<Picture 1> ([Shot 1] first frame): fully_preserved - the rainy environment and the running woman are retained.\n<Audio 1>: partially_copy - the beginning of <Audio 1> is the music for the audience-only score.\n\ndetailed_description:\nThe target video is in a live-action cinematic horror realism style, underexposed dark lighting and a desaturated color palette.\n[Shot 1] The shot's keyframe corresponds to <Picture 1>. A tracking shot of the girl as she runs through the rain, afraid and pursued by an unknown attacker. \n\noverall_soundscape: rain, distant thunder, wet footsteps, fear. \n\nnon_diegetic_music: <Audio 1> is the music for the audience-only score. "
+    },
+    "class_type": "PrimitiveStringMultiline",
+    "_meta": {
+      "title": "PROMPT (H3 template)"
+    }
+  },
+  "11": {
+    "inputs": {
+      "value": 4.0
+    },
+    "class_type": "PrimitiveFloat",
+    "_meta": {
+      "title": "Duration (seconds)"
+    }
+  },
+  "12": {
+    "inputs": {
+      "expression": "max(5, round(a * 24)) + (5 - (max(5, round(a * 24)) % 17)) % 17",
+      "values.a": [
+        "11",
+        0
+      ]
+    },
+    "class_type": "ComfyMathExpression",
+    "_meta": {
+      "title": "frames = H3 17k+5 law"
+    }
+  },
+  "14": {
+    "inputs": {
+      "model": [
+        "4",
+        0
+      ],
+      "conditioning": [
+        "24",
+        0
+      ]
+    },
+    "class_type": "BasicGuider",
+    "_meta": {
+      "title": "Guider (CFG 1)"
+    }
+  },
+  "15": {
+    "inputs": {
+      "sampler_name": "euler"
+    },
+    "class_type": "KSamplerSelect",
+    "_meta": {
+      "title": "KSamplerSelect"
+    }
+  },
+  "16": {
+    "inputs": {
+      "scheduler": "bong_tangent",
+      "steps": 12,
+      "denoise": 1.0,
+      "model": [
+        "4",
+        0
+      ]
+    },
+    "class_type": "BasicScheduler",
+    "_meta": {
+      "title": "12 steps"
+    }
+  },
+  "17": {
+    "inputs": {
+      "noise_seed": 281978719996481
+    },
+    "class_type": "RandomNoise",
+    "_meta": {
+      "title": "Seed"
+    }
+  },
+  "18": {
+    "inputs": {
+      "noise": [
+        "17",
+        0
+      ],
+      "guider": [
+        "14",
+        0
+      ],
+      "sampler": [
+        "15",
+        0
+      ],
+      "sigmas": [
+        "16",
+        0
+      ],
+      "latent_image": [
+        "24",
+        1
+      ]
+    },
+    "class_type": "SamplerCustomAdvanced",
+    "_meta": {
+      "title": "Sample (single H3 pass)"
+    }
+  },
+  "19": {
+    "inputs": {
+      "samples": [
+        "18",
+        0
+      ],
+      "vae": [
+        "6",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "Decode video"
+    }
+  },
+  "20": {
+    "inputs": {
+      "samples": [
+        "18",
+        0
+      ],
+      "vae": [
+        "7",
+        0
+      ]
+    },
+    "class_type": "VAEDecodeAudio",
+    "_meta": {
+      "title": "Decode audio"
+    }
+  },
+  "21": {
+    "inputs": {
+      "fps": 24.0,
+      "bit_depth": 8,
+      "color_space": "sRGB",
+      "images": [
+        "19",
+        0
+      ],
+      "audio": [
+        "20",
+        0
+      ]
+    },
+    "class_type": "CreateVideo",
+    "_meta": {
+      "title": "Create video (24 fps)"
+    }
+  },
+  "22": {
+    "inputs": {
+      "filename_prefix": "video/ALPHA-T1",
+      "format": "auto",
+      "format.codec": "auto",
+      "codec": "auto",
+      "video-preview": "",
+      "video": [
+        "21",
+        0
+      ]
+    },
+    "class_type": "SaveVideo",
+    "_meta": {
+      "title": "Save"
+    }
+  },
+  "24": {
+    "inputs": {
+      "prompt": [
+        "10",
+        0
+      ],
+      "width": [
+        "9",
+        0
+      ],
+      "height": [
+        "9",
+        1
+      ],
+      "length": [
+        "12",
+        1
+      ],
+      "ref_image_size": "match",
+      "clip": [
+        "5",
+        0
+      ],
+      "vae": [
+        "6",
+        0
+      ],
+      "audio_vae": [
+        "7",
+        0
+      ],
+      "ref_images.ref_image_0": [
+        "8",
+        0
+      ],
+      "ref_audios.ref_audio_0": [
+        "25",
+        0
+      ]
+    },
+    "class_type": "MiniMaxH3ReferenceToVideo",
+    "_meta": {
+      "title": "MiniMax H3 Reference to Video"
+    }
+  },
+  "25": {
+    "inputs": {
+      "audio": "Backlot Shadows s12 long.wav"
+    },
+    "class_type": "LoadAudio",
+    "_meta": {
+      "title": "Load Audio"
+    },
+    "is_changed": [
+      "83bda1c01600daf305bc7a7e59eca54e413edaedac3c98b3d1fad107ccd41e04"
+    ]
+  }
+}

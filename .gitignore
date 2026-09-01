@@ -1,0 +1,9 @@
+.DS_Store
+__pycache__/
+*.pyc
+
+# Upload as a GitHub Release asset; GitHub blocks normal objects over 100 MiB.
+release-assets/*.mp4
+
+# Local scratch/verification outputs.
+.verification/

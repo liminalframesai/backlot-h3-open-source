@@ -1,0 +1,21 @@
+subject_definitions:
+<Subject 1> is the professional foley soundstage location in <Picture 1>, including its material pits, microphone stands, prop benches, shelves, monitor cart, practical work lights, and established room geography.
+<Subject 2> is the middle-aged foley artist whose character reference comes from <Picture 2>, with short hair, a green jacket over a grey shirt, dark jeans, brown work boots, and studio headphones.
+
+summary:
+[reference generation] Live-action, cinematic documentary style, the target video shows <Subject 2> inside <Subject 1> performing two heavy door-pounding effects with a padded beater and a bench-mounted steel resonance plate, then pausing to listen.
+
+retention_analysis:
+<Subject 1> (location throughout [Shot 1]): fully_preserved - the professional soundstage geography, material pits, microphone stands, prop benches, shelves, monitor cart, and practical work lights are retained.
+<Subject 2> (appears throughout [Shot 1]): fully_preserved - his identity, short hair, green jacket, grey shirt, dark jeans, brown work boots, headphones, and focused working posture are retained.
+
+detailed_description:
+The target video is live-action cinematic realism in a working-documentary style, with slightly underexposed lighting and a slightly desaturated color palette.
+[Shot 1] A stable medium three-quarter shot establishes <Subject 1> and <Subject 2> beside a professional foley prop: a thick bench-mounted steel resonance plate held inside a rigid braced frame, with a close microphone aimed at its center. <Subject 2> plants both boots, grips a short padded leather beater in his right hand, and works silently with focused concentration. He draws the beater back beside his shoulder and drives its padded head into the center of the steel plate. The tool makes visible contact, the plate flexes inside its brace, and the frame gives one short mechanical rebound. He reloads the same visible beater and performs a separate second strike with another complete shoulder-and-torso weight transfer. The second padded head contact produces a deeper panel thud and a brief hardware rattle. After the rebound, he lowers the beater beside his leg, turns his head toward the soundstage entrance, and listens through the final frame while the close microphone, resonance plate, and his complete working posture remain readable in the composition.
+
+overall_soundscape:
+Dry professional soundstage room tone continues with low ventilation, a monitor-cart fan, and faint work-lamp buzz. The two padded-beater contacts produce two synchronized heavy steel-panel thuds, each with a short low resonance and brief brace rattle. <Subject 2>'s clothing shifts and his breathing tightens with each impact.
+
+non_diegetic_music:
+N/A
+

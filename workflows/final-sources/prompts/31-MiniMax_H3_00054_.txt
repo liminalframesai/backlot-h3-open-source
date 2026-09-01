@@ -1,0 +1,27 @@
+subject_definitions:
+<Subject 1> is the location in <Picture 1> showing the layout of a professional foley setup in a backlot soundstage. 
+<Subject 2> is the middle-aged man with short hair whose character reference comes from <Picture 2>.
+<Subject 3> is the middle-aged man with curly hair and a beard whose reference comes from <Picture 3>.
+<Audio 1> is the full audio track of a scene that <Subject 1> and <Subject 2> are doing foley work for and will be a reference for sound effects they create in the target video.
+
+summary:
+[reference generation + audio reuse] Live-action, cinematic, documentary style, the target video shows <Subject 2> and <Subject 3> in the soundstage location shown in <Subject 1> creating foley effects for the sound effects referenced in <Audio 1>.
+
+retention_analysis:
+<Subject 1> (location for [Shot 1], [Shot 2], [Shot 3]): fully_preserved - the professional soundstage, the foley equipment, the computer cart and various microphones and sound equipment are retained.
+<Subject 2> (appears in [Shot 1], [Shot 3]): fully_preserved - the man's green jacket, headphones, jeans, and facial features are fully retained.
+<Subject 3> (appears in [Shot 2]): fully_preserved - the man's rust shirt, navy t-shirt underneath, jeans, curly hair and beared face are fully retained.
+<Audio 1>: partially_copy - the effects from <Audio 1> including the multiple thunderclaps and the continuous rain are reused directly 1:1 without copying the musical score.
+
+detailed_description: 
+The target video is in a live-action cinematic realism documentary style, with slightly underexposed lighting and a slightly desaturated color palette.
+[Shot 1] A medium long shot establishes <Subject 1>, the crowded foley soundstage, where <Subject 2> is preparing to manipulate a thick piece of metal to make a thunderous sound. The movement of the metal synchronizes perfectly with <Audio 1> to demonstrate <Subject 2>'s creation of the sound effect. 
+[Shot 2] At 00:02.600 the shot cuts to a close-up of <Subject 3>, who is pouring small beads down a long chute to create a rain sound. 
+[Shot 3] At 00:04.000 the shot cuts to a dutch angle, canted angle, tilted horizon, diagonal shot, disorienting, focused on <Subject 2>. He now manipulates the metal sheet again, in conjunction with the double-stutter of lightning in <Audio 1>.
+
+overall_soundscape:
+Sound of heavy rain on pavement throughout, increasing in volume during [Shot 2] when its creation is shown. The first thunder is in [Shot 1] is deep, loud, and sustained, panning from right to left, preserving exactly the first thunder sound from <Audio 1>. The second thunder is a cra-crack, double hit, not as loud as the first lightning overall but the second crack builds intensity over the first, preserving exactly the second thunder from <Audio 1>
+
+non_diegetic_music: 
+N/A
+

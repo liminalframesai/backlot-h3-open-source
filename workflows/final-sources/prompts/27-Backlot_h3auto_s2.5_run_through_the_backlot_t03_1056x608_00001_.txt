@@ -1,0 +1,23 @@
+subject_definitions:
+<Subject 1> is the film-world photographic look whose reference comes from <Picture 1>: a dark, rain-lashed ruined backlot at night, heavily desaturated toward cold green-grey, with crushed shadows, hard visible rain, wet reflective ground, scattered debris, weak dirty practical light, and misted depth.
+<Subject 2> is the young blonde woman whose facial and character reference comes from <Picture 2>, with wet warm golden-blonde hair, pale skin, a small pendant, a dirt-stained and tattered light cream dress, and bare feet.
+<Audio 1> is a non-diegetic excerpt of the Backlot Shadows score for the running shot.
+
+summary:
+[reference generation + audio reuse] Live-action cinematic horror, one unbroken tracking take shows <Subject 2> sustaining a fast, grounded barefoot sprint through a new deserted backlot street rendered in the photographic world of <Subject 1>, under heavy rain and the score from <Audio 1>.
+
+retention_analysis:
+<Subject 1> (applies throughout [Shot 1]): attribute_transfer - its underexposed cold green-grey grade, crushed shadows, hard rain, wet reflections, debris texture, weak practical light, and misted depth transfer to a newly composed street, framing, and action.
+<Subject 2> (appears throughout [Shot 1]): fully_preserved - her facial identity, wet warm golden-blonde hair, pale skin, pendant, dirty torn cream dress, bare feet, and frightened physical state are retained.
+<Audio 1>: partially_copy - the score excerpt is reused 1:1 from its beginning as the complete audience-only music; if the target outlasts the excerpt, its final texture resolves naturally within the same theme.
+
+detailed_description:
+The target video is live-action cinematic horror realism, severely underexposed and heavily desaturated toward dirty olive-green and slate under cold green-grey night lighting. The picture fills the frame.
+[Shot 1] One unbroken handheld tracking take from one camera begins at chest height beside <Subject 2> and follows one smooth continuous physical path at her running speed. She runs hard and badly frightened in a continuous, forward-pitched sprint. Each alternating bare foot plants its full sole into standing water, accepts her body weight, pushes backward against the pavement, and lifts cleanly as the opposite foot lands, throwing a broad synchronized splash. Her soaked warm golden-blonde hair flies behind her in separated wet ropes; the wet torn cream skirt whips and twists around her legs and the pendant moves against her chest. She glances back once while maintaining full speed. The camera travels laterally beside her for the opening movement, then traces a smooth semicircular arc behind her with continuous frame-to-frame parallax and a stable horizon. Around 00:04.500 the same moving camera completes its arc into a rear three-quarter view as she runs deeper into the same street and becomes slightly smaller, still moving at full pace through rain and darkness. The deserted street keeps her as the sole visible person through the final frame.
+
+overall_soundscape:
+Torrential rain fills the stereo field throughout: hard droplets striking standing water, runoff from damaged facades, and open-lot reverberance. Her fast alternating barefoot splashes travel with her, accompanied by wet fabric movement and close ragged breathing. Every splash aligns with a full planted step, weight transfer, push-off, and lift; the running rhythm stays even and unbroken through the complete sprint.
+
+non_diegetic_music:
+<Audio 1> is reused from its beginning as the audience-only Backlot Shadows score under the rain, running, fabric, and breath.
+

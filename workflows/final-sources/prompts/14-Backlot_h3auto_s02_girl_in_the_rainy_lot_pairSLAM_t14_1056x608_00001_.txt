@@ -1,0 +1,27 @@
+subject_definitions:
+<Picture 1> is the exact first frame of [Shot 1], showing the young woman beside a solid gate in the rainy backlot.
+<Subject 1> is the young blonde woman whose facial and character reference comes from <Picture 2> and who appears as the primary subject in <Picture 1>, with wet warm golden-blonde hair, pale skin, a dirt-stained and tattered light cream dress, a small pendant, and bare feet.
+<Audio 1> is the synchronized full audio of the selected earlier take of this scene and supplies the gate impacts, latch strain, exterior rain, breath, and first running steps.
+<Audio 2> is a non-diegetic excerpt of the Backlot Shadows score for this shot.
+
+summary:
+[keyframe completion + reference generation + audio reuse] Live-action cinematic horror, the target video begins exactly from <Picture 1> as an unseen force hits the solid gate, <Subject 1> freezes and ducks at the second impact, then runs quickly away before the shot cuts behind her.
+
+retention_analysis:
+<Picture 1> ([Shot 1] first frame): fully_preserved - the exact rainy backlot, solid gate, camera position, lighting, blocking, and first physical state are retained as frame zero.
+<Subject 1> (appears in [Shot 1], [Shot 2], [Shot 3]): fully_preserved - her facial identity, wet warm golden-blonde hair, pale skin, pendant, torn dirty cream dress, and bare feet are retained.
+<Audio 1>: partially_copy - the heavy gate impacts, metallic rattle, latch strain, wide rain, frightened breath, and first splashing running steps are reused 1:1; any musical content is not copied.
+<Audio 2>: partially_copy - the supplied score excerpt is reused 1:1 from its beginning as the complete audience-only score beneath the scene.
+
+detailed_description:
+The target video is live-action cinematic horror realism at night, underexposed and heavily desaturated toward cold green-grey, with hard visible rain, wet reflective ground, and weak dirty practical light.
+[Shot 1] The shot's keyframe corresponds exactly to <Picture 1>. The scene is already in motion when the video starts. <Subject 1> stands on the camera side of the tall solid gate. Its tall opaque surface fills the vertical sightline while the impact source remains concealed on the far side. A heavy impact makes the gate shudder subtly and the latch strain. The camera makes a small-amplitude, slow push toward her as she freezes and listens.
+[Shot 2] At 00:01.500, a second heavy impact hits. The gate shudders again. <Subject 1> flinches, ducks instinctively for one brief beat, then immediately turns and launches into a full panicked run away from the gate. Her bare feet splash through standing water as she accelerates into an uninterrupted sure-footed sprint.
+[Shot 3] At 00:03.300, the shot cuts to a moving rear three-quarter view behind <Subject 1>. The handheld camera follows at running speed with medium amplitude as she runs deeper down the deserted backlot street, getting slightly smaller in frame. Her soaked hair and torn dress stream behind her in the hard rain. She remains the sole visible person as the solid gate recedes behind her.
+
+overall_soundscape:
+The heavy gate impacts, latch strain, metallic rattle, exterior rain, frightened breath, and first splashing steps from <Audio 1> are retained directly and synchronized to the corresponding visible actions. Rain fills the stereo field continuously. Her breathing stays close and centered, then travels with her after the rear cut.
+
+non_diegetic_music:
+<Audio 2> is reused from its beginning as the complete audience-only score under the target video. It remains distinct from the diegetic gate, rain, breath, and footstep sounds copied from <Audio 1>.
+

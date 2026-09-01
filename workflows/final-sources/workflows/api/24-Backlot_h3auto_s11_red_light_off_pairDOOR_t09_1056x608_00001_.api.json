@@ -1,0 +1,358 @@
+{
+  "92": {
+    "inputs": {
+      "filename_prefix": "video/Backlot_h3auto_s11_red_light_off_pairDOOR_t09_1056x608",
+      "format": "mp4",
+      "codec": "h264",
+      "video": [
+        "130",
+        0
+      ],
+      "codec.encoding": "auto"
+    },
+    "class_type": "SaveVideo",
+    "_meta": {
+      "title": "Save Video"
+    }
+  },
+  "119": {
+    "inputs": {
+      "vae_name": "minimax_h3_video_vae_fp16.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "Load VAE"
+    }
+  },
+  "120": {
+    "inputs": {
+      "vae_name": "minimax_h3_audio_vae_fp32.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "Load VAE"
+    }
+  },
+  "121": {
+    "inputs": {
+      "samples": [
+        "125",
+        0
+      ],
+      "vae": [
+        "120",
+        0
+      ]
+    },
+    "class_type": "VAEDecodeAudio",
+    "_meta": {
+      "title": "VAE Decode Audio"
+    }
+  },
+  "122": {
+    "inputs": {
+      "samples": [
+        "125",
+        0
+      ],
+      "vae": [
+        "119",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "123": {
+    "inputs": {
+      "sampler_name": "euler"
+    },
+    "class_type": "KSamplerSelect",
+    "_meta": {
+      "title": "KSamplerSelect"
+    }
+  },
+  "124": {
+    "inputs": {
+      "scheduler": "bong_tangent",
+      "denoise": 1.0,
+      "model": [
+        "127",
+        0
+      ],
+      "steps": [
+        "142",
+        0
+      ]
+    },
+    "class_type": "BasicScheduler",
+    "_meta": {
+      "title": "BasicScheduler"
+    }
+  },
+  "125": {
+    "inputs": {
+      "noise": [
+        "129",
+        0
+      ],
+      "guider": [
+        "126",
+        0
+      ],
+      "sampler": [
+        "123",
+        0
+      ],
+      "sigmas": [
+        "124",
+        0
+      ],
+      "latent_image": [
+        "136",
+        1
+      ]
+    },
+    "class_type": "SamplerCustomAdvanced",
+    "_meta": {
+      "title": "SamplerCustomAdvanced"
+    }
+  },
+  "126": {
+    "inputs": {
+      "model": [
+        "141",
+        0
+      ],
+      "conditioning": [
+        "136",
+        0
+      ]
+    },
+    "class_type": "BasicGuider",
+    "_meta": {
+      "title": "Basic Guider"
+    }
+  },
+  "127": {
+    "inputs": {
+      "unet_name": "minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+      "weight_dtype": "default"
+    },
+    "class_type": "UNETLoader",
+    "_meta": {
+      "title": "Load Diffusion Model"
+    }
+  },
+  "128": {
+    "inputs": {
+      "clip_name": "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+      "type": "minimax",
+      "device": "default"
+    },
+    "class_type": "CLIPLoader",
+    "_meta": {
+      "title": "Load CLIP"
+    }
+  },
+  "129": {
+    "inputs": {
+      "noise_seed": 35091496631
+    },
+    "class_type": "RandomNoise",
+    "_meta": {
+      "title": "RandomNoise"
+    }
+  },
+  "130": {
+    "inputs": {
+      "fps": 24.0,
+      "bit_depth": 8,
+      "images": [
+        "122",
+        0
+      ],
+      "audio": [
+        "121",
+        0
+      ]
+    },
+    "class_type": "CreateVideo",
+    "_meta": {
+      "title": "Create Video"
+    }
+  },
+  "136": {
+    "inputs": {
+      "clip": [
+        "128",
+        0
+      ],
+      "vae": [
+        "119",
+        0
+      ],
+      "prompt": "subject_definitions:\n<Video 1> is the silent scene-continuation source made from the final usable exterior beat of Scene 10A; it supplies the exact heroine, Foley-stage door, rain, exterior camera direction, active struggle, and temporal handoff at the start of the target video.\n<Subject 1> is the young blonde woman whose character reference comes from <Picture 1> and who also appears in <Video 1>, with wet warm golden-blonde hair, pale skin, pendant, dirty tattered cream dress, and bare feet. <Picture 1> is authoritative for facial and wardrobe identity while <Video 1> is authoritative for her moving pose at the handoff.\n<Subject 2> is the exterior Foley-stage entrance whose design and spatial reference comes from <Picture 2> and which also appears in <Video 1>, preserving the same heavy steel door, lettering, warning plate, lever handle, latch, lock, conduit, left-wall caged red beacon, facade corner, and rain-wet threshold. <Picture 2> is authoritative for door geometry and hardware while <Video 1> is authoritative for the current camera and closed-door state.\n<Audio 1> is the non-diegetic Backlot Shadows score segment for the beacon blackout and lock-release beat.\n\nsummary:\n[video continuation + reference generation + audio reuse] Live-action cinematic horror, the target video continues from <Video 1>, cuts to the red beacon switching off, cuts to <Subject 1>'s hand physically operating the released lever and latch, then returns wide as she begins pushing <Subject 2> inward into the soundstage.\n\nretention_analysis:\n<Video 1> (first temporal state and wide-camera handoff for [Shot 1] and [Shot 4]): fully_preserved - the heroine's active struggle, exterior camera direction, rain, facade, closed-door state, and spatial relationships flow into the target and are restored for the final wide.\n<Subject 1> (appears in [Shot 1], [Shot 3], and [Shot 4]): fully_preserved - her facial identity, wet blonde hair, pendant, torn dirty cream dress, bare feet, frightened urgency, and position at the door are retained.\n<Subject 2> (appears throughout all shots): fully_preserved - its exterior geometry, lettering, warning plate, lever, latch, lock, conduit, caged red beacon on the wall left of the door, hinge side, and threshold remain unchanged across the inserts and wide views.\n<Audio 1>: partially_copy - the supplied score segment is reused 1:1 from its beginning as the complete audience-only music under the scene.\n\ndetailed_description:\nThe target video is live-action cinematic horror realism at night, underexposed and desaturated toward cold green-grey with hard rain and wet reflections. It continues directly from the preceding action.\n[Shot 1] Continue exactly from the final physical instant of <Video 1>. In a brief exterior wide, <Subject 1> braces one bare foot against the wet threshold and gives the lever of <Subject 2> one forceful full-range attempt with her arm, shoulder, and torso visibly engaged.\n[Shot 2] At 00:00.650 a hard cut moves to a tight close-up of the single caged red beacon fixed high on the wall left of <Subject 2>. Rain beads and runs over the red lens and cage. At 00:01.200 the beacon snaps off in one decisive state change. The lens becomes opaque black and its red wash drains from the wet wall.\n[Shot 3] At 00:01.550 a hard cut moves to a tight close-up of <Subject 1>'s wet hand and the lever mechanism of <Subject 2>. Her palm stays fixed to the grip, four fingers curl firmly beneath it, her thumb braces above it, and her knuckles tense. At 00:01.750 the internal lock releases with one hard metallic clunk. From 00:01.900 through 00:03.150 her hand and the lever move together as one mechanism: the lever rotates visibly from horizontal to its full downward stop, the spindle turns, and the latch tongue retracts completely from the strike plate. Her grip holds the lever at the downward stop.\n[Shot 4] At 00:03.200 a hard cut returns to the exterior wide camera and geography supplied by <Video 1>. The caged fixture remains black. <Subject 1> plants her forward foot, keeps one hand on the depressed lever, places her other palm against the steel door, and drives her shoulder forward. At 00:03.850 the door leaf begins moving inward, away from the exterior camera and into the soundstage. The fixed hinge side stays against the facade while the handle edge recedes by only a hand-width before the final frame, handing the motion directly to Scene 12.\n\noverall_soundscape:\nHard exterior rain and close frightened breathing continue throughout. The beacon's faint electrical hum stops exactly when it goes black. One hard internal lock clunk follows, then wet hand-on-metal friction, the lever's downward mechanical rotation, the latch withdrawing from the strike, and one low hinge groan at the first inward movement.\n\nnon_diegetic_music:\n<Audio 1> is reused from its beginning as the complete audience-only score beneath rain, breathing, beacon blackout, lock clunk, lever movement, latch withdrawal, and the first inward hinge sound.\n",
+      "width": 1056,
+      "height": 608,
+      "length": 107,
+      "audio_vae": [
+        "120",
+        0
+      ],
+      "ref_image_size": "match",
+      "ref_images.ref_image_0": [
+        "17980",
+        0
+      ],
+      "ref_images.ref_image_1": [
+        "17981",
+        0
+      ],
+      "ref_videos.ref_video_0": [
+        "30511",
+        0
+      ],
+      "ref_video_audios.ref_video_audio_0": [
+        "30511",
+        1
+      ],
+      "ref_audios.ref_audio_0": [
+        "23170",
+        0
+      ]
+    },
+    "class_type": "MiniMaxH3ReferenceToVideo",
+    "_meta": {
+      "title": "MiniMax H3 Reference to Video"
+    }
+  },
+  "141": {
+    "inputs": {
+      "switch": [
+        "146",
+        0
+      ],
+      "on_false": [
+        "127",
+        0
+      ],
+      "on_true": [
+        "145",
+        0
+      ]
+    },
+    "class_type": "ComfySwitchNode",
+    "_meta": {
+      "title": "If/Else Switch (model)"
+    }
+  },
+  "142": {
+    "inputs": {
+      "switch": [
+        "146",
+        0
+      ],
+      "on_false": [
+        "143",
+        0
+      ],
+      "on_true": [
+        "144",
+        0
+      ]
+    },
+    "class_type": "ComfySwitchNode",
+    "_meta": {
+      "title": "If/Else Switch (Steps)"
+    }
+  },
+  "143": {
+    "inputs": {
+      "value": 20
+    },
+    "class_type": "PrimitiveInt",
+    "_meta": {
+      "title": "Int (Full)"
+    }
+  },
+  "144": {
+    "inputs": {
+      "value": 4
+    },
+    "class_type": "PrimitiveInt",
+    "_meta": {
+      "title": "Int (Lightning LoRA)"
+    }
+  },
+  "145": {
+    "inputs": {
+      "lora_name": "minimax_h3_ref2v_turbo_4step_v0.1_comfyui_bf16.safetensors",
+      "strength_model": 1.0,
+      "model": [
+        "127",
+        0
+      ]
+    },
+    "class_type": "LoraLoaderModelOnly",
+    "_meta": {
+      "title": "Load LoRA"
+    }
+  },
+  "146": {
+    "inputs": {
+      "value": false
+    },
+    "class_type": "PrimitiveBoolean",
+    "_meta": {
+      "title": "Boolean (Enable Lightning LoRA)"
+    }
+  },
+  "17980": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "lead-actress-character-sheet.png"
+    },
+    "is_changed": [
+      "1891aa540dc6d3413f97147afb41846c589e21c6e3ed42cd6a08def8f123f7f0"
+    ]
+  },
+  "17981": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "foley-stage-door-exterior-spatial-lock-v2.png"
+    },
+    "is_changed": [
+      "b6a16e27dcfceecff541a8dab55bfc998c76012a652ffe9924dc9ae6eaf39bcf"
+    ]
+  },
+  "30510": {
+    "class_type": "LoadVideo",
+    "inputs": {
+      "file": "s10a-t10-final-wide-continuation.mp4"
+    },
+    "is_changed": [
+      1787826524.5720966
+    ]
+  },
+  "30511": {
+    "class_type": "GetVideoComponents",
+    "inputs": {
+      "video": [
+        "30510",
+        0
+      ]
+    }
+  },
+  "23170": {
+    "class_type": "LoadAudio",
+    "inputs": {
+      "audio": "music-s11.wav"
+    },
+    "is_changed": [
+      "3fda264056ce14a9e036d25b175f3915165d719fbc9d976dbec63fb59e8239b0"
+    ]
+  }
+}

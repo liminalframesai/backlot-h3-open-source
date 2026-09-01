@@ -1,0 +1,389 @@
+{
+  "1": {
+    "inputs": {
+      "unet_name": "minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+      "weight_dtype": "default"
+    },
+    "class_type": "UNETLoader",
+    "_meta": {
+      "title": "H3 diffusion model"
+    }
+  },
+  "2": {
+    "inputs": {
+      "lora_name": "minimax_h3_ref2v_lightx2v_turbo_4step_v0.1_resized_avg_rank_20_bf16.safetensors",
+      "strength_model": 0.5,
+      "model": [
+        "1",
+        0
+      ]
+    },
+    "class_type": "LoraLoaderModelOnly",
+    "_meta": {
+      "title": "Turbo LoRA (4-step) @ 0.5"
+    }
+  },
+  "3": {
+    "inputs": {
+      "enabled": true,
+      "model": [
+        "2",
+        0
+      ]
+    },
+    "class_type": "MiniMaxH3FusedModulation",
+    "_meta": {
+      "title": "Fused Modulation"
+    }
+  },
+  "4": {
+    "inputs": {
+      "enabled": true,
+      "tau": 1.3,
+      "min_tokens": 4096,
+      "strict": false,
+      "thresh_type": "diag",
+      "int8_qk": false,
+      "int8_pv": false,
+      "sink_conditioning": "exact_kv",
+      "dense_blocks": "",
+      "model": [
+        "3",
+        0
+      ]
+    },
+    "class_type": "MiniMaxH3MemoryEfficientSolAttentionPatch",
+    "_meta": {
+      "title": "Sol-Attn"
+    }
+  },
+  "5": {
+    "inputs": {
+      "clip_name": "qwen3vl-32B-MiniMax-H3-Q4_K_M.gguf",
+      "type": "minimax"
+    },
+    "class_type": "CLIPLoaderGGUF",
+    "_meta": {
+      "title": "H3 text encoder (GGUF)"
+    }
+  },
+  "6": {
+    "inputs": {
+      "vae_name": "minimax_h3_video_vae_fp16.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "H3 video VAE"
+    }
+  },
+  "7": {
+    "inputs": {
+      "vae_name": "minimax_h3_audio_vae_fp32.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "H3 audio VAE"
+    }
+  },
+  "9": {
+    "inputs": {
+      "aspect_ratio": "16:9 (Widescreen)",
+      "megapixels": 0.6,
+      "multiple": 32
+    },
+    "class_type": "ResolutionSelector",
+    "_meta": {
+      "title": "Resolution (0.27 MP = 704x384)"
+    }
+  },
+  "10": {
+    "inputs": {
+      "value": "subject_definitions:\n<Subject 1> is the middle-aged man in <Picture 1> with grey hair, headphones hanging around his neck, and a grey shirt and dark jeans.\n<Subject 2> is the man in <Picture 2> with brown hair, a short brown beard, headhpones, a green shirt, and dark jeans.\n<Subject 3> is the professional soundstage shown in <Picture 3> with miscellaneous equipment, microphones, and a computer cart. \n<Audio 1> is a predefined audio track and is reused in the target video.\n\nsummary:\n[reference generation + audio reuse] The target video is synced to the sound of <Audio 1>. It shows <Subject 1> using a clapboard to start a scene in <Subject 3> with <Subject 2> behind him.\n\nretention_analysis:\n<Subject 1> (appears in [Shot 1]): partially_preserved - the man's grey hair, headphones around his neck, and grey shirt and jeans are retained.\n<Subject 2> (appears in [Shot 1]): partially_preserved - the man's brown hair, headhpones, green shirt, and dark jeans are retained.\n<Subject 3> (location for [Shot 1]): partially_preserved - the location serves as a backdrop for the action and is retained.\n<Audio 1>: fully_copy - <Audio 1> is reused 1:1 as the target video's complete final audio track.\n\ndetailed_description:\nThe target video is live-action cinematic realism in a working-documentary style, slightly underexposed and slightly desaturated.\n[Shot 1] A medium shot establishes <Subject 3> and opens on <Subject 1> holding an open clapboard. <Subject 2> has his right hand on the mock door-frame equipment seen in <Subject 3> and is behind <Subject 1>. From out of frame we hear a voice from <Audio 1> say <d>[English] Quiet, please.</d>. Perfectly synchronized with the clapboard clack from <Audio 1>, the <Subject 1> claps the clapboard in a swift fluid motion. After the clap <Subject 1> holds position with the clapboard closed.\n\noverall_soundscape:\n<Audio 1> is reused 1:1 as the target video's complete final audio track, including its soundstage room tone, spoken cue, and clapboard crack.\n\nnon_diegetic_music:\nN/A\n"
+    },
+    "class_type": "PrimitiveStringMultiline",
+    "_meta": {
+      "title": "PROMPT (H3 template)"
+    }
+  },
+  "11": {
+    "inputs": {
+      "value": 3.0
+    },
+    "class_type": "PrimitiveFloat",
+    "_meta": {
+      "title": "Duration (seconds)"
+    }
+  },
+  "12": {
+    "inputs": {
+      "expression": "max(5, round(a * 24)) + (5 - (max(5, round(a * 24)) % 17)) % 17",
+      "values.a": [
+        "11",
+        0
+      ]
+    },
+    "class_type": "ComfyMathExpression",
+    "_meta": {
+      "title": "frames = H3 17k+5 law"
+    }
+  },
+  "14": {
+    "inputs": {
+      "model": [
+        "4",
+        0
+      ],
+      "conditioning": [
+        "24",
+        0
+      ]
+    },
+    "class_type": "BasicGuider",
+    "_meta": {
+      "title": "Guider (CFG 1)"
+    }
+  },
+  "15": {
+    "inputs": {
+      "sampler_name": "euler"
+    },
+    "class_type": "KSamplerSelect",
+    "_meta": {
+      "title": "KSamplerSelect"
+    }
+  },
+  "16": {
+    "inputs": {
+      "scheduler": "bong_tangent",
+      "steps": 12,
+      "denoise": 1.0,
+      "model": [
+        "4",
+        0
+      ]
+    },
+    "class_type": "BasicScheduler",
+    "_meta": {
+      "title": "12 steps"
+    }
+  },
+  "17": {
+    "inputs": {
+      "noise_seed": 527742521178345
+    },
+    "class_type": "RandomNoise",
+    "_meta": {
+      "title": "Seed"
+    }
+  },
+  "18": {
+    "inputs": {
+      "noise": [
+        "17",
+        0
+      ],
+      "guider": [
+        "14",
+        0
+      ],
+      "sampler": [
+        "15",
+        0
+      ],
+      "sigmas": [
+        "16",
+        0
+      ],
+      "latent_image": [
+        "24",
+        1
+      ]
+    },
+    "class_type": "SamplerCustomAdvanced",
+    "_meta": {
+      "title": "Sample (single H3 pass)"
+    }
+  },
+  "19": {
+    "inputs": {
+      "samples": [
+        "18",
+        0
+      ],
+      "vae": [
+        "6",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "Decode video"
+    }
+  },
+  "20": {
+    "inputs": {
+      "samples": [
+        "18",
+        0
+      ],
+      "vae": [
+        "7",
+        0
+      ]
+    },
+    "class_type": "VAEDecodeAudio",
+    "_meta": {
+      "title": "Decode audio"
+    }
+  },
+  "21": {
+    "inputs": {
+      "fps": 24.0,
+      "bit_depth": 8,
+      "color_space": "sRGB",
+      "images": [
+        "19",
+        0
+      ],
+      "audio": [
+        "20",
+        0
+      ]
+    },
+    "class_type": "CreateVideo",
+    "_meta": {
+      "title": "Create video (24 fps)"
+    }
+  },
+  "22": {
+    "inputs": {
+      "filename_prefix": "video/ALPHA-T1",
+      "format": "auto",
+      "format.codec": "auto",
+      "codec": "auto",
+      "video-preview": "",
+      "video": [
+        "21",
+        0
+      ]
+    },
+    "class_type": "SaveVideo",
+    "_meta": {
+      "title": "Save"
+    }
+  },
+  "24": {
+    "inputs": {
+      "prompt": [
+        "10",
+        0
+      ],
+      "width": [
+        "9",
+        0
+      ],
+      "height": [
+        "9",
+        1
+      ],
+      "length": [
+        "12",
+        1
+      ],
+      "ref_image_size": "match",
+      "clip": [
+        "5",
+        0
+      ],
+      "vae": [
+        "6",
+        0
+      ],
+      "audio_vae": [
+        "7",
+        0
+      ],
+      "ref_images.ref_image_0": [
+        "39",
+        0
+      ],
+      "ref_images.ref_image_1": [
+        "37",
+        0
+      ],
+      "ref_images.ref_image_2": [
+        "40",
+        0
+      ],
+      "ref_audios.ref_audio_0": [
+        "42",
+        1
+      ]
+    },
+    "class_type": "MiniMaxH3ReferenceToVideo",
+    "_meta": {
+      "title": "MiniMax H3 Reference to Video"
+    }
+  },
+  "37": {
+    "inputs": {
+      "image": "foley-lead-A-sheet.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    },
+    "is_changed": [
+      "55e9e3075bedadc60ccacb6b06c966b90ff31559e8cebc636009aefd82f2767f"
+    ]
+  },
+  "39": {
+    "inputs": {
+      "image": "studio-operator-grayer-hair-sheet.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    },
+    "is_changed": [
+      "276b9dc5705e1e91214ebd2748e78cf0f73111b0d81c97205803670eb7cd499b"
+    ]
+  },
+  "40": {
+    "inputs": {
+      "image": "foley-stage-interior-master-v1.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    },
+    "is_changed": [
+      "80b6127cde52a18b542ba1b0607a630a542b88ec3a62e3014d49ffd554dc4b11"
+    ]
+  },
+  "41": {
+    "inputs": {
+      "file": "s01-t13-first2p5-edge-hold3p042-audio.mp4",
+      "video-preview": ""
+    },
+    "class_type": "LoadVideo",
+    "_meta": {
+      "title": "Load Video"
+    },
+    "is_changed": [
+      1787868089.3809254
+    ]
+  },
+  "42": {
+    "inputs": {
+      "video": [
+        "41",
+        0
+      ]
+    },
+    "class_type": "GetVideoComponents",
+    "_meta": {
+      "title": "Get Video Components"
+    }
+  }
+}

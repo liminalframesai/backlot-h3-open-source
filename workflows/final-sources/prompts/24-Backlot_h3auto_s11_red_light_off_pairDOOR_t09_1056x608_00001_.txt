@@ -1,0 +1,28 @@
+subject_definitions:
+<Video 1> is the silent scene-continuation source made from the final usable exterior beat of Scene 10A; it supplies the exact heroine, Foley-stage door, rain, exterior camera direction, active struggle, and temporal handoff at the start of the target video.
+<Subject 1> is the young blonde woman whose character reference comes from <Picture 1> and who also appears in <Video 1>, with wet warm golden-blonde hair, pale skin, pendant, dirty tattered cream dress, and bare feet. <Picture 1> is authoritative for facial and wardrobe identity while <Video 1> is authoritative for her moving pose at the handoff.
+<Subject 2> is the exterior Foley-stage entrance whose design and spatial reference comes from <Picture 2> and which also appears in <Video 1>, preserving the same heavy steel door, lettering, warning plate, lever handle, latch, lock, conduit, left-wall caged red beacon, facade corner, and rain-wet threshold. <Picture 2> is authoritative for door geometry and hardware while <Video 1> is authoritative for the current camera and closed-door state.
+<Audio 1> is the non-diegetic Backlot Shadows score segment for the beacon blackout and lock-release beat.
+
+summary:
+[video continuation + reference generation + audio reuse] Live-action cinematic horror, the target video continues from <Video 1>, cuts to the red beacon switching off, cuts to <Subject 1>'s hand physically operating the released lever and latch, then returns wide as she begins pushing <Subject 2> inward into the soundstage.
+
+retention_analysis:
+<Video 1> (first temporal state and wide-camera handoff for [Shot 1] and [Shot 4]): fully_preserved - the heroine's active struggle, exterior camera direction, rain, facade, closed-door state, and spatial relationships flow into the target and are restored for the final wide.
+<Subject 1> (appears in [Shot 1], [Shot 3], and [Shot 4]): fully_preserved - her facial identity, wet blonde hair, pendant, torn dirty cream dress, bare feet, frightened urgency, and position at the door are retained.
+<Subject 2> (appears throughout all shots): fully_preserved - its exterior geometry, lettering, warning plate, lever, latch, lock, conduit, caged red beacon on the wall left of the door, hinge side, and threshold remain unchanged across the inserts and wide views.
+<Audio 1>: partially_copy - the supplied score segment is reused 1:1 from its beginning as the complete audience-only music under the scene.
+
+detailed_description:
+The target video is live-action cinematic horror realism at night, underexposed and desaturated toward cold green-grey with hard rain and wet reflections. It continues directly from the preceding action.
+[Shot 1] Continue exactly from the final physical instant of <Video 1>. In a brief exterior wide, <Subject 1> braces one bare foot against the wet threshold and gives the lever of <Subject 2> one forceful full-range attempt with her arm, shoulder, and torso visibly engaged.
+[Shot 2] At 00:00.650 a hard cut moves to a tight close-up of the single caged red beacon fixed high on the wall left of <Subject 2>. Rain beads and runs over the red lens and cage. At 00:01.200 the beacon snaps off in one decisive state change. The lens becomes opaque black and its red wash drains from the wet wall.
+[Shot 3] At 00:01.550 a hard cut moves to a tight close-up of <Subject 1>'s wet hand and the lever mechanism of <Subject 2>. Her palm stays fixed to the grip, four fingers curl firmly beneath it, her thumb braces above it, and her knuckles tense. At 00:01.750 the internal lock releases with one hard metallic clunk. From 00:01.900 through 00:03.150 her hand and the lever move together as one mechanism: the lever rotates visibly from horizontal to its full downward stop, the spindle turns, and the latch tongue retracts completely from the strike plate. Her grip holds the lever at the downward stop.
+[Shot 4] At 00:03.200 a hard cut returns to the exterior wide camera and geography supplied by <Video 1>. The caged fixture remains black. <Subject 1> plants her forward foot, keeps one hand on the depressed lever, places her other palm against the steel door, and drives her shoulder forward. At 00:03.850 the door leaf begins moving inward, away from the exterior camera and into the soundstage. The fixed hinge side stays against the facade while the handle edge recedes by only a hand-width before the final frame, handing the motion directly to Scene 12.
+
+overall_soundscape:
+Hard exterior rain and close frightened breathing continue throughout. The beacon's faint electrical hum stops exactly when it goes black. One hard internal lock clunk follows, then wet hand-on-metal friction, the lever's downward mechanical rotation, the latch withdrawing from the strike, and one low hinge groan at the first inward movement.
+
+non_diegetic_music:
+<Audio 1> is reused from its beginning as the complete audience-only score beneath rain, breathing, beacon blackout, lock clunk, lever movement, latch withdrawal, and the first inward hinge sound.
+

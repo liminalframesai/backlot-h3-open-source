@@ -1,0 +1,33 @@
+subject_definitions:
+<Picture 1> is the exact last frame of [Shot 1], showing the completed BACKLOT title card with an amber audio waveform at frame-left, a small red sync point at center, a blue-white waveform with rain and lightning energy at frame-right, and the title typography centered between them.
+<Subject 1> is the audiovisual signal environment whose visual reference comes from <Picture 1>, consisting of the near-black field, restrained calibration ticks, warm amber Foley signal at frame-left, central red sync point, cold blue-white film-world signal at frame-right, rain texture, lightning energy, deep blacks, and fine cinematic grain.
+<Audio 1> is the six-second non-diegetic score excerpt for the target video and is reused as its complete final audio track.
+
+summary:
+[keyframe completion + reference generation + audio reuse] The target video begins in black, reveals <Subject 1> in exact synchronization with <Audio 1>, introduces the BACKLOT title as the warm Foley signal breaches into the cold film-world signal, and ends exactly on <Picture 1>.
+
+retention_analysis:
+<Picture 1> ([Shot 1] last frame): fully_preserved - its complete composition, exact typography, signal shapes, amber-left and blue-white-right color division, red sync point, rain texture, calibration marks, lighting, and final physical state are retained.
+<Subject 1> (appears in [Shot 1]): fully_preserved - the near-black motion-graphics field, warm-to-cold audiovisual signal transformation, red sync point, rain, lightning energy, deep contrast, and cinematic grain are retained throughout the reveal.
+<Audio 1>: fully_copy - <Audio 1> is reused 1:1 as the target video's complete final audio track.
+
+detailed_description:
+The target video is a premium cinematic horror title sequence in a restrained abstract audiovisual style. The frame remains a locked 16:9 composition with deep blacks, precise ivory typography, fine photochemical grain, and controlled warm-amber and cold-blue-white signal light.
+
+[Shot 1] The video begins on a pure black frame. During the opening high-string rise in <Audio 1>, an extremely faint amber horizontal trace becomes visible at frame-left while a nearly imperceptible cold rain texture gathers at frame-right. The center remains dark and empty, creating one full second of visual tension after the preceding drag-away scene.
+
+At the first strong musical impact in <Audio 1>, within the first second, the small red sync point ignites at the exact center of frame. The impact sends a warm amber waveform from frame-left toward the red point. At the same instant, a cold blue-white signal erupts from the point toward frame-right, combining an audio waveform, restrained lightning filaments, and rain streaks. The two signals remain parts of one continuous horizontal energy line, with the warm Foley world visibly transforming into the cold film world at the red sync point.
+
+At 00:01.200, the complete word BACKLOT appears at center as a single clean exposure reveal, its full ivory condensed letterforms already formed and perfectly stable. Beneath it, A LIMINAL FRAMES PRODUCTION appears as one complete, smaller, widely tracked line. The full visible typography reads exactly:
+BACKLOT
+A LIMINAL FRAMES PRODUCTION
+
+From 00:01.500 through 00:04.800, both lines remain crisp and continuously readable. The camera stays locked. The amber waveform breathes with small amplitude to the rhythm of <Audio 1>; the central red point pulses subtly on musical accents; the blue-white waveform travels gently while rain moves downward and occasional lightning energy flickers within the cold side. Signal motion remains behind and around the lettering while the type holds still.
+
+At 00:04.800, all movement gradually settles. The waveforms, rain, red sync point, calibration ticks, title scale, spacing, and lighting converge precisely toward <Picture 1>. The shot ends exactly on <Picture 1> as the literal final frame, preserving every pixel-level design relationship and the complete readable title card.
+
+overall_soundscape:
+N/A
+
+non_diegetic_music:
+<Audio 1> is directly reused 1:1 as the target video's complete final non-diegetic score.

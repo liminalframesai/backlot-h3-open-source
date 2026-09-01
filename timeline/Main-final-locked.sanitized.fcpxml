@@ -1,0 +1,684 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE fcpxml>
+<fcpxml version="1.14">
+    <resources>
+        <format frameDuration="1/24s" height="1080" id="r0" width="1920" name="FFVideoFormat1080p24"/>
+        <format frameDuration="1/24s" height="608" id="r1" width="1056" name="FFVideoFormatRateUndefined"/>
+        <format frameDuration="1/24s" height="704" id="r3" width="1280" name="FFVideoFormatRateUndefined"/>
+        <format frameDuration="1/24s" height="736" id="r5" width="1280" name="FFVideoFormatRateUndefined"/>
+        <format frameDuration="1/24s" height="544" id="r7" width="960" name="FFVideoFormatRateUndefined"/>
+        <format frameDuration="1/24s" height="672" id="r27" width="1216" name="FFVideoFormatRateUndefined"/>
+        <format frameDuration="1/24s" height="768" id="r42" width="1376" name="FFVideoFormatRateUndefined"/>
+        <effect uid="FxPlug:4731E73A-8DAC-4113-9A30-AE85B1761265" id="r50" name="Cross Dissolve"/>
+        <asset audioSources="1" hasVideo="1" hasAudio="1" audioChannels="2" id="r2" duration="73/24s" start="0/1s" format="r1" name="ALPHA-T1_00111_.mp4">
+            <media-rep src="file:///RELINK/media/final-sources/ALPHA-T1_00111_.mp4" kind="original-media"/>
+        </asset>
+        <asset audioSources="1" hasVideo="1" hasAudio="1" audioChannels="2" id="r4" duration="175/24s" start="0/1s" format="r3" name="Backlot_h3auto_s01_quiet_please_pairSLAM_t14_1280x704_00001_.mp4">
+            <media-rep src="file:///RELINK/media/final-sources/Backlot_h3auto_s01_quiet_please_pairSLAM_t14_1280x704_00001_.mp4" kind="original-media"/>
+        </asset>
+        <asset audioSources="1" hasVideo="1" hasAudio="1" audioChannels="2" id="r6" duration="175/24s" start="0/1s" format="r5" name="MiniMax_H3_00054_.mp4">
+            <media-rep src="file:///RELINK/media/final-sources/MiniMax_H3_00054_.mp4" kind="original-media"/>
+        </asset>
+        <asset audioSources="1" hasVideo="1" hasAudio="1" audioChannels="2" id="r8" duration="113/12s" start="0/1s" format="r7" name="Backlot_h3auto_s07_that_sounds_great_pairSCRAPE_t06_960x544_00001_.mp4">
+            <media-rep src="file:///RELINK/media/final-sources/Backlot_h3auto_s07_that_sounds_great_pairSCRAPE_t06_960x544_00001_.mp4" kind="original-media"/>
+        </asset>
+        <asset audioSources="1" hasVideo="1" hasAudio="1" audioChannels="2" id="r9" duration="175/24s" start="0/1s" format="r5" name="MiniMax_H3_00054_.mp4">
+            <media-rep src="file:///RELINK/media/final-sources/MiniMax_H3_00054_.mp4" kind="original-media"/>
+        </asset>
+        <asset audioSources="1" hasVideo="1" hasAudio="1" audioChannels="2" id="r10" duration="175/24s" start="0/1s" format="r5" name="MiniMax_H3_00054_.mp4">
+            <media-rep src="file:///RELINK/media/final-sources/MiniMax_H3_00054_.mp4" kind="original-media"/>
+        </asset>
+        <asset audioSources="1" hasVideo="1" hasAudio="1" audioChannels="2" id="r11" duration="113/12s" start="0/1s" format="r1" name="Backlot_h3auto_s07_that_sounds_great_pairSCRAPE_t08_1056x608_00001_.mp4">
+            <media-rep src="file:///RELINK/media/final-sources/Backlot_h3auto_s07_that_sounds_great_pairSCRAPE_t08_1056x608_00001_.mp4" kind="original-media"/>
+        </asset>
+        <asset audioSources="1" hasVideo="1" hasAudio="1" audioChannels="2" id="r12" duration="79/12s" start="0/1s" format="r1" name="Backlot_h3auto_s02_girl_in_the_rainy_lot_pairSLAM_t14_1056x608_00001_.mp4">
+            <media-rep src="file:///RELINK/media/final-sources/Backlot_h3auto_s02_girl_in_the_rainy_lot_pairSLAM_t14_1056x608_00001_.mp4" kind="original-media"/>
+        </asset>
+        <asset audioSources="1" hasVideo="1" hasAudio="1" audioChannels="2" id="r13" duration="79/12s" start="0/1s" format="r1" name="Backlot_h3auto_s8.5_door_pounding_interior_foley_t07_1056x608_00001_.mp4">
+            <media-rep src="file:///RELINK/media/final-sources/Backlot_h3auto_s8.5_door_pounding_interior_foley_t07_1056x608_00001_.mp4" kind="original-media"/>
+        </asset>
+        <asset audioSources="1" hasVideo="1" hasAudio="1" audioChannels="2" id="r14" duration="79/12s" start="0/1s" format="r1" name="Backlot_h3auto_s8.5_door_pounding_interior_foley_t07_1056x608_00001_.mp4">
+            <media-rep src="file:///RELINK/media/final-sources/Backlot_h3auto_s8.5_door_pounding_interior_foley_t07_1056x608_00001_.mp4" kind="original-media"/>
+        </asset>
+        <asset audioSources="1" hasVideo="1" hasAudio="1" audioChannels="2" id="r15" duration="113/12s" start="0/1s" format="r7" name="Backlot_h3auto_s07_that_sounds_great_pairSCRAPE_t06_960x544_00001_.mp4">
+            <media-rep src="file:///RELINK/media/final-sources/Backlot_h3auto_s07_that_sounds_great_pairSCRAPE_t06_960x544_00001_.mp4" kind="original-media"/>
+        </asset>
+        <asset audioSources="1" hasVideo="1" hasAudio="1" audioChannels="2" id="r16" duration="113/12s" start="0/1s" format="r7" name="Backlot_h3auto_s07_that_sounds_great_pairSCRAPE_t06_960x544_00001_.mp4">
+            <media-rep src="file:///RELINK/media/final-sources/Backlot_h3auto_s07_that_sounds_great_pairSCRAPE_t06_960x544_00001_.mp4" kind="original-media"/>
+        </asset>
+        <asset audioSources="1" hasVideo="1" hasAudio="1" audioChannels="2" id="r17" duration="175/24s" start="0/1s" format="r1" name="Backlot_h3auto_s06_the_assailant_waist_down_pairSCRAPE_t10_1056x608_00001_.mp4">
+            <media-rep src="file:///RELINK/media/final-sources/Backlot_h3auto_s06_the_assailant_waist_down_pairSCRAPE_t10_1056x608_00001_.mp4" kind="original-media"/>
+        </asset>
+        <asset audioSources="1" hasVideo="1" hasAudio="1" audioChannels="2" id="r18" duration="175/24s" start="0/1s" format="r1" name="Backlot_h3auto_s06_the_assailant_waist_down_pairSCRAPE_t10_1056x608_00001_.mp4">
+            <media-rep src="file:///RELINK/media/final-sources/Backlot_h3auto_s06_the_assailant_waist_down_pairSCRAPE_t10_1056x608_00001_.mp4" kind="original-media"/>
+        </asset>
+        <asset audioSources="1" hasVideo="1" hasAudio="1" audioChannels="2" id="r19" duration="175/24s" start="0/1s" format="r1" name="Backlot_h3auto_s06_the_assailant_waist_down_pairSCRAPE_t10_1056x608_00001_.mp4">
+            <media-rep src="file:///RELINK/media/final-sources/Backlot_h3auto_s06_the_assailant_waist_down_pairSCRAPE_t10_1056x608_00001_.mp4" kind="original-media"/>
+        </asset>
+        <asset audioSources="1" hasVideo="1" hasAudio="1" audioChannels="2" id="r20" duration="73/24s" start="0/1s" format="r1" name="Backlot_h3auto_s10b_the_ruined_take_interior_pairPOUND_t12_1056x608_00001_.mp4">
+            <media-rep src="file:///RELINK/media/final-sources/Backlot_h3auto_s10b_the_ruined_take_interior_pairPOUND_t12_1056x608_00001_.mp4" kind="original-media"/>
+        </asset>
+        <asset audioSources="1" hasVideo="1" hasAudio="1" audioChannels="2" id="r21" duration="73/24s" start="0/1s" format="r1" name="Backlot_h3auto_s10b_the_ruined_take_interior_pairPOUND_t12_1056x608_00001_.mp4">
+            <media-rep src="file:///RELINK/media/final-sources/Backlot_h3auto_s10b_the_ruined_take_interior_pairPOUND_t12_1056x608_00001_.mp4" kind="original-media"/>
+        </asset>
+        <asset audioSources="1" hasVideo="1" hasAudio="1" audioChannels="2" id="r22" duration="175/24s" start="0/1s" format="r1" name="Backlot_h3auto_s06_the_assailant_waist_down_pairSCRAPE_t10_1056x608_00001_.mp4">
+            <media-rep src="file:///RELINK/media/final-sources/Backlot_h3auto_s06_the_assailant_waist_down_pairSCRAPE_t10_1056x608_00001_.mp4" kind="original-media"/>
+        </asset>
+        <asset audioSources="1" hasVideo="1" hasAudio="1" audioChannels="2" id="r23" duration="175/24s" start="0/1s" format="r1" name="Backlot_h3auto_s06_the_assailant_waist_down_pairSCRAPE_t10_1056x608_00001_.mp4">
+            <media-rep src="file:///RELINK/media/final-sources/Backlot_h3auto_s06_the_assailant_waist_down_pairSCRAPE_t10_1056x608_00001_.mp4" kind="original-media"/>
+        </asset>
+        <asset audioSources="1" hasVideo="1" hasAudio="1" audioChannels="2" id="r24" duration="175/24s" start="0/1s" format="r1" name="Backlot_h3auto_s10b_the_ruined_take_interior_pairPOUND_t08_1056x608_00001_.mp4">
+            <media-rep src="file:///RELINK/media/final-sources/Backlot_h3auto_s10b_the_ruined_take_interior_pairPOUND_t08_1056x608_00001_.mp4" kind="original-media"/>
+        </asset>
+        <asset audioSources="1" hasVideo="1" hasAudio="1" audioChannels="2" id="r25" duration="107/24s" start="0/1s" format="r1" name="Backlot_h3auto_s11_red_light_off_pairDOOR_t09_1056x608_00001_.mp4">
+            <media-rep src="file:///RELINK/media/final-sources/Backlot_h3auto_s11_red_light_off_pairDOOR_t09_1056x608_00001_.mp4" kind="original-media"/>
+        </asset>
+        <asset audioSources="1" hasVideo="1" hasAudio="1" audioChannels="2" id="r26" duration="73/24s" start="0/1s" format="r1" name="Backlot_h3auto_s12_door_opens_exterior_bridge_exterior_pairFINALE_t21_1056x608_00001_.mp4">
+            <media-rep src="file:///RELINK/media/final-sources/Backlot_h3auto_s12_door_opens_exterior_bridge_exterior_pairFINALE_t21_1056x608_00001_.mp4" kind="original-media"/>
+        </asset>
+        <asset audioSources="1" hasVideo="1" hasAudio="1" audioChannels="2" id="r28" duration="31/6s" start="0/1s" format="r27" name="ALPHA-T1_00060_.mp4">
+            <media-rep src="file:///RELINK/media/final-sources/ALPHA-T1_00060_.mp4" kind="original-media"/>
+        </asset>
+        <asset audioSources="1" hasVideo="1" hasAudio="1" audioChannels="2" id="r29" duration="31/6s" start="0/1s" format="r1" name="ALPHA-T1_00079_.mp4">
+            <media-rep src="file:///RELINK/media/final-sources/ALPHA-T1_00079_.mp4" kind="original-media"/>
+        </asset>
+        <asset audioSources="1" hasVideo="1" hasAudio="1" audioChannels="2" id="r30" duration="31/6s" start="0/1s" format="r3" name="Backlot_h3auto_s02_girl_in_the_rainy_lot_pairSLAM_t16_1280x704_00001_.mp4">
+            <media-rep src="file:///RELINK/media/final-sources/Backlot_h3auto_s02_girl_in_the_rainy_lot_pairSLAM_t16_1280x704_00001_.mp4" kind="original-media"/>
+        </asset>
+        <asset audioSources="1" hasVideo="1" hasAudio="1" audioChannels="2" id="r31" duration="31/6s" start="0/1s" format="r3" name="Backlot_h3auto_s02_girl_in_the_rainy_lot_pairSLAM_t16_1280x704_00001_.mp4">
+            <media-rep src="file:///RELINK/media/final-sources/Backlot_h3auto_s02_girl_in_the_rainy_lot_pairSLAM_t16_1280x704_00001_.mp4" kind="original-media"/>
+        </asset>
+        <asset audioSources="1" hasVideo="1" hasAudio="1" audioChannels="2" id="r32" duration="31/6s" start="0/1s" format="r3" name="Backlot_h3auto_s02_girl_in_the_rainy_lot_pairSLAM_t16_1280x704_00001_.mp4">
+            <media-rep src="file:///RELINK/media/final-sources/Backlot_h3auto_s02_girl_in_the_rainy_lot_pairSLAM_t16_1280x704_00001_.mp4" kind="original-media"/>
+        </asset>
+        <asset audioSources="1" hasVideo="1" hasAudio="1" audioChannels="2" id="r33" duration="175/24s" start="0/1s" format="r1" name="Backlot_h3auto_s2.5_run_through_the_backlot_t03_1056x608_00001_.mp4">
+            <media-rep src="file:///RELINK/media/final-sources/Backlot_h3auto_s2.5_run_through_the_backlot_t03_1056x608_00001_.mp4" kind="original-media"/>
+        </asset>
+        <asset audioSources="1" hasVideo="1" hasAudio="1" audioChannels="2" id="r34" duration="175/24s" start="0/1s" format="r1" name="Backlot_h3auto_s2.5_run_through_the_backlot_t03_1056x608_00001_.mp4">
+            <media-rep src="file:///RELINK/media/final-sources/Backlot_h3auto_s2.5_run_through_the_backlot_t03_1056x608_00001_.mp4" kind="original-media"/>
+        </asset>
+        <asset audioSources="1" hasVideo="1" hasAudio="1" audioChannels="2" id="r35" duration="175/24s" start="0/1s" format="r5" name="MiniMax_H3_00054_.mp4">
+            <media-rep src="file:///RELINK/media/final-sources/MiniMax_H3_00054_.mp4" kind="original-media"/>
+        </asset>
+        <asset audioSources="1" hasVideo="1" hasAudio="1" audioChannels="2" id="r36" duration="79/12s" start="0/1s" format="r27" name="ALPHA-T1_00056_.mp4">
+            <media-rep src="file:///RELINK/media/final-sources/ALPHA-T1_00056_.mp4" kind="original-media"/>
+        </asset>
+        <asset audioSources="1" hasVideo="1" hasAudio="1" audioChannels="2" id="r37" duration="79/12s" start="0/1s" format="r27" name="ALPHA-T1_00056_.mp4">
+            <media-rep src="file:///RELINK/media/final-sources/ALPHA-T1_00056_.mp4" kind="original-media"/>
+        </asset>
+        <asset audioSources="1" hasVideo="1" hasAudio="1" audioChannels="2" id="r38" duration="31/6s" start="0/1s" format="r1" name="Backlot_h3auto_s09_boots_in_the_rain_pairBOOTS_t10_1056x608_00001_.mp4">
+            <media-rep src="file:///RELINK/media/final-sources/Backlot_h3auto_s09_boots_in_the_rain_pairBOOTS_t10_1056x608_00001_.mp4" kind="original-media"/>
+        </asset>
+        <asset audioSources="1" hasVideo="1" hasAudio="1" audioChannels="2" id="r39" duration="31/6s" start="0/1s" format="r1" name="Backlot_h3auto_s09_boots_in_the_rain_pairBOOTS_t10_1056x608_00001_.mp4">
+            <media-rep src="file:///RELINK/media/final-sources/Backlot_h3auto_s09_boots_in_the_rain_pairBOOTS_t10_1056x608_00001_.mp4" kind="original-media"/>
+        </asset>
+        <asset audioSources="1" hasVideo="1" hasAudio="1" audioChannels="2" id="r40" duration="31/6s" start="0/1s" format="r1" name="Backlot_h3auto_s09_boots_in_the_rain_pairBOOTS_t10_1056x608_00001_.mp4">
+            <media-rep src="file:///RELINK/media/final-sources/Backlot_h3auto_s09_boots_in_the_rain_pairBOOTS_t10_1056x608_00001_.mp4" kind="original-media"/>
+        </asset>
+        <asset audioSources="1" hasVideo="1" hasAudio="1" audioChannels="2" id="r41" duration="79/12s" start="0/1s" format="r1" name="ALPHA-T1_00042_.mp4">
+            <media-rep src="file:///RELINK/media/final-sources/ALPHA-T1_00042_.mp4" kind="original-media"/>
+        </asset>
+        <asset audioSources="1" hasVideo="1" hasAudio="1" audioChannels="2" id="r43" duration="107/24s" start="0/1s" format="r42" name="ALPHA-T1_00007_.mp4">
+            <media-rep src="file:///RELINK/media/final-sources/ALPHA-T1_00007_.mp4" kind="original-media"/>
+        </asset>
+        <asset audioSources="1" hasVideo="1" hasAudio="1" audioChannels="2" id="r44" duration="175/24s" start="0/1s" format="r1" name="Backlot_h3auto_s10a_let_me_in_exterior_pairPOUND_t12_1056x608_00001_.mp4">
+            <media-rep src="file:///RELINK/media/final-sources/Backlot_h3auto_s10a_let_me_in_exterior_pairPOUND_t12_1056x608_00001_.mp4" kind="original-media"/>
+        </asset>
+        <asset audioSources="1" hasVideo="1" hasAudio="1" audioChannels="2" id="r45" duration="175/24s" start="0/1s" format="r1" name="Backlot_h3auto_s10a_let_me_in_exterior_pairPOUND_t11_1056x608_00001_.mp4">
+            <media-rep src="file:///RELINK/media/final-sources/Backlot_h3auto_s10a_let_me_in_exterior_pairPOUND_t11_1056x608_00001_.mp4" kind="original-media"/>
+        </asset>
+        <asset audioSources="1" hasVideo="1" hasAudio="1" audioChannels="2" id="r46" duration="175/24s" start="0/1s" format="r1" name="Backlot_h3auto_s10a_let_me_in_exterior_pairPOUND_t12_1056x608_00001_.mp4">
+            <media-rep src="file:///RELINK/media/final-sources/Backlot_h3auto_s10a_let_me_in_exterior_pairPOUND_t12_1056x608_00001_.mp4" kind="original-media"/>
+        </asset>
+        <asset audioSources="1" hasVideo="1" hasAudio="1" audioChannels="2" id="r47" duration="73/24s" start="0/1s" format="r1" name="Backlot_h3auto_s12_door_opens_exterior_bridge_exterior_pairFINALE_t21_1056x608_00001_.mp4">
+            <media-rep src="file:///RELINK/media/final-sources/Backlot_h3auto_s12_door_opens_exterior_bridge_exterior_pairFINALE_t21_1056x608_00001_.mp4" kind="original-media"/>
+        </asset>
+        <asset audioSources="1" hasVideo="1" hasAudio="1" audioChannels="2" id="r48" duration="113/12s" start="0/1s" format="r1" name="ALPHA-T1_00033_.mp4">
+            <media-rep src="file:///RELINK/media/final-sources/ALPHA-T1_00033_.mp4" kind="original-media"/>
+        </asset>
+        <asset audioSources="1" hasVideo="1" hasAudio="1" audioChannels="2" id="r49" duration="79/12s" start="0/1s" format="r27" name="ALPHA-T1_00089_.mp4">
+            <media-rep src="file:///RELINK/media/final-sources/ALPHA-T1_00089_.mp4" kind="original-media"/>
+        </asset>
+        <asset audioSources="1" hasVideo="1" hasAudio="1" audioChannels="2" id="r51" duration="79/12s" start="0/1s" format="r27" name="ALPHA-T1_00087_.mp4">
+            <media-rep src="file:///RELINK/media/final-sources/ALPHA-T1_00087_.mp4" kind="original-media"/>
+        </asset>
+        <asset audioSources="1" hasVideo="1" hasAudio="1" audioChannels="2" id="r52" duration="8/1s" start="0/1s" format="r27" name="ALPHA-T1_00093_.mp4">
+            <media-rep src="file:///RELINK/media/final-sources/ALPHA-T1_00093_.mp4" kind="original-media"/>
+        </asset>
+        <asset audioSources="1" hasVideo="1" hasAudio="1" audioChannels="2" id="r53" duration="175/24s" start="0/1s" format="r1" name="MiniMax_H3_00046_.mp4">
+            <media-rep src="file:///RELINK/media/final-sources/MiniMax_H3_00046_.mp4" kind="original-media"/>
+        </asset>
+        <asset audioSources="1" hasVideo="1" hasAudio="1" audioChannels="2" id="r54" duration="175/24s" start="0/1s" format="r1" name="MiniMax_H3_00046_.mp4">
+            <media-rep src="file:///RELINK/media/final-sources/MiniMax_H3_00046_.mp4" kind="original-media"/>
+        </asset>
+        <asset audioSources="1" hasVideo="1" hasAudio="1" audioChannels="2" id="r55" duration="175/24s" start="0/1s" format="r1" name="MiniMax_H3_00046_.mp4">
+            <media-rep src="file:///RELINK/media/final-sources/MiniMax_H3_00046_.mp4" kind="original-media"/>
+        </asset>
+        <asset audioSources="1" hasVideo="1" hasAudio="1" audioChannels="2" id="r56" duration="175/24s" start="0/1s" format="r1" name="Backlot_h3auto_s06_the_assailant_waist_down_pairSCRAPE_t10_1056x608_00001_.mp4">
+            <media-rep src="file:///RELINK/media/final-sources/Backlot_h3auto_s06_the_assailant_waist_down_pairSCRAPE_t10_1056x608_00001_.mp4" kind="original-media"/>
+        </asset>
+        <asset audioSources="1" hasVideo="1" hasAudio="1" audioChannels="2" id="r57" duration="175/24s" start="0/1s" format="r1" name="Backlot_h3auto_s06_the_assailant_waist_down_pairSCRAPE_t10_1056x608_00001_.mp4">
+            <media-rep src="file:///RELINK/media/final-sources/Backlot_h3auto_s06_the_assailant_waist_down_pairSCRAPE_t10_1056x608_00001_.mp4" kind="original-media"/>
+        </asset>
+        <asset audioSources="1" hasVideo="1" hasAudio="1" audioChannels="2" id="r58" duration="175/24s" start="0/1s" format="r1" name="Backlot_h3auto_s06_the_assailant_waist_down_pairSCRAPE_t10_1056x608_00001_.mp4">
+            <media-rep src="file:///RELINK/media/final-sources/Backlot_h3auto_s06_the_assailant_waist_down_pairSCRAPE_t10_1056x608_00001_.mp4" kind="original-media"/>
+        </asset>
+        <asset audioSources="1" hasVideo="1" hasAudio="1" audioChannels="2" id="r59" duration="79/12s" start="0/1s" format="r3" name="Backlot_h3auto_s08_someone_please_t13_1280x704_00001_.mp4">
+            <media-rep src="file:///RELINK/media/final-sources/Backlot_h3auto_s08_someone_please_t13_1280x704_00001_.mp4" kind="original-media"/>
+        </asset>
+        <asset audioSources="1" hasVideo="1" hasAudio="1" audioChannels="2" id="r60" duration="79/12s" start="0/1s" format="r3" name="Backlot_h3auto_s08_someone_please_t13_1280x704_00001_.mp4">
+            <media-rep src="file:///RELINK/media/final-sources/Backlot_h3auto_s08_someone_please_t13_1280x704_00001_.mp4" kind="original-media"/>
+        </asset>
+        <asset audioSources="1" hasVideo="1" hasAudio="1" audioChannels="2" id="r61" duration="79/12s" start="0/1s" format="r3" name="Backlot_h3auto_s08_someone_please_t13_1280x704_00001_.mp4">
+            <media-rep src="file:///RELINK/media/final-sources/Backlot_h3auto_s08_someone_please_t13_1280x704_00001_.mp4" kind="original-media"/>
+        </asset>
+        <asset audioSources="1" hasVideo="1" hasAudio="1" audioChannels="2" id="r62" duration="79/12s" start="0/1s" format="r3" name="Backlot_h3auto_s08_someone_please_t13_1280x704_00001_.mp4">
+            <media-rep src="file:///RELINK/media/final-sources/Backlot_h3auto_s08_someone_please_t13_1280x704_00001_.mp4" kind="original-media"/>
+        </asset>
+        <asset audioSources="1" hasVideo="1" hasAudio="1" audioChannels="2" id="r63" duration="79/12s" start="0/1s" format="r1" name="ALPHA-T1_00043_.mp4">
+            <media-rep src="file:///RELINK/media/final-sources/ALPHA-T1_00043_.mp4" kind="original-media"/>
+        </asset>
+        <asset audioSources="1" hasVideo="1" hasAudio="1" audioChannels="2" id="r64" duration="175/24s" start="0/1s" format="r1" name="Backlot_h3auto_s10a_let_me_in_exterior_pairPOUND_t12_1056x608_00001_.mp4">
+            <media-rep src="file:///RELINK/media/final-sources/Backlot_h3auto_s10a_let_me_in_exterior_pairPOUND_t12_1056x608_00001_.mp4" kind="original-media"/>
+        </asset>
+        <asset audioSources="1" hasVideo="1" hasAudio="1" audioChannels="2" id="r65" duration="175/24s" start="0/1s" format="r1" name="Backlot_h3auto_s10a_let_me_in_exterior_pairPOUND_t12_1056x608_00001_.mp4">
+            <media-rep src="file:///RELINK/media/final-sources/Backlot_h3auto_s10a_let_me_in_exterior_pairPOUND_t12_1056x608_00001_.mp4" kind="original-media"/>
+        </asset>
+        <asset audioSources="1" hasVideo="1" hasAudio="1" audioChannels="2" id="r66" duration="107/24s" start="0/1s" format="r1" name="Backlot_h3auto_s11_red_light_off_pairDOOR_t11_1056x608_00001_.mp4">
+            <media-rep src="file:///RELINK/media/final-sources/Backlot_h3auto_s11_red_light_off_pairDOOR_t11_1056x608_00001_.mp4" kind="original-media"/>
+        </asset>
+        <asset audioSources="1" hasVideo="1" hasAudio="1" audioChannels="2" id="r67" duration="107/24s" start="0/1s" format="r1" name="Backlot_h3auto_s11_red_light_off_pairDOOR_t11_1056x608_00001_.mp4">
+            <media-rep src="file:///RELINK/media/final-sources/Backlot_h3auto_s11_red_light_off_pairDOOR_t11_1056x608_00001_.mp4" kind="original-media"/>
+        </asset>
+        <asset audioSources="1" hasVideo="1" hasAudio="1" audioChannels="2" id="r68" duration="107/24s" start="0/1s" format="r1" name="Backlot_h3auto_s11_red_light_off_pairDOOR_t11_1056x608_00001_.mp4">
+            <media-rep src="file:///RELINK/media/final-sources/Backlot_h3auto_s11_red_light_off_pairDOOR_t11_1056x608_00001_.mp4" kind="original-media"/>
+        </asset>
+        <asset audioSources="1" hasVideo="1" hasAudio="1" audioChannels="2" id="r69" duration="175/24s" start="0/1s" format="r3" name="Backlot_h3auto_s01_quiet_please_pairSLAM_t15_1280x704_00001_.mp4">
+            <media-rep src="file:///RELINK/media/final-sources/Backlot_h3auto_s01_quiet_please_pairSLAM_t15_1280x704_00001_.mp4" kind="original-media"/>
+        </asset>
+    </resources>
+    <library>
+        <event name="Main-final-locked (Resolve)">
+            <project name="Main-final-locked (Resolve)">
+                <sequence tcStart="3600/1s" tcFormat="NDF" duration="705/8s" format="r0">
+                    <spine>
+                        <gap duration="2/3s" start="3600/1s" offset="3600/1s" name="Gap">
+                            <asset-clip enabled="1" tcFormat="NDF" ref="r30" duration="2/3s" audioStart="0/1s" start="0/1s" audioDuration="11/12s" offset="3600/1s" format="r3" lane="1" name="Backlot_h3auto_s02_girl_in_the_rainy_lot_pairSLAM_t16_1280x704_00001_.mp4">
+                                <adjust-transform position="0 0" anchor="0 0" scale="1 1"/>
+                                <adjust-volume amount="-13.66"/>
+                            </asset-clip>
+                        </gap>
+                        <asset-clip enabled="1" tcFormat="NDF" ref="r2" duration="31/24s" audioStart="0/1s" start="2/3s" audioDuration="11/4s" offset="10802/3s" format="r1" name="ALPHA-T1_00111_.mp4">
+                            <adjust-transform position="0 0" anchor="0 0" scale="1 1"/>
+                            <adjust-volume amount="2.21"/>
+                        </asset-clip>
+                        <gap duration="19/24s" start="3600/1s" offset="86447/24s" name="Gap">
+                            <asset-clip enabled="1" tcFormat="NDF" ref="r31" duration="19/24s" audioStart="0/1s" start="1/8s" audioDuration="11/12s" offset="3600/1s" format="r3" lane="1" name="Backlot_h3auto_s02_girl_in_the_rainy_lot_pairSLAM_t16_1280x704_00001_.mp4">
+                                <adjust-transform position="0 0" anchor="0 0" scale="1 1"/>
+                                <adjust-volume amount="-13.66"/>
+                            </asset-clip>
+                        </gap>
+                        <asset-clip enabled="1" tcFormat="NDF" ref="r4" duration="7/8s" audioStart="11/4s" start="11/4s" audioDuration="49/12s" offset="14411/4s" format="r3" name="Backlot_h3auto_s01_quiet_please_pairSLAM_t14_1280x704_00001_.mp4">
+                            <adjust-transform position="0 0" anchor="0 0" scale="1 1"/>
+                            <adjust-volume amount="-11.6"/>
+                        </asset-clip>
+                        <gap duration="77/24s" start="3600/1s" offset="28829/8s" name="Gap">
+                            <asset-clip enabled="1" tcFormat="NDF" ref="r32" duration="77/24s" audioStart="1/6s" start="1/1s" audioDuration="59/12s" offset="3600/1s" format="r3" lane="1" name="Backlot_h3auto_s02_girl_in_the_rainy_lot_pairSLAM_t16_1280x704_00001_.mp4">
+                                <adjust-transform position="0 0" anchor="0 0" scale="1 1"/>
+                                <adjust-volume amount="-10.1"/>
+                            </asset-clip>
+                        </gap>
+                        <asset-clip enabled="1" tcFormat="NDF" ref="r6" duration="17/12s" audioStart="61/24s" start="61/24s" audioDuration="31/12s" offset="21641/6s" format="r5" name="MiniMax_H3_00054_.mp4">
+                            <adjust-transform position="0 0" anchor="0 0" scale="1 1"/>
+                            <adjust-volume amount="4.7"/>
+                        </asset-clip>
+                        <gap duration="19/12s" start="3600/1s" offset="14433/4s" name="Gap">
+                            <clip enabled="1" tcFormat="NDF" duration="19/12s" audioStart="1/24s" start="7/12s" audioDuration="29/4s" offset="3600/1s" format="r1" lane="1" name="Backlot_h3auto_s2.5_run_through_the_backlot_t03_1056x608_00001_.mp4">
+                                <adjust-transform position="0 0" anchor="0 0" scale="1.125 1.125"/>
+                                <adjust-volume amount="0">
+                                    <param value="0" name="amount">
+                                        <keyframeAnimation>
+                                            <keyframe time="13/6s" value="0"/>
+                                            <keyframe time="53/24s" value="-4"/>
+                                            <keyframe time="73/24s" value="-4"/>
+                                            <keyframe time="43/8s" value="-4"/>
+                                            <keyframe time="11/2s" value="-7.71"/>
+                                        </keyframeAnimation>
+                                    </param>
+                                </adjust-volume>
+                                <video ref="r33" duration="175/24s" start="0/1s" offset="0/1s">
+                                    <audio ref="r33" srcCh="1, 2" duration="175/24s" start="0/1s" offset="0/1s" lane="-1"/>
+                                </video>
+                            </clip>
+                        </gap>
+                        <asset-clip enabled="1" tcFormat="NDF" ref="r8" duration="7/8s" start="0/1s" offset="21659/6s" format="r7" name="Backlot_h3auto_s07_that_sounds_great_pairSCRAPE_t06_960x544_00001_.mp4">
+                            <adjust-transform position="0 0" anchor="0 0" scale="1 1"/>
+                            <adjust-volume amount="10.9"/>
+                        </asset-clip>
+                        <gap duration="43/24s" start="3600/1s" offset="86657/24s" name="Gap">
+                            <clip enabled="1" tcFormat="NDF" duration="43/24s" audioStart="1/24s" start="73/24s" audioDuration="29/4s" offset="3600/1s" format="r1" lane="1" name="Backlot_h3auto_s2.5_run_through_the_backlot_t03_1056x608_00001_.mp4">
+                                <adjust-transform position="0 0" anchor="0 0" scale="1.125 1.125"/>
+                                <adjust-volume amount="0">
+                                    <param value="0" name="amount">
+                                        <keyframeAnimation>
+                                            <keyframe time="13/6s" value="0"/>
+                                            <keyframe time="53/24s" value="-4"/>
+                                            <keyframe time="73/24s" value="-4"/>
+                                            <keyframe time="43/8s" value="-4"/>
+                                            <keyframe time="11/2s" value="-7.71"/>
+                                        </keyframeAnimation>
+                                    </param>
+                                </adjust-volume>
+                                <video ref="r34" duration="175/24s" start="0/1s" offset="0/1s">
+                                    <audio ref="r34" srcCh="1, 2" duration="175/24s" start="0/1s" offset="0/1s" lane="-1"/>
+                                </video>
+                            </clip>
+                        </gap>
+                        <asset-clip enabled="1" tcFormat="NDF" ref="r9" duration="13/12s" audioStart="1/4s" start="1/4s" audioDuration="59/24s" offset="7225/2s" format="r5" name="MiniMax_H3_00054_.mp4">
+                            <adjust-transform position="0 0" anchor="0 0" scale="1 1"/>
+                            <adjust-volume amount="-11.4"/>
+                        </asset-clip>
+                        <gap duration="55/24s" start="3600/1s" offset="43363/12s" name="Gap">
+                            <clip enabled="1" tcFormat="NDF" duration="55/24s" audioStart="5/6s" start="11/8s" audioDuration="19/3s" offset="3600/1s" format="r1" lane="2" name="MiniMax_H3_00046_.mp4">
+                                <adjust-transform position="0 0" anchor="0 0" scale="1 1"/>
+                                <adjust-volume amount="-7.71"/>
+                                <video ref="r53" duration="175/24s" start="0/1s" offset="0/1s">
+                                    <audio ref="r53" srcCh="1, 2" duration="175/24s" start="0/1s" offset="0/1s" lane="-1"/>
+                                </video>
+                            </clip>
+                        </gap>
+                        <asset-clip enabled="1" tcFormat="NDF" ref="r10" duration="5/6s" audioStart="83/24s" start="35/8s" audioDuration="10/3s" offset="28927/8s" format="r5" name="MiniMax_H3_00054_.mp4">
+                            <adjust-transform position="0 0" anchor="0 0" scale="1 1"/>
+                            <adjust-volume amount="-7.71"/>
+                        </asset-clip>
+                        <gap duration="67/24s" start="3600/1s" offset="86801/24s" name="Gap">
+                            <asset-clip enabled="1" tcFormat="NDF" ref="r35" duration="11/24s" audioStart="79/12s" start="41/6s" audioDuration="17/24s" offset="28809/8s" format="r5" lane="1" name="MiniMax_H3_00054_.mp4">
+                                <adjust-transform position="0 0" anchor="0 0" scale="1 1"/>
+                                <adjust-volume amount="-11.4"/>
+                            </asset-clip>
+                            <clip enabled="1" tcFormat="NDF" duration="9/8s" audioStart="5/6s" start="9/2s" audioDuration="19/3s" offset="3600/1s" format="r1" lane="2" name="MiniMax_H3_00046_.mp4">
+                                <adjust-transform position="0 0" anchor="0 0" scale="1 1"/>
+                                <adjust-volume amount="-7.71"/>
+                                <video ref="r54" duration="175/24s" start="0/1s" offset="0/1s">
+                                    <audio ref="r54" srcCh="1, 2" duration="175/24s" start="0/1s" offset="0/1s" lane="-1"/>
+                                </video>
+                            </clip>
+                            <clip enabled="1" tcFormat="NDF" duration="29/24s" audioStart="5/6s" start="73/12s" audioDuration="19/3s" offset="43219/12s" format="r1" lane="2" name="MiniMax_H3_00046_.mp4">
+                                <adjust-transform position="0 0" anchor="0 0" scale="1 1"/>
+                                <adjust-volume amount="-7.71"/>
+                                <video ref="r55" duration="175/24s" start="0/1s" offset="0/1s">
+                                    <audio ref="r55" srcCh="1, 2" duration="175/24s" start="0/1s" offset="0/1s" lane="-1"/>
+                                </video>
+                            </clip>
+                        </gap>
+                        <asset-clip enabled="1" tcFormat="NDF" ref="r11" duration="9/8s" audioStart="19/6s" start="13/4s" audioDuration="23/12s" offset="7239/2s" format="r1" name="Backlot_h3auto_s07_that_sounds_great_pairSCRAPE_t08_1056x608_00001_.mp4">
+                            <adjust-transform position="0 0" anchor="0 0" scale="1 1"/>
+                            <adjust-volume amount="4.2"/>
+                        </asset-clip>
+                        <gap duration="11/6s" start="3600/1s" offset="28965/8s" name="Gap">
+                            <asset-clip enabled="1" tcFormat="NDF" ref="r36" duration="17/24s" audioStart="0/1s" start="0/1s" audioDuration="29/8s" offset="3600/1s" format="r27" lane="1" name="ALPHA-T1_00056_.mp4">
+                                <adjust-transform position="0 0" anchor="0 0" scale="1 1"/>
+                                <adjust-volume amount="0">
+                                    <param value="0" name="amount">
+                                        <keyframeAnimation>
+                                            <keyframe time="25/24s" value="0"/>
+                                            <keyframe time="13/12s" value="-2.75"/>
+                                        </keyframeAnimation>
+                                    </param>
+                                </adjust-volume>
+                            </asset-clip>
+                            <clip enabled="1" tcFormat="NDF" duration="9/8s" audioStart="1/4s" start="53/24s" audioDuration="83/12s" offset="86417/24s" format="r1" lane="2" name="Backlot_h3auto_s06_the_assailant_waist_down_pairSCRAPE_t10_1056x608_00001_.mp4">
+                                <adjust-transform position="0 0" anchor="0 0" scale="1 1"/>
+                                <adjust-volume amount="-10.4"/>
+                                <video ref="r56" duration="175/24s" start="0/1s" offset="0/1s">
+                                    <audio ref="r56" srcCh="1, 2" duration="175/24s" start="0/1s" offset="0/1s" lane="-1"/>
+                                </video>
+                            </clip>
+                        </gap>
+                        <asset-clip enabled="1" tcFormat="NDF" ref="r12" duration="29/24s" audioStart="43/12s" start="101/24s" audioDuration="3/1s" offset="86939/24s" format="r1" name="Backlot_h3auto_s02_girl_in_the_rainy_lot_pairSLAM_t14_1056x608_00001_.mp4">
+                            <adjust-transform position="0 0" anchor="0 0" scale="1 1"/>
+                            <adjust-volume amount="4.2"/>
+                        </asset-clip>
+                        <gap duration="89/24s" start="3600/1s" offset="10871/3s" name="Gap">
+                            <asset-clip enabled="1" tcFormat="NDF" ref="r37" duration="11/12s" audioStart="7/24s" start="17/24s" audioDuration="7/3s" offset="3601/1s" format="r27" lane="1" name="ALPHA-T1_00056_.mp4">
+                                <adjust-transform position="0 0" anchor="0 0" scale="1 1"/>
+                                <adjust-volume amount="0">
+                                    <param value="0" name="amount">
+                                        <keyframeAnimation>
+                                            <keyframe time="25/24s" value="0"/>
+                                            <keyframe time="13/12s" value="-2.3"/>
+                                        </keyframeAnimation>
+                                    </param>
+                                </adjust-volume>
+                            </asset-clip>
+                            <clip enabled="1" tcFormat="NDF" duration="1/1s" audioStart="1/4s" start="109/24s" audioDuration="83/12s" offset="3600/1s" format="r1" lane="2" name="Backlot_h3auto_s06_the_assailant_waist_down_pairSCRAPE_t10_1056x608_00001_.mp4">
+                                <adjust-transform position="0 0" anchor="0 0" scale="1 1"/>
+                                <adjust-volume amount="-10.4"/>
+                                <video ref="r57" duration="175/24s" start="0/1s" offset="0/1s">
+                                    <audio ref="r57" srcCh="1, 2" duration="175/24s" start="0/1s" offset="0/1s" lane="-1"/>
+                                </video>
+                            </clip>
+                            <clip enabled="1" tcFormat="NDF" duration="5/6s" audioStart="1/4s" start="155/24s" audioDuration="83/12s" offset="43223/12s" format="r1" lane="2" name="Backlot_h3auto_s06_the_assailant_waist_down_pairSCRAPE_t10_1056x608_00001_.mp4">
+                                <adjust-transform position="0 0" anchor="0 0" scale="1 1"/>
+                                <adjust-volume amount="-10.4"/>
+                                <video ref="r58" duration="175/24s" start="0/1s" offset="0/1s">
+                                    <audio ref="r58" srcCh="1, 2" duration="175/24s" start="0/1s" offset="0/1s" lane="-1"/>
+                                </video>
+                            </clip>
+                            <clip enabled="1" tcFormat="NDF" duration="23/24s" audioStart="5/12s" start="13/24s" audioDuration="37/6s" offset="14411/4s" format="r3" lane="2" name="Backlot_h3auto_s08_someone_please_t13_1280x704_00001_.mp4">
+                                <adjust-transform position="0 0" anchor="0 0" scale="1 1"/>
+                                <adjust-volume amount="-6.72">
+                                    <param value="-6.72" name="amount">
+                                        <keyframeAnimation>
+                                            <keyframe time="55/12s" value="-6.72"/>
+                                            <keyframe time="37/8s" value="-2.75"/>
+                                            <keyframe time="45/8s" value="-2.75"/>
+                                            <keyframe time="17/3s" value="-6.75"/>
+                                        </keyframeAnimation>
+                                    </param>
+                                </adjust-volume>
+                                <video ref="r59" duration="79/12s" start="0/1s" offset="0/1s">
+                                    <audio ref="r59" srcCh="1, 2" duration="79/12s" start="0/1s" offset="0/1s" lane="-1"/>
+                                </video>
+                            </clip>
+                        </gap>
+                        <asset-clip enabled="1" tcFormat="NDF" ref="r13" duration="1/2s" audioStart="7/3s" start="31/12s" audioDuration="13/12s" offset="29019/8s" format="r1" name="Backlot_h3auto_s8.5_door_pounding_interior_foley_t07_1056x608_00001_.mp4">
+                            <adjust-transform position="0 0" anchor="0 0" scale="1 1"/>
+                            <adjust-volume amount="-13.1"/>
+                        </asset-clip>
+                        <gap duration="11/8s" start="3600/1s" offset="29023/8s" name="Gap">
+                            <clip enabled="1" tcFormat="NDF" duration="11/8s" audioStart="5/12s" start="2/1s" audioDuration="37/6s" offset="3600/1s" format="r3" lane="2" name="Backlot_h3auto_s08_someone_please_t13_1280x704_00001_.mp4">
+                                <adjust-transform position="0 0" anchor="0 0" scale="1 1"/>
+                                <adjust-volume amount="-6.72">
+                                    <param value="-6.72" name="amount">
+                                        <keyframeAnimation>
+                                            <keyframe time="55/12s" value="-6.72"/>
+                                            <keyframe time="37/8s" value="-2.75"/>
+                                            <keyframe time="45/8s" value="-2.75"/>
+                                            <keyframe time="17/3s" value="-6.75"/>
+                                        </keyframeAnimation>
+                                    </param>
+                                </adjust-volume>
+                                <video ref="r60" duration="79/12s" start="0/1s" offset="0/1s">
+                                    <audio ref="r60" srcCh="1, 2" duration="79/12s" start="0/1s" offset="0/1s" lane="-1"/>
+                                </video>
+                            </clip>
+                        </gap>
+                        <asset-clip enabled="1" tcFormat="NDF" ref="r14" duration="11/24s" audioStart="53/12s" start="109/24s" audioDuration="49/24s" offset="14517/4s" format="r1" name="Backlot_h3auto_s8.5_door_pounding_interior_foley_t07_1056x608_00001_.mp4">
+                            <adjust-transform position="0 0" anchor="0 0" scale="1 1"/>
+                            <adjust-volume amount="-10.4"/>
+                        </asset-clip>
+                        <gap duration="17/6s" start="3600/1s" offset="87113/24s" name="Gap">
+                            <asset-clip enabled="1" tcFormat="NDF" ref="r38" duration="11/12s" audioStart="0/1s" start="17/24s" audioDuration="49/24s" offset="43223/12s" format="r1" lane="1" name="Backlot_h3auto_s09_boots_in_the_rain_pairBOOTS_t10_1056x608_00001_.mp4">
+                                <adjust-transform position="0 0" anchor="0 0" scale="1 1"/>
+                                <adjust-volume amount="-13.66"/>
+                            </asset-clip>
+                            <clip enabled="1" tcFormat="NDF" duration="23/12s" audioStart="5/12s" start="23/6s" audioDuration="37/6s" offset="3600/1s" format="r3" lane="2" name="Backlot_h3auto_s08_someone_please_t13_1280x704_00001_.mp4">
+                                <adjust-transform position="0 0" anchor="0 0" scale="1 1"/>
+                                <adjust-volume amount="-6.72">
+                                    <param value="-6.72" name="amount">
+                                        <keyframeAnimation>
+                                            <keyframe time="55/12s" value="-6.72"/>
+                                            <keyframe time="37/8s" value="-2.75"/>
+                                            <keyframe time="45/8s" value="-2.75"/>
+                                            <keyframe time="17/3s" value="-6.75"/>
+                                        </keyframeAnimation>
+                                    </param>
+                                </adjust-volume>
+                                <video ref="r61" duration="79/12s" start="0/1s" offset="0/1s">
+                                    <audio ref="r61" srcCh="1, 2" duration="79/12s" start="0/1s" offset="0/1s" lane="-1"/>
+                                </video>
+                            </clip>
+                        </gap>
+                        <asset-clip enabled="1" tcFormat="NDF" ref="r15" duration="5/6s" audioStart="14/3s" start="145/24s" audioDuration="79/24s" offset="87181/24s" format="r7" name="Backlot_h3auto_s07_that_sounds_great_pairSCRAPE_t06_960x544_00001_.mp4">
+                            <adjust-transform position="0 0" anchor="0 0" scale="1 1"/>
+                            <adjust-volume amount="15.2"/>
+                        </asset-clip>
+                        <gap duration="13/12s" start="3600/1s" offset="29067/8s" name="Gap">
+                            <asset-clip enabled="1" tcFormat="NDF" ref="r39" duration="13/12s" audioStart="29/24s" start="13/8s" audioDuration="23/12s" offset="3600/1s" format="r1" lane="1" name="Backlot_h3auto_s09_boots_in_the_rain_pairBOOTS_t10_1056x608_00001_.mp4">
+                                <adjust-transform position="0 0" anchor="0 0" scale="1 1"/>
+                                <adjust-volume amount="-13.66"/>
+                            </asset-clip>
+                        </gap>
+                        <asset-clip enabled="1" tcFormat="NDF" ref="r16" duration="5/6s" audioStart="55/8s" start="55/8s" audioDuration="61/24s" offset="87227/24s" format="r7" name="Backlot_h3auto_s07_that_sounds_great_pairSCRAPE_t06_960x544_00001_.mp4">
+                            <adjust-transform position="0 0" anchor="0 0" scale="1 1"/>
+                            <adjust-volume amount="15.2">
+                                <param value="15.2" name="amount">
+                                    <keyframeAnimation>
+                                        <keyframe time="211/24s" value="15.6"/>
+                                        <keyframe time="221/24s" value="7.18"/>
+                                    </keyframeAnimation>
+                                </param>
+                            </adjust-volume>
+                        </asset-clip>
+                        <gap duration="133/24s" start="3600/1s" offset="87247/24s" name="Gap">
+                            <asset-clip enabled="1" tcFormat="NDF" ref="r40" duration="13/12s" audioStart="55/24s" start="65/24s" audioDuration="67/24s" offset="3600/1s" format="r1" lane="1" name="Backlot_h3auto_s09_boots_in_the_rain_pairBOOTS_t10_1056x608_00001_.mp4">
+                                <adjust-transform position="0 0" anchor="0 0" scale="1 1"/>
+                                <adjust-volume amount="-13.66">
+                                    <param value="-13.66" name="amount">
+                                        <keyframeAnimation>
+                                            <keyframe time="17/4s" value="-13.66"/>
+                                            <keyframe time="119/24s" value="-8.7"/>
+                                        </keyframeAnimation>
+                                    </param>
+                                </adjust-volume>
+                            </asset-clip>
+                            <asset-clip enabled="1" tcFormat="NDF" ref="r41" duration="61/24s" audioStart="1/12s" start="17/24s" audioDuration="107/24s" offset="3603/1s" format="r1" lane="1" name="ALPHA-T1_00042_.mp4">
+                                <adjust-transform position="0 0" anchor="0 0" scale="1 1"/>
+                                <adjust-volume amount="1.22">
+                                    <param value="1.22" name="amount">
+                                        <keyframeAnimation>
+                                            <keyframe time="1/24s" value="-7.71"/>
+                                            <keyframe time="3/4s" value="1.22"/>
+                                        </keyframeAnimation>
+                                    </param>
+                                </adjust-volume>
+                            </asset-clip>
+                            <asset-clip enabled="1" tcFormat="NDF" ref="r62" duration="11/12s" start="17/3s" offset="43213/12s" format="r3" lane="2" name="Backlot_h3auto_s08_someone_please_t13_1280x704_00001_.mp4">
+                                <adjust-transform position="0 0" anchor="0 0" scale="1 1"/>
+                                <adjust-volume amount="0.23"/>
+                            </asset-clip>
+                        </gap>
+                        <asset-clip enabled="1" tcFormat="NDF" ref="r17" duration="19/24s" audioStart="71/24s" start="61/12s" audioDuration="47/12s" offset="21845/6s" format="r1" name="Backlot_h3auto_s06_the_assailant_waist_down_pairSCRAPE_t10_1056x608_00001_.mp4">
+                            <adjust-transform position="-24.8148 10.4934" anchor="0 0" scale="1.54145 1.54145"/>
+                            <adjust-volume amount="-11.3636"/>
+                        </asset-clip>
+                        <gap duration="7/6s" start="3600/1s" offset="29133/8s" name="Gap">
+                            <asset-clip enabled="1" tcFormat="NDF" ref="r63" duration="2/3s" audioStart="9/4s" start="11/4s" audioDuration="13/3s" offset="7201/2s" format="r1" lane="2" name="ALPHA-T1_00043_.mp4">
+                                <adjust-transform position="0 0" anchor="0 0" scale="1 1"/>
+                                <adjust-volume amount="-5.22667">
+                                    <param value="-5.22667" name="amount">
+                                        <keyframeAnimation>
+                                            <keyframe time="27/8s" value="-5.22667"/>
+                                            <keyframe time="41/12s" value="-12.67"/>
+                                            <keyframe time="35/8s" value="-12.67"/>
+                                            <keyframe time="39/8s" value="-5.73"/>
+                                        </keyframeAnimation>
+                                    </param>
+                                </adjust-volume>
+                            </asset-clip>
+                        </gap>
+                        <asset-clip enabled="1" tcFormat="NDF" ref="r18" duration="1/1s" audioStart="17/3s" start="35/6s" audioDuration="11/8s" offset="87427/24s" format="r1" name="Backlot_h3auto_s06_the_assailant_waist_down_pairSCRAPE_t10_1056x608_00001_.mp4">
+                            <adjust-transform position="-24.8148 10.4934" anchor="0 0" scale="1.54145 1.54145"/>
+                            <adjust-volume amount="-11.3636"/>
+                        </asset-clip>
+                        <gap duration="49/24s" start="3600/1s" offset="87451/24s" name="Gap">
+                            <asset-clip enabled="1" tcFormat="NDF" ref="r43" duration="37/24s" audioStart="0/1s" start="0/1s" audioDuration="33/8s" offset="7201/2s" format="r42" lane="1" name="ALPHA-T1_00007_.mp4">
+                                <adjust-transform position="0 0" anchor="0 0" scale="1 1"/>
+                                <adjust-volume amount="-6.81818">
+                                    <param value="-6.81818" name="amount">
+                                        <keyframeAnimation>
+                                            <keyframe time="0/1s" value="-10.69"/>
+                                            <keyframe time="55/24s" value="-13.66"/>
+                                            <keyframe time="7/3s" value="-18.63"/>
+                                            <keyframe time="35/12s" value="-18.63"/>
+                                            <keyframe time="3/1s" value="-16.64"/>
+                                        </keyframeAnimation>
+                                    </param>
+                                </adjust-volume>
+                            </asset-clip>
+                        </gap>
+                        <asset-clip enabled="1" tcFormat="NDF" ref="r19" duration="35/24s" audioStart="4/1s" start="35/6s" audioDuration="79/24s" offset="21875/6s" format="r1" name="Backlot_h3auto_s06_the_assailant_waist_down_pairSCRAPE_t10_1056x608_00001_.mp4">
+                            <adjust-transform position="-24.8148 10.4934" anchor="0 0" scale="1.54145 1.54145"/>
+                            <adjust-volume amount="-11.3636"/>
+                        </asset-clip>
+                        <gap duration="5/12s" start="3600/1s" offset="87535/24s" name="Gap">
+                            <asset-clip enabled="1" tcFormat="NDF" ref="r64" duration="5/12s" audioStart="0/1s" start="5/8s" audioDuration="121/24s" offset="3600/1s" format="r1" lane="2" name="Backlot_h3auto_s10a_let_me_in_exterior_pairPOUND_t12_1056x608_00001_.mp4">
+                                <adjust-transform position="0 0" anchor="0 0" scale="1 1"/>
+                                <adjust-volume amount="-4.54545">
+                                    <param value="-4.54545" name="amount">
+                                        <keyframeAnimation>
+                                            <keyframe time="19/12s" value="-4.54545"/>
+                                            <keyframe time="13/8s" value="-23.59"/>
+                                            <keyframe time="59/24s" value="-23.59"/>
+                                            <keyframe time="5/2s" value="-17.63"/>
+                                        </keyframeAnimation>
+                                    </param>
+                                </adjust-volume>
+                            </asset-clip>
+                        </gap>
+                        <asset-clip enabled="1" tcFormat="NDF" ref="r20" duration="7/6s" audioStart="0/1s" start="0/1s" audioDuration="47/24s" offset="87545/24s" format="r1" name="Backlot_h3auto_s10b_the_ruined_take_interior_pairPOUND_t12_1056x608_00001_.mp4">
+                            <adjust-transform position="0 0" anchor="0 0" scale="1 1"/>
+                            <adjust-volume amount="-11.1"/>
+                        </asset-clip>
+                        <gap duration="5/4s" start="3600/1s" offset="29191/8s" name="Gap">
+                            <asset-clip enabled="1" tcFormat="NDF" ref="r44" duration="5/4s" audioStart="1/6s" start="5/8s" audioDuration="7/3s" offset="3600/1s" format="r1" lane="1" name="Backlot_h3auto_s10a_let_me_in_exterior_pairPOUND_t12_1056x608_00001_.mp4">
+                                <adjust-transform position="0 0" anchor="0 0" scale="1 1"/>
+                                <adjust-volume amount="-4.54545"/>
+                            </asset-clip>
+                        </gap>
+                        <asset-clip enabled="1" tcFormat="NDF" ref="r21" duration="17/12s" audioStart="7/6s" start="13/8s" audioDuration="15/8s" offset="29201/8s" format="r1" name="Backlot_h3auto_s10b_the_ruined_take_interior_pairPOUND_t12_1056x608_00001_.mp4">
+                            <adjust-transform position="0 0" anchor="0 0" scale="1 1"/>
+                            <adjust-volume amount="-10.1"/>
+                        </asset-clip>
+                        <gap duration="15/8s" start="3600/1s" offset="87637/24s" name="Gap">
+                            <asset-clip enabled="1" tcFormat="NDF" ref="r65" duration="41/24s" audioStart="65/24s" start="65/24s" audioDuration="55/12s" offset="21601/6s" format="r1" lane="2" name="Backlot_h3auto_s10a_let_me_in_exterior_pairPOUND_t12_1056x608_00001_.mp4">
+                                <adjust-transform position="0 0" anchor="0 0" scale="1 1"/>
+                                <adjust-volume amount="-22.6"/>
+                            </asset-clip>
+                        </gap>
+                        <asset-clip enabled="1" tcFormat="NDF" ref="r22" duration="13/24s" audioStart="17/3s" start="17/3s" audioDuration="19/24s" offset="43841/12s" format="r1" name="Backlot_h3auto_s06_the_assailant_waist_down_pairSCRAPE_t10_1056x608_00001_.mp4">
+                            <adjust-transform position="-9.25926 24.6053" anchor="0 0" scale="1.93947 1.93947"/>
+                            <adjust-volume amount="-18.63"/>
+                        </asset-clip>
+                        <gap duration="13/24s" start="3600/1s" offset="87695/24s" name="Gap">
+                            <asset-clip enabled="1" tcFormat="NDF" ref="r45" duration="13/24s" audioStart="65/12s" start="67/12s" audioDuration="5/4s" offset="3600/1s" format="r1" lane="1" name="Backlot_h3auto_s10a_let_me_in_exterior_pairPOUND_t11_1056x608_00001_.mp4">
+                                <adjust-transform position="0 0" anchor="0 0" scale="1 1"/>
+                                <adjust-volume amount="-16.64"/>
+                            </asset-clip>
+                        </gap>
+                        <asset-clip enabled="1" tcFormat="NDF" ref="r23" duration="13/24s" audioStart="155/24s" start="27/4s" audioDuration="5/6s" offset="7309/2s" format="r1" name="Backlot_h3auto_s06_the_assailant_waist_down_pairSCRAPE_t10_1056x608_00001_.mp4">
+                            <adjust-transform position="-9.25926 24.6053" anchor="0 0" scale="1.93947 1.93947"/>
+                            <adjust-volume amount="-18.63"/>
+                        </asset-clip>
+                        <gap duration="3/4s" start="3600/1s" offset="87721/24s" name="Gap">
+                            <asset-clip enabled="1" tcFormat="NDF" ref="r46" duration="3/4s" audioStart="43/12s" start="43/12s" audioDuration="43/24s" offset="3600/1s" format="r1" lane="1" name="Backlot_h3auto_s10a_let_me_in_exterior_pairPOUND_t12_1056x608_00001_.mp4">
+                                <adjust-transform position="0 0" anchor="0 0" scale="1 1"/>
+                                <adjust-volume amount="-20.61"/>
+                            </asset-clip>
+                        </gap>
+                        <asset-clip enabled="1" tcFormat="NDF" ref="r24" duration="5/4s" audioStart="13/3s" start="103/24s" audioDuration="29/24s" offset="87739/24s" format="r1" name="Backlot_h3auto_s10b_the_ruined_take_interior_pairPOUND_t08_1056x608_00001_.mp4">
+                            <adjust-transform position="0 0" anchor="0 0" scale="1 1"/>
+                            <adjust-volume amount="0.2"/>
+                        </asset-clip>
+                        <gap duration="11/8s" start="3600/1s" offset="87769/24s" name="Gap">
+                            <asset-clip enabled="1" tcFormat="NDF" ref="r66" duration="1/3s" audioStart="0/1s" start="0/1s" audioDuration="4/3s" offset="86425/24s" format="r1" lane="2" name="Backlot_h3auto_s11_red_light_off_pairDOOR_t11_1056x608_00001_.mp4">
+                                <adjust-transform position="0 0" anchor="0 0" scale="1 1"/>
+                                <adjust-volume amount="-5.73"/>
+                            </asset-clip>
+                        </gap>
+                        <asset-clip enabled="1" tcFormat="NDF" ref="r25" duration="2/3s" start="13/24s" offset="43901/12s" format="r1" name="Backlot_h3auto_s11_red_light_off_pairDOOR_t09_1056x608_00001_.mp4">
+                            <adjust-transform position="0 0" anchor="0 0" scale="-1 1"/>
+                            <adjust-volume amount="-10.5"/>
+                        </asset-clip>
+                        <gap duration="23/24s" start="3600/1s" offset="43909/12s" name="Gap">
+                            <asset-clip enabled="1" tcFormat="NDF" ref="r67" duration="1/2s" audioStart="29/24s" start="4/3s" audioDuration="7/8s" offset="86411/24s" format="r1" lane="2" name="Backlot_h3auto_s11_red_light_off_pairDOOR_t11_1056x608_00001_.mp4">
+                                <adjust-transform position="0 0" anchor="0 0" scale="1 1"/>
+                                <adjust-volume amount="-5.73"/>
+                            </asset-clip>
+                        </gap>
+                        <asset-clip enabled="1" tcFormat="NDF" ref="r26" duration="3/8s" audioStart="0/1s" start="1/4s" audioDuration="17/24s" offset="87841/24s" format="r1" name="Backlot_h3auto_s12_door_opens_exterior_bridge_exterior_pairFINALE_t21_1056x608_00001_.mp4">
+                            <adjust-crop mode="trim">
+                                <trim-rect left="0.203704"/>
+                            </adjust-crop>
+                            <adjust-transform position="-25.1267 11.9408" anchor="0 0" scale="1.74101 1.74101"/>
+                            <adjust-volume amount="-8.1"/>
+                        </asset-clip>
+                        <gap duration="17/24s" start="3600/1s" offset="43925/12s" name="Gap">
+                            <asset-clip enabled="1" tcFormat="NDF" ref="r47" duration="1/2s" audioStart="3/8s" start="17/24s" audioDuration="31/24s" offset="86405/24s" format="r1" lane="1" name="Backlot_h3auto_s12_door_opens_exterior_bridge_exterior_pairFINALE_t21_1056x608_00001_.mp4">
+                                <adjust-crop mode="trim">
+                                    <trim-rect left="0.203704"/>
+                                </adjust-crop>
+                                <adjust-transform position="-25.1267 11.9408" anchor="0 0" scale="1.74101 1.74101"/>
+                                <adjust-volume amount="-8.1"/>
+                            </asset-clip>
+                            <asset-clip enabled="1" tcFormat="NDF" ref="r68" duration="5/24s" audioStart="25/12s" start="53/24s" audioDuration="19/8s" offset="3600/1s" format="r1" lane="2" name="Backlot_h3auto_s11_red_light_off_pairDOOR_t11_1056x608_00001_.mp4">
+                                <adjust-transform position="0 0" anchor="0 0" scale="1 1"/>
+                                <adjust-volume amount="-5.73"/>
+                            </asset-clip>
+                        </gap>
+                        <asset-clip enabled="1" tcFormat="NDF" ref="r28" duration="7/6s" audioStart="0/1s" start="3/8s" audioDuration="19/8s" offset="29289/8s" format="r27" name="ALPHA-T1_00060_.mp4">
+                            <adjust-transform position="0 0" anchor="0 0" scale="1 1"/>
+                            <adjust-volume amount="-11.1"/>
+                        </asset-clip>
+                        <gap duration="37/8s" start="3600/1s" offset="87895/24s" name="Gap">
+                            <asset-clip enabled="1" tcFormat="NDF" ref="r48" duration="7/2s" audioStart="9/8s" start="7/3s" audioDuration="199/24s" offset="7201/2s" format="r1" lane="1" name="ALPHA-T1_00033_.mp4">
+                                <adjust-transform position="0 0" anchor="0 0" scale="1 1"/>
+                                <adjust-volume amount="-8.7">
+                                    <param value="-8.7" name="amount">
+                                        <keyframeAnimation>
+                                            <keyframe time="67/24s" value="-8.7"/>
+                                            <keyframe time="17/6s" value="-4.73"/>
+                                            <keyframe time="7/2s" value="-4.73"/>
+                                            <keyframe time="85/24s" value="-8.7"/>
+                                        </keyframeAnimation>
+                                    </param>
+                                </adjust-volume>
+                            </asset-clip>
+                            <asset-clip enabled="1" tcFormat="NDF" ref="r69" duration="5/8s" start="47/8s" offset="3604/1s" format="r3" lane="2" name="Backlot_h3auto_s01_quiet_please_pairSLAM_t15_1280x704_00001_.mp4">
+                                <adjust-transform position="0 0" anchor="0 0" scale="1 1"/>
+                                <adjust-volume amount="1.22"/>
+                            </asset-clip>
+                        </gap>
+                        <asset-clip enabled="1" tcFormat="NDF" ref="r29" duration="35/8s" audioStart="0/1s" start="5/8s" audioDuration="31/6s" offset="44003/12s" format="r1" name="ALPHA-T1_00079_.mp4">
+                            <adjust-transform position="0 0" anchor="0 0" scale="1 1"/>
+                            <adjust-volume amount="-6.72"/>
+                        </asset-clip>
+                        <gap duration="101/6s" start="3600/1s" offset="88111/24s" name="Gap">
+                            <spine offset="3600/1s" lane="1">
+                                <asset-clip enabled="1" tcFormat="NDF" ref="r49" duration="41/8s" audioStart="0/1s" start="11/12s" audioDuration="145/24s" offset="0/1s" format="r27" name="ALPHA-T1_00089_.mp4">
+                                    <adjust-transform position="0 0" anchor="0 0" scale="1 1"/>
+                                    <adjust-volume amount="-6.72">
+                                        <param value="-6.72" name="amount">
+                                            <keyframeAnimation>
+                                                <keyframe time="11/8s" value="-6.72"/>
+                                            </keyframeAnimation>
+                                        </param>
+                                    </adjust-volume>
+                                </asset-clip>
+                                <transition duration="1/4s" offset="5/1s" name="Cross Dissolve">
+                                    <filter-video ref="r50" name="Transition">
+                                        <param value="-1" name="ease" key="50"/>
+                                    </filter-video>
+                                </transition>
+                                <asset-clip enabled="1" tcFormat="NDF" ref="r51" duration="11/2s" start="5/24s" offset="41/8s" format="r27" name="ALPHA-T1_00087_.mp4">
+                                    <adjust-transform position="0 0" anchor="0 0" scale="1 1"/>
+                                    <adjust-volume amount="-11.4"/>
+                                </asset-clip>
+                                <transition duration="1/4s" offset="21/2s" name="Cross Dissolve">
+                                    <filter-video ref="r50" name="Transition">
+                                        <param value="-1" name="ease" key="50"/>
+                                    </filter-video>
+                                </transition>
+                                <asset-clip enabled="1" tcFormat="NDF" ref="r52" duration="149/24s" start="5/4s" offset="85/8s" format="r27" name="ALPHA-T1_00093_.mp4">
+                                    <adjust-transform position="0 0" anchor="0 0" scale="1 1"/>
+                                    <adjust-volume amount="-9.8"/>
+                                </asset-clip>
+                            </spine>
+                        </gap>
+                    </spine>
+                </sequence>
+            </project>
+        </event>
+    </library>
+</fcpxml>

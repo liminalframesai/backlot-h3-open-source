@@ -1,0 +1,34 @@
+subject_definitions:
+<Subject 1> is the professional foley soundstage whose location reference comes from <Picture 1>, including the crowded practical room, foley pit, mounted steel-clad door-effect slab, prop rigs, monitor cart, microphones, sound equipment, work lights, and exterior stage door.
+<Subject 2> is the middle-aged male foley performer with short hair whose character reference comes from <Picture 2>, wearing his green work jacket, headphones, and jeans.
+<Subject 3> is the middle-aged male foley performer with curly hair and a beard whose character reference comes from <Picture 3>, wearing his rust work shirt over a navy T-shirt and jeans.
+<Subject 4> is the older male director and studio operator whose character reference comes from <Picture 4>, preserving his grey hair, face, and practical soundstage wardrobe.
+<Subject 5> is the male monitor operator whose character reference comes from <Picture 5>, preserving his face, hair, and practical black soundstage wardrobe.
+<Subject 6> (S1) is an off-camera first assistant. His voice is referenced by <Audio 2>: an adult American man with a neutral General American accent, compact calm baritone, and practiced dry projection of a working film set.
+<Audio 1> is the synchronized full audio from the selected rainy-gate scene and supplies the exact heavy impact and slab-rattle sound family that the foley crew creates in the target video.
+<Audio 2> is the voice and delivery reference for <Subject 6> (S1).
+
+summary:
+[reference generation + audio reuse + audio reference] Live-action cinematic documentary style, one clean room master followed by one clean action insert shows four working crew members become quiet, a physically held clapboard close once, and <Subject 2> create the heavy door-slab impact heard in <Audio 1>.
+
+retention_analysis:
+<Subject 1> (location for [Shot 1] and [Shot 2]): fully_preserved - the professional soundstage geography, mounted door-effect slab, foley pit, monitor cart, microphones, work lights, and equipment are retained while the precise camera positions adapt to the action.
+<Subject 2> (appears in [Shot 1] and [Shot 2]): fully_preserved - his identity, short hair, green jacket, headphones, and jeans are retained.
+<Subject 3> (appears in [Shot 1]): fully_preserved - his identity, curly hair, beard, rust shirt, navy T-shirt, and jeans are retained.
+<Subject 4> (appears in [Shot 1]): fully_preserved - his older grey-haired identity and soundstage wardrobe are retained.
+<Subject 5> (appears in [Shot 1]): fully_preserved - his identity and black soundstage wardrobe are retained.
+<Subject 6> (S1) (speaks in [Shot 1]): fully_preserved - his calm American baritone, dry professional delivery, and the words in <Audio 2> guide the generated line.
+<Audio 1>: partially_copy - one strongest heavy gate impact, its low slab resonance, and its short frame rattle are reused 1:1 as the performed foley sound.
+<Audio 2>: reference - the speaker identity, American accent, baritone register, pace, and dry set-call delivery guide <Subject 6> (S1).
+
+detailed_description:
+The target video is live-action cinematic realism in a working-documentary style, slightly underexposed and slightly desaturated. Exactly four principal crew members work at separate stations.
+[Shot 1] A wide moving room master establishes <Subject 1>. <Subject 2> stands ready beside the mounted steel-clad door-effect slab, one open palm raised. <Subject 3> finishes placing a practical prop and steps naturally clear. <Subject 4> watches from the monitor cart. <Subject 5> physically holds a clapboard with both hands at chest height, with his face fully visible above it. The four men stay in their own positions and retain their identities. Off camera, <Subject 6> (S1) calls <d>[English] Quiet please.</d> in the voice referenced by <Audio 2>. The low crew murmur falls away. At 00:01.500, <Subject 5> closes the hinged clapper once with a clean crack, visibly supporting the slate with both hands throughout the action.
+[Shot 2] At 00:02.500, a hard edit cuts directly to a stable medium view of <Subject 2> and the complete mounted door-effect slab. His open palm strikes the steel cladding exactly once. Palm contact synchronizes with the one copied heavy impact from <Audio 1>. The slab visibly flexes backward, rebounds once, and its fixed brace rattles while <Subject 2> holds his finishing position. The camera makes a small-amplitude slow push toward the vibrating slab and his focused face, then holds the physical decay through the final frame.
+
+overall_soundscape:
+A dry professional soundstage bed continues throughout: low ventilation behind camera, monitor-cart fan frame-right, faint lamp buzz, and scattered floor and truss settling. Low crew murmur spans the room until <Subject 6> (S1) says <d>[English] Quiet please.</d>, then drops naturally to room tone. One physically held clapboard crack is centered and close. One heavy foley slab impact reuses the chosen impact, low resonance, and frame rattle from <Audio 1> exactly, placed at the mounted slab.
+
+non_diegetic_music:
+N/A
+

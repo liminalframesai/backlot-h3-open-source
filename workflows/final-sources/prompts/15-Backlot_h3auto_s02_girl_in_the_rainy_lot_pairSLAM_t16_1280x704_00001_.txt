@@ -1,0 +1,25 @@
+subject_definitions:
+<Picture 1> is the exact first frame of [Shot 1], showing the young woman beside the solid gate in the rainy backlot.
+<Subject 1> is the young blonde woman whose facial and character reference comes from <Picture 2> and who appears as the primary subject in <Picture 1> and throughout <Video 1>, with wet warm golden-blonde hair, pale skin, a small pendant, a dirt-stained and tattered light cream dress, and bare feet. <Picture 2> is authoritative for her facial identity, hair, and wardrobe while <Video 1> is authoritative for her moving pose and performance.
+<Video 1> is the reference for the gate reaction, <Subject 1>'s movement, camera movement, run direction, rhythm, and temporal structure.
+<Audio 1> is the synchronized gate impacts, rain, breathing, footsteps, and complete soundtrack of <Video 1> and is reused in the target video.
+
+summary:
+[keyframe completion + reference generation + audio reuse] Live-action cinematic horror, the target video begins exactly from <Picture 1> and rerenders <Video 1> at higher visual quality, preserving <Subject 1>'s natural frightened reaction and her run toward frame-right with the complete synchronized audio.
+
+retention_analysis:
+<Picture 1> ([Shot 1] first frame): fully_preserved - the exact rainy backlot, solid gate, camera position, lighting, blocking, and first physical state are retained as frame zero.
+<Subject 1> (appears throughout [Shot 1]): fully_preserved - her facial identity, wet warm golden-blonde hair, pale skin, pendant, dirty torn cream dress, bare feet, and frightened physical state are retained.
+<Video 1> (gate reaction, <Subject 1> movement, camera movement, run direction, rhythm, and temporal structure): weak_reference - the exact natural flinch, brief duck, turn, acceleration toward frame-right, camera path, rhythm, and temporal structure are retained.
+<Audio 1>: fully_copy - <Audio 1> is reused 1:1 as the target video's complete final synchronized audio track.
+
+detailed_description:
+The target video is live-action cinematic horror realism at night, underexposed and heavily desaturated toward cold green-grey, with hard visible rain, wet reflective ground, and weak dirty practical light.
+[Shot 1] The shot's keyframe corresponds exactly to <Picture 1>. The scene is already in motion when the video starts. Follow <Video 1>'s exact camera movement and performance. <Subject 1> reacts naturally to the heavy gate impact, startled fear passing through her face and body. She freezes, flinches, ducks instinctively for one brief beat, turns, and accelerates into the same sure-footed run established by <Video 1>. She runs toward frame-right in the same direction, timing, rhythm, and camera relationship as <Video 1>. Her soaked hair and torn dress move naturally in the hard rain, her bare feet splash through standing water, and her identity remains anchored to <Picture 2> throughout. Preserve <Video 1>'s complete motion through the final frame.
+
+overall_soundscape:
+<Audio 1> is reused 1:1 as the target video's complete final synchronized audio track.
+
+non_diegetic_music:
+<Audio 1> is reused 1:1 as the target video's complete final synchronized audio track.
+

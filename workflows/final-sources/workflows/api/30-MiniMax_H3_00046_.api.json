@@ -1,0 +1,433 @@
+{
+  "92": {
+    "inputs": {
+      "filename_prefix": "video/MiniMax_H3",
+      "format": "auto",
+      "codec": "auto",
+      "video-preview": "",
+      "video": [
+        "130",
+        0
+      ]
+    },
+    "class_type": "SaveVideo",
+    "_meta": {
+      "title": "Save Video"
+    }
+  },
+  "115": {
+    "inputs": {
+      "aspect_ratio": "16:9 (Widescreen)",
+      "megapixels": 0.6,
+      "multiple": 32
+    },
+    "class_type": "ResolutionSelector",
+    "_meta": {
+      "title": "Resolution Selector (Size)"
+    }
+  },
+  "119": {
+    "inputs": {
+      "vae_name": "minimax_h3_video_vae_fp16.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "Load VAE"
+    }
+  },
+  "120": {
+    "inputs": {
+      "vae_name": "minimax_h3_audio_vae_fp32.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "Load VAE"
+    }
+  },
+  "121": {
+    "inputs": {
+      "samples": [
+        "125",
+        0
+      ],
+      "vae": [
+        "120",
+        0
+      ]
+    },
+    "class_type": "VAEDecodeAudio",
+    "_meta": {
+      "title": "VAE Decode Audio"
+    }
+  },
+  "122": {
+    "inputs": {
+      "samples": [
+        "125",
+        0
+      ],
+      "vae": [
+        "119",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "123": {
+    "inputs": {
+      "sampler_name": "res_multistep"
+    },
+    "class_type": "KSamplerSelect",
+    "_meta": {
+      "title": "KSamplerSelect"
+    }
+  },
+  "124": {
+    "inputs": {
+      "scheduler": "simple",
+      "steps": [
+        "142",
+        0
+      ],
+      "denoise": 1.0,
+      "model": [
+        "127",
+        0
+      ]
+    },
+    "class_type": "BasicScheduler",
+    "_meta": {
+      "title": "BasicScheduler"
+    }
+  },
+  "125": {
+    "inputs": {
+      "noise": [
+        "129",
+        0
+      ],
+      "guider": [
+        "126",
+        0
+      ],
+      "sampler": [
+        "123",
+        0
+      ],
+      "sigmas": [
+        "124",
+        0
+      ],
+      "latent_image": [
+        "136",
+        1
+      ]
+    },
+    "class_type": "SamplerCustomAdvanced",
+    "_meta": {
+      "title": "SamplerCustomAdvanced"
+    }
+  },
+  "126": {
+    "inputs": {
+      "model": [
+        "141",
+        0
+      ],
+      "conditioning": [
+        "136",
+        0
+      ]
+    },
+    "class_type": "BasicGuider",
+    "_meta": {
+      "title": "Basic Guider"
+    }
+  },
+  "127": {
+    "inputs": {
+      "unet_name": "minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+      "weight_dtype": "default"
+    },
+    "class_type": "UNETLoader",
+    "_meta": {
+      "title": "Load Diffusion Model"
+    }
+  },
+  "128": {
+    "inputs": {
+      "clip_name": "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+      "type": "minimax",
+      "device": "default"
+    },
+    "class_type": "CLIPLoader",
+    "_meta": {
+      "title": "Load CLIP"
+    }
+  },
+  "129": {
+    "inputs": {
+      "noise_seed": 853708625130486
+    },
+    "class_type": "RandomNoise",
+    "_meta": {
+      "title": "RandomNoise"
+    }
+  },
+  "130": {
+    "inputs": {
+      "fps": 24.0,
+      "bit_depth": 8,
+      "images": [
+        "122",
+        0
+      ],
+      "audio": [
+        "121",
+        0
+      ]
+    },
+    "class_type": "CreateVideo",
+    "_meta": {
+      "title": "Create Video"
+    }
+  },
+  "131": {
+    "inputs": {
+      "expression": "max(5, round(a * 24)) + (5 - (max(5, round(a * 24)) % 17)) % 17",
+      "values.a": [
+        "132",
+        0
+      ]
+    },
+    "class_type": "ComfyMathExpression",
+    "_meta": {
+      "title": "Math Expression"
+    }
+  },
+  "132": {
+    "inputs": {
+      "value": 7.0
+    },
+    "class_type": "PrimitiveFloat",
+    "_meta": {
+      "title": "Float (Duration)"
+    }
+  },
+  "136": {
+    "inputs": {
+      "prompt": [
+        "150",
+        0
+      ],
+      "width": [
+        "115",
+        0
+      ],
+      "height": [
+        "115",
+        1
+      ],
+      "length": [
+        "131",
+        1
+      ],
+      "ref_image_size": "match",
+      "clip": [
+        "128",
+        0
+      ],
+      "vae": [
+        "119",
+        0
+      ],
+      "audio_vae": [
+        "120",
+        0
+      ],
+      "ref_images.ref_image_0": [
+        "137",
+        0
+      ],
+      "ref_images.ref_image_1": [
+        "139",
+        0
+      ],
+      "ref_videos.ref_video_0": [
+        "154",
+        0
+      ],
+      "ref_video_audios.ref_video_audio_0": [
+        "154",
+        1
+      ]
+    },
+    "class_type": "MiniMaxH3ReferenceToVideo",
+    "_meta": {
+      "title": "MiniMax H3 Reference to Video"
+    }
+  },
+  "137": {
+    "inputs": {
+      "image": "s04-openframe-restored.jpg"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    },
+    "is_changed": [
+      "82b0c4b09356edb097e4f5f1291bfad43202e615aaa74776842617759791f46d"
+    ]
+  },
+  "139": {
+    "inputs": {
+      "image": "lead-actress-character-sheet.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    },
+    "is_changed": [
+      "1891aa540dc6d3413f97147afb41846c589e21c6e3ed42cd6a08def8f123f7f0"
+    ]
+  },
+  "141": {
+    "inputs": {
+      "switch": [
+        "146",
+        0
+      ],
+      "on_false": [
+        "127",
+        0
+      ],
+      "on_true": [
+        "145",
+        0
+      ]
+    },
+    "class_type": "ComfySwitchNode",
+    "_meta": {
+      "title": "If/Else Switch (model)"
+    }
+  },
+  "142": {
+    "inputs": {
+      "switch": [
+        "146",
+        0
+      ],
+      "on_false": [
+        "143",
+        0
+      ],
+      "on_true": [
+        "144",
+        0
+      ]
+    },
+    "class_type": "ComfySwitchNode",
+    "_meta": {
+      "title": "If/Else Switch (Steps)"
+    }
+  },
+  "143": {
+    "inputs": {
+      "value": 20
+    },
+    "class_type": "PrimitiveInt",
+    "_meta": {
+      "title": "Int (Full)"
+    }
+  },
+  "144": {
+    "inputs": {
+      "value": 4
+    },
+    "class_type": "PrimitiveInt",
+    "_meta": {
+      "title": "Int (Lightning LoRA)"
+    }
+  },
+  "145": {
+    "inputs": {
+      "lora_name": "minimax_h3_ref2v_turbo_4step_v0.1_comfyui_bf16.safetensors",
+      "strength_model": 1.0,
+      "model": [
+        "127",
+        0
+      ]
+    },
+    "class_type": "LoraLoaderModelOnly",
+    "_meta": {
+      "title": "Load LoRA"
+    }
+  },
+  "146": {
+    "inputs": {
+      "value": true
+    },
+    "class_type": "PrimitiveBoolean",
+    "_meta": {
+      "title": "Boolean (Enable Lightning LoRA)"
+    }
+  },
+  "148": {
+    "inputs": {
+      "value": "\nsubject_definitions:\n<Picture 1> is the first frame of [Shot 1], showing the young woman standing in the rainy backlot street. \n<Subject 1> is the young blonde woman whose facial and character reference comes from <Picture 2> and who appears as the primary subject in <Picture 1>, with wet blonde hair and the tattered, dirty light dress and bare feet.\n<Audio 1> is the non-diegetic music track for the shot.\n\nsummary:\n[keyframe completion + reference generation + audio reuse] Live-action, cinematic, the target video shows <Subject 1> scared in the street, rain falling hard, lightning striking behind her, startling her, then building her resolve.\n\nretention_analysis:\n<Picture 1> ([Shot 1] first frame): fully_preserved - the backlot street, building facade, pouring rain, and scared young woman are retained.\n<Subject 1> (appears in [Shot 1], [Shot 2], [Shot 3]): fully_preserved - the blonde woman's identity, wet hair, tattered dress, and bare feet are retained.\n<Audio 1>: partially_copy - the beginning of <Audio 1> is reused 1:1 as the target video's complete final non-diegetic music track.\n\ndetailed_description: \nThe target video is in a live-action cinematic horror realism style, underexposed dark lighting and a slightly desaturated color palette.\n[Shot 1] The shot's keyframe corresponds to <Picture 1>. the young woman <Subject 1> stands as shown in <Picture 1> in the backlot street, preserving her appearance, clothing, and location. The camera pushes in with small amplitude at slow speed toward her face as rain falls. Lightning flashes in the sky high frame-right, momentarily lighting the entire scene brightly and she flinches in response to it. \n[Shot 2] At 00:02.600 the shot cuts to a close-up of <Subject 1>, capturing the fear in her eyes and her heavy breathing and startled reaction as the thunder follows the lightning. Rain continues.\n[Shot 3] At 00:04.000 the shot cuts to a dutch angle, canted angle, tilted horizon, diagonal shot, disorienting, focused on <Subject 1>. A second, double-stutter of lightning fires, a bit higher and further away, weaker and shorter than the first, silhouetting the facades again. Her fear heightens as she prepares to run. The rain intensifies.\n\noverall_soundscape:\nSound of heavy rain on pavement throughout. The first thunder is deep, loud, and sustained, panning from right to left, slightly delayed behind the lightning. The second thunder is a cra-crack, double hit, not as loud as the first lightning overall but the second crack builds intensity over the first. The character's breathing is close and centered throughout, fast and unsteady.\n\nnon_diegetic_music: <Audio 1> is directly reused as the complete audience-only score."
+    },
+    "class_type": "PrimitiveStringMultiline",
+    "_meta": {
+      "title": "Input Text (Prompt)"
+    }
+  },
+  "149": {
+    "inputs": {
+      "audio": "backlot-shadows-s4.wav"
+    },
+    "class_type": "LoadAudio",
+    "_meta": {
+      "title": "Load Audio"
+    },
+    "is_changed": [
+      "83fd9c8c21cc88c810fc489d05babbdf8cd751e333e2ee040e4c2fd11a8376ab"
+    ]
+  },
+  "150": {
+    "inputs": {
+      "value": "\nsubject_definitions:\n<Picture 1> is the first frame of [Shot 1], showing the young woman standing in the rainy backlot street. \n<Subject 1> is the young blonde woman whose facial and character reference comes from <Picture 2> and who appears as the primary subject in <Picture 1>, with wet blonde hair and the tattered, dirty light dress and bare feet.\n<Audio 1> is the non-diegetic music track for the shot.\n\nsummary:\n[keyframe completion + reference generation + audio reuse] Live-action, cinematic, the target video shows <Subject 1> scared in the street, rain falling hard, lightning striking behind her, startling her, then building her resolve.\n\nretention_analysis:\n<Picture 1> ([Shot 1] first frame): fully_preserved - the backlot street, building facade, pouring rain, and scared young woman are retained.\n<Subject 1> (appears in [Shot 1], [Shot 2], [Shot 3]): fully_preserved - the blonde woman's identity, wet hair, tattered dress, and bare feet are retained.\n<Audio 1>: partially_copy - the beginning of <Audio 1> is reused 1:1 as the target video's complete final non-diegetic music track.\n\ndetailed_description: \nThe target video is in a live-action cinematic horror realism style, underexposed dark lighting and a slightly desaturated color palette.\n[Shot 1] The shot's keyframe corresponds to <Picture 1>. the young woman <Subject 1> stands as shown in <Picture 1> in the backlot street, preserving her appearance, clothing, and location. The camera pushes in with small amplitude at slow speed toward her face as rain falls. Lightning flashes in the sky high frame-right, momentarily lighting the entire scene brightly and she flinches in response to it. \n[Shot 2] At 00:02.600 the shot cuts to a close-up of <Subject 1>, capturing the fear in her eyes and her heavy breathing and startled reaction as the thunder follows the lightning. Rain continues.\n[Shot 3] At 00:04.000 the shot cuts to a dutch angle, canted angle, tilted horizon, diagonal shot, disorienting, focused on <Subject 1>. A second, double-stutter of lightning fires, a bit higher and further away, weaker and shorter than the first, silhouetting the facades again. Her fear heightens as she prepares to run. The rain intensifies.\n\noverall_soundscape:\nSound of heavy rain on pavement throughout. The first thunder is deep, loud, and sustained, panning from right to left, slightly delayed behind the lightning. The second thunder is a cra-crack, double hit, not as loud as the first lightning overall but the second crack builds intensity over the first. The character's breathing is close and centered throughout, fast and unsteady.\n\nnon_diegetic_music: <Audio 1> is directly reused as the complete audience-only score."
+    },
+    "class_type": "PrimitiveStringMultiline",
+    "_meta": {
+      "title": "Input Text (Prompt + lowres video)"
+    }
+  },
+  "153": {
+    "inputs": {
+      "file": "MiniMax_H3_edge.mp4",
+      "video-preview": ""
+    },
+    "class_type": "LoadVideo",
+    "_meta": {
+      "title": "Load Video"
+    },
+    "is_changed": [
+      1787769513.488105
+    ]
+  },
+  "154": {
+    "inputs": {
+      "video": [
+        "153",
+        0
+      ]
+    },
+    "class_type": "GetVideoComponents",
+    "_meta": {
+      "title": "Get Video Components"
+    }
+  }
+}

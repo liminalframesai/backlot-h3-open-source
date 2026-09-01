@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use the workflows, techniques, or media closure, please cite this project."
+title: "Backlot: a local MiniMax H3 native-audiovisual production"
+type: software
+authors:
+  - name: "Liminal Frames"
+version: 1.0.0
+date-released: 2026-08-31
+license: MIT

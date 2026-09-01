@@ -1,0 +1,30 @@
+subject_definitions:
+<Picture 1> is the exact first frame of [Shot 1], showing the young woman outside the locked, red-lit foley-stage door in the rain.
+<Subject 1> (S1) is the young blonde woman whose facial and character reference comes from <Picture 2> and who appears in <Picture 1>, with wet warm golden-blonde hair, pale skin, a small pendant, a dirt-stained tattered light cream dress, and bare feet. Her speaking voice is referenced by <Audio 1>: a young adult American woman with a neutral General American accent and clear light-mid register that becomes breathy, cracked, strained, and ragged under terror.
+<Subject 2> is the foley-stage exterior door whose design and spatial reference comes from <Picture 3> and which appears in <Picture 1>: the same rigid dark steel door with fixed hinges screen-left, lever and latch screen-right, steady illuminated red caged beacon screen-right, side lighting, facade position, and a fully seated door leaf with a flush dark perimeter seam.
+<Audio 1> is the voice identity, accent, register, and distressed delivery reference for <Subject 1> (S1).
+<Audio 2> is a non-diegetic excerpt of the Backlot Shadows score for the exterior bridge shot.
+
+summary:
+[keyframe completion + reference generation + audio reference + audio reuse] Live-action cinematic horror, the target video begins exactly from <Picture 1> as <Subject 1> (S1) strikes the locked <Subject 2> with two forceful fist blows, shouts to be let in, and strains against its immovable locked lever under <Audio 2>.
+
+retention_analysis:
+<Picture 1> ([Shot 1] first frame): fully_preserved - its exact exterior door, steady red beacon and wash, rainy facade, camera position, heroine blocking, lighting, sealed dark door seam, and first physical state are retained as frame zero.
+<Subject 1> (appears and speaks throughout [Shot 1], [Shot 2], [Shot 3], [Shot 4]): fully_preserved - her facial identity, wet warm golden-blonde hair, pale skin, pendant, dirty torn cream dress, bare feet, General American accent, and cracked frightened voice are retained.
+<Subject 2> (appears throughout [Shot 1], [Shot 2], [Shot 3], [Shot 4]): fully_preserved - the exact rigid steel door design, facade location, fixed screen-left hinges, screen-right lever and latch, steady screen-right beacon, red wash, fully seated door leaf, and flush dark perimeter seam remain spatially consistent.
+<Audio 1>: reference - the heroine's voice identity, accent, register, cracked distress texture, and shouting delivery guide her newly generated line.
+<Audio 2>: partially_copy - the score excerpt is reused 1:1 from its beginning as the complete audience-only music.
+
+detailed_description:
+The target video is live-action cinematic horror realism at night, underexposed and heavily desaturated toward cold green-grey, with hard rain, wet reflections, and the beacon's dim steady red wash as the only warm color.
+[Shot 1] The shot's keyframe corresponds exactly to <Picture 1>. The scene is already in motion when the video starts. A medium handheld shot makes a slow small-amplitude push toward <Subject 1> (S1) and <Subject 2>. She plants her feet and drives two large full-force fist blows into the steel door. Each blow has a clear shoulder and torso wind-up, hard knuckle contact, heavy body commitment, and immediate rebound. After the second impact she shouts <d>[English] Let me in!</d> in the distressed voice referenced by <Audio 1>.
+[Shot 2] At 00:02.200, the shot cuts to a tight detail of her wet hand closing firmly around the screen-right lever. The lever is already seated at its hard locked stop and remains visually fixed while her tightening grip, flexing forearm, shifting wrist, and shaking shoulder show two forceful attempts. The rigid closed door remains fully seated on its screen-left hinges and its perimeter seam stays flush and dark.
+[Shot 3] At 00:03.600, the shot cuts to a close detail of the screen-right red caged beacon. Its rain-beaded lens holds one steady constant red illumination and the corresponding red wash remains constant across the steel door and standing water.
+[Shot 4] At 00:04.500, the shot cuts back wide. <Subject 1> (S1) braces one bare foot against the wet pavement and makes one sustained desperate pull against the fixed locked lever. Her arm and body strain while the lever, latch, fully seated steel door, and dark perimeter seam hold their exact locked state through the final frame. The beacon remains steadily illuminated.
+
+overall_soundscape:
+Hard rain fills the stereo field. The two close fist impacts on steel are large heavy pounds with deep panel thuds and short hollow tails. The fixed lock answers her two handle attempts with compact internal metal strain and a hard latch-stop clack. <Subject 1> breathes raggedly around her shouted line. A faint steady electrical hum and muffled stage room tone sit behind <Subject 2>.
+
+non_diegetic_music:
+<Audio 2> is reused from its beginning as the complete audience-only Backlot Shadows score beneath the rain, two heavy pounds, locked-latch strain, breath, and voice.
+

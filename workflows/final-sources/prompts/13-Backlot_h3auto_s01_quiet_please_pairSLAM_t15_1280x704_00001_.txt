@@ -1,0 +1,31 @@
+subject_definitions:
+<Subject 1> is the professional foley soundstage whose location reference comes from <Picture 1>, including its practical crowded room, foley pits, prop rigs, monitor cart, microphones, sound equipment, work lights, and exterior stage door. <Subject 1> also appears throughout <Video 1>; <Picture 1> is authoritative for its photographic detail and geography while <Video 1> is authoritative for the opening camera position and movement.
+<Subject 2> is the middle-aged male foley performer with short hair whose character reference comes from <Picture 2> and who appears in <Video 1>, wearing his green work jacket, headphones, and jeans.
+<Subject 3> is the middle-aged male foley performer with curly hair and a beard whose character reference comes from <Picture 3> and who appears in <Video 1>, wearing his rust work shirt over a navy T-shirt and jeans.
+<Subject 4> is the older male director and studio operator whose character reference comes from <Picture 4> and who appears in <Video 1>, preserving his grey hair, face, and practical soundstage wardrobe.
+<Subject 5> is the male monitor operator whose character reference comes from <Picture 5> and who appears in <Video 1>, preserving his face, hair, and practical black soundstage wardrobe.
+<Video 1> is the reference for the complete opening camera movement, crew movement, clapboard performance, rhythm, and temporal structure.
+<Audio 1> is the synchronized dialogue, room tone, and clapboard sound of <Video 1> and is reused in the target video.
+
+summary:
+[reference generation + audio reuse] Live-action cinematic documentary style, the short target video rerenders the opening of <Video 1> at higher visual quality as the foley crew prepares, the set is called quiet, and the physically held clapboard closes once with its synchronized crack.
+
+retention_analysis:
+<Subject 1> (location throughout [Shot 1]): fully_preserved - the professional soundstage geography, practical equipment, monitor cart, microphones, work lights, and photographic character are retained.
+<Subject 2> (appears in [Shot 1]): fully_preserved - his identity, short hair, green jacket, headphones, and jeans are retained.
+<Subject 3> (appears in [Shot 1]): fully_preserved - his identity, curly hair, beard, rust shirt, navy T-shirt, and jeans are retained.
+<Subject 4> (appears in [Shot 1]): fully_preserved - his older grey-haired identity and soundstage wardrobe are retained.
+<Subject 5> (appears in [Shot 1]): fully_preserved - his identity and black soundstage wardrobe are retained.
+<Video 1> (camera movement, crew movement, clapboard performance, rhythm, and temporal structure): weak_reference - its exact opening action, camera path, clapboard close, rhythm, and temporal structure are retained.
+<Audio 1>: fully_copy - <Audio 1> is reused 1:1 as the target video's complete final synchronized audio track.
+
+detailed_description:
+The target video is live-action cinematic realism in a working-documentary style, slightly underexposed and slightly desaturated, with natural skin texture and detailed faces.
+[Shot 1] Follow <Video 1>'s exact opening camera design and temporal structure. The camera begins in the same wide view inside <Subject 1>. The four crew members occupy their established working positions and retain the identities and clothing of <Subject 2>, <Subject 3>, <Subject 4>, and <Subject 5>. Their faces, eyes, hair, and expressions are rendered with crisp photographic detail. The set is called quiet in synchronization with <Audio 1>. The crew settle naturally. The clapboard operator supports the slate with both hands and closes its hinged clapper exactly once in the motion and timing established by <Video 1>. The visible clap occurs in exact synchronization with the clean clapboard crack in <Audio 1>. The camera and crew performance preserve <Video 1> through the final frame.
+
+overall_soundscape:
+<Audio 1> is reused 1:1 as the target video's complete final synchronized audio track.
+
+non_diegetic_music:
+N/A
+

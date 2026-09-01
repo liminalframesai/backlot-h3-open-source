@@ -1,0 +1,19 @@
+{
+  "timeline": "Main-final-locked",
+  "fps": 24.0,
+  "creative_video_occurrences": 62,
+  "audio_occurrences": 55,
+  "video_status_counts": {
+    "PASS_SYNCED_CROSSFADE_EDGE": 3,
+    "PASS_SYNCED_FULL_COVERAGE": 59
+  },
+  "source_aligned_video_occurrences": 62,
+  "source_offset_mismatches": 0,
+  "video_occurrences_with_full_same_source_audio_coverage": 59,
+  "video_occurrences_with_intentional_crossfade_edge_handoff": 3,
+  "video_frames_without_any_native_audio": 0.0,
+  "unmatched_audio_origins": 0,
+  "complex_db_timemaps": 0,
+  "fcpxml_time_maps": 0,
+  "interpretation": "All PASS_SYNCED statuses have identical picture/audio source-time origins. PASS_SYNCED_CROSSFADE_EDGE means only that a clip's own aligned audio ends or begins 1-3 frames inside one picture edge while adjacent H3-native audio covers those frames; it is not a synchronization failure. The count of three applies only to this narrow picture-coverage condition. It is not a count of the edit's crossfades or L/J overlaps: many aligned native-audio segments intentionally continue for seconds beyond their picture cuts or across multiple picture segments."
+}

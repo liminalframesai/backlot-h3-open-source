@@ -1,0 +1,332 @@
+{
+  "92": {
+    "inputs": {
+      "filename_prefix": "video/Backlot_h3auto_s8.5_door_pounding_interior_foley_t07_1056x608",
+      "format": "mp4",
+      "codec": "h264",
+      "video": [
+        "130",
+        0
+      ],
+      "codec.encoding": "auto"
+    },
+    "class_type": "SaveVideo",
+    "_meta": {
+      "title": "Save Video"
+    }
+  },
+  "119": {
+    "inputs": {
+      "vae_name": "minimax_h3_video_vae_fp16.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "Load VAE"
+    }
+  },
+  "120": {
+    "inputs": {
+      "vae_name": "minimax_h3_audio_vae_fp32.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "Load VAE"
+    }
+  },
+  "121": {
+    "inputs": {
+      "samples": [
+        "125",
+        0
+      ],
+      "vae": [
+        "120",
+        0
+      ]
+    },
+    "class_type": "VAEDecodeAudio",
+    "_meta": {
+      "title": "VAE Decode Audio"
+    }
+  },
+  "122": {
+    "inputs": {
+      "samples": [
+        "125",
+        0
+      ],
+      "vae": [
+        "119",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "123": {
+    "inputs": {
+      "sampler_name": "euler"
+    },
+    "class_type": "KSamplerSelect",
+    "_meta": {
+      "title": "KSamplerSelect"
+    }
+  },
+  "124": {
+    "inputs": {
+      "scheduler": "bong_tangent",
+      "denoise": 1.0,
+      "model": [
+        "127",
+        0
+      ],
+      "steps": [
+        "142",
+        0
+      ]
+    },
+    "class_type": "BasicScheduler",
+    "_meta": {
+      "title": "BasicScheduler"
+    }
+  },
+  "125": {
+    "inputs": {
+      "noise": [
+        "129",
+        0
+      ],
+      "guider": [
+        "126",
+        0
+      ],
+      "sampler": [
+        "123",
+        0
+      ],
+      "sigmas": [
+        "124",
+        0
+      ],
+      "latent_image": [
+        "136",
+        1
+      ]
+    },
+    "class_type": "SamplerCustomAdvanced",
+    "_meta": {
+      "title": "SamplerCustomAdvanced"
+    }
+  },
+  "126": {
+    "inputs": {
+      "model": [
+        "141",
+        0
+      ],
+      "conditioning": [
+        "136",
+        0
+      ]
+    },
+    "class_type": "BasicGuider",
+    "_meta": {
+      "title": "Basic Guider"
+    }
+  },
+  "127": {
+    "inputs": {
+      "unet_name": "minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+      "weight_dtype": "default"
+    },
+    "class_type": "UNETLoader",
+    "_meta": {
+      "title": "Load Diffusion Model"
+    }
+  },
+  "128": {
+    "inputs": {
+      "clip_name": "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+      "type": "minimax",
+      "device": "default"
+    },
+    "class_type": "CLIPLoader",
+    "_meta": {
+      "title": "Load CLIP"
+    }
+  },
+  "129": {
+    "inputs": {
+      "noise_seed": 31315590379
+    },
+    "class_type": "RandomNoise",
+    "_meta": {
+      "title": "RandomNoise"
+    }
+  },
+  "130": {
+    "inputs": {
+      "fps": 24.0,
+      "bit_depth": 8,
+      "images": [
+        "122",
+        0
+      ],
+      "audio": [
+        "121",
+        0
+      ]
+    },
+    "class_type": "CreateVideo",
+    "_meta": {
+      "title": "Create Video"
+    }
+  },
+  "136": {
+    "inputs": {
+      "clip": [
+        "128",
+        0
+      ],
+      "vae": [
+        "119",
+        0
+      ],
+      "prompt": "subject_definitions:\n<Subject 1> is the professional foley soundstage whose location reference comes from <Picture 1>, including its warm practical work light, material pits, microphone stands, prop workbenches, shelves, monitor cart, and working-room depth.\n<Subject 2> is the short-haired middle-aged male foley performer whose character reference comes from <Picture 2>, wearing his green work jacket, grey shirt, dark jeans, brown work boots, and black over-ear headphones.\n<Subject 3> is a purpose-built Foley resonance panel: a chest-high rectangular slab of layered weathered timber suspended vertically inside a welded steel rolling rack, with its raw outer edges visible, open air behind it, large spring clamps at the corners, adjustable tension rods, two sandbagged diagonal braces, a contact microphone taped to its rear face, and a shotgun microphone aimed at the impact area.\n<Audio 1> is the complete dry three-impact Foley soundtrack from the accepted prior Scene 8.5 take.\n\nsummary:\n[reference generation + audio reuse] Live-action cinematic documentary style, the target video shows <Subject 2> performing the three impacts in <Audio 1> on the purpose-built <Subject 3> inside <Subject 1>, photographed from the open side of the rig so its fabricated construction and sound-recording technique are immediately readable.\n\nretention_analysis:\n<Subject 1> (location throughout [Shot 1] and [Shot 2]): fully_preserved - the professional soundstage, practical work light, material pits, microphones, prop benches, shelves, monitor cart, and working-room depth are retained.\n<Subject 2> (appears throughout [Shot 1] and [Shot 2]): fully_preserved - his identity, short hair, green jacket, grey shirt, dark jeans, brown boots, headphones, and focused working posture are retained.\n<Subject 3> (primary Foley device throughout [Shot 1] and [Shot 2]): fully_preserved - the exposed timber slab, open-backed rolling rack, spring clamps, tension rods, sandbagged braces, contact microphone, and shotgun microphone are retained as one stable practical rig.\n<Audio 1>: fully_copy - <Audio 1> is reused 1:1 as the target video's complete final synchronized audio track.\n\ndetailed_description:\nThe target video is live-action cinematic realism in a working-documentary style, slightly underexposed and slightly desaturated, with warm practical soundstage light.\n[Shot 1] A medium low three-quarter view from the open rear side of <Subject 3> establishes <Subject 1>, <Subject 2>, and the resonance rig. The timber slab occupies the right half of frame while open air, the rear contact microphone, tension rods, steel rack, diagonal braces, sandbags, casters, and the performer on the opposite side remain visible together. <Subject 2> plants both boots and loads his right fist beside his shoulder. He drives two forceful, compact body blows into the slab in exact synchronization with the first two impacts in <Audio 1> at approximately 00:00.950 and 00:02.150. At each contact his hips and shoulder move through the strike, the knuckles meet the timber squarely, the slab flexes inside the clamps, and his fist rebounds into open space.\n[Shot 2] At 00:03.200 a hard cut moves to a tight side profile that layers <Subject 2>'s face and headphones, his loaded shoulder and striking fist, the raw timber edge, rear contact microphone, one spring clamp, and one diagonal brace in the same composition. His weight settles over the rear boot and his right fist draws back. At approximately 00:04.550 his whole body drives the final heavy contact in exact synchronization with the third impact in <Audio 1>. The timber slab bows within the steel rack, the clamp and tension rod oscillate, the brace shudders against its sandbag, and his fist rebounds sharply. He then holds still and listens through his headphones while the copied decay finishes.\n\noverall_soundscape:\n<Audio 1> is reused 1:1 as the target video's complete final synchronized audio track.\n\nnon_diegetic_music:\nN/A\n",
+      "width": 1056,
+      "height": 608,
+      "length": 158,
+      "audio_vae": [
+        "120",
+        0
+      ],
+      "ref_image_size": "match",
+      "ref_images.ref_image_0": [
+        "16580",
+        0
+      ],
+      "ref_images.ref_image_1": [
+        "16581",
+        0
+      ],
+      "ref_audios.ref_audio_0": [
+        "22520",
+        0
+      ]
+    },
+    "class_type": "MiniMaxH3ReferenceToVideo",
+    "_meta": {
+      "title": "MiniMax H3 Reference to Video"
+    }
+  },
+  "141": {
+    "inputs": {
+      "switch": [
+        "146",
+        0
+      ],
+      "on_false": [
+        "127",
+        0
+      ],
+      "on_true": [
+        "145",
+        0
+      ]
+    },
+    "class_type": "ComfySwitchNode",
+    "_meta": {
+      "title": "If/Else Switch (model)"
+    }
+  },
+  "142": {
+    "inputs": {
+      "switch": [
+        "146",
+        0
+      ],
+      "on_false": [
+        "143",
+        0
+      ],
+      "on_true": [
+        "144",
+        0
+      ]
+    },
+    "class_type": "ComfySwitchNode",
+    "_meta": {
+      "title": "If/Else Switch (Steps)"
+    }
+  },
+  "143": {
+    "inputs": {
+      "value": 20
+    },
+    "class_type": "PrimitiveInt",
+    "_meta": {
+      "title": "Int (Full)"
+    }
+  },
+  "144": {
+    "inputs": {
+      "value": 4
+    },
+    "class_type": "PrimitiveInt",
+    "_meta": {
+      "title": "Int (Lightning LoRA)"
+    }
+  },
+  "145": {
+    "inputs": {
+      "lora_name": "minimax_h3_ref2v_turbo_4step_v0.1_comfyui_bf16.safetensors",
+      "strength_model": 1.0,
+      "model": [
+        "127",
+        0
+      ]
+    },
+    "class_type": "LoraLoaderModelOnly",
+    "_meta": {
+      "title": "Load LoRA"
+    }
+  },
+  "146": {
+    "inputs": {
+      "value": false
+    },
+    "class_type": "PrimitiveBoolean",
+    "_meta": {
+      "title": "Boolean (Enable Lightning LoRA)"
+    }
+  },
+  "16580": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "foley-stage-interior-master-v1.png"
+    },
+    "is_changed": [
+      "80b6127cde52a18b542ba1b0607a630a542b88ec3a62e3014d49ffd554dc4b11"
+    ]
+  },
+  "16581": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "foley-lead-A-sheet.png"
+    },
+    "is_changed": [
+      "55e9e3075bedadc60ccacb6b06c966b90ff31559e8cebc636009aefd82f2767f"
+    ]
+  },
+  "22520": {
+    "class_type": "LoadAudio",
+    "inputs": {
+      "audio": "s08p5-t05-dry-three-impact.wav"
+    },
+    "is_changed": [
+      "56275e4c6a29e0cd7cc52f486b1d80b2b8d3204162d0759804eb32dbe9e5dd90"
+    ]
+  }
+}

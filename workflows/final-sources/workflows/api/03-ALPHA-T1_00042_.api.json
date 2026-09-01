@@ -1,0 +1,385 @@
+{
+  "1": {
+    "inputs": {
+      "unet_name": "minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+      "weight_dtype": "default"
+    },
+    "class_type": "UNETLoader",
+    "_meta": {
+      "title": "H3 diffusion model"
+    }
+  },
+  "2": {
+    "inputs": {
+      "lora_name": "minimax_h3_ref2v_lightx2v_turbo_4step_v0.1_resized_avg_rank_20_bf16.safetensors",
+      "strength_model": 0.5,
+      "model": [
+        "1",
+        0
+      ]
+    },
+    "class_type": "LoraLoaderModelOnly",
+    "_meta": {
+      "title": "Turbo LoRA (4-step) @ 0.5"
+    }
+  },
+  "3": {
+    "inputs": {
+      "enabled": true,
+      "model": [
+        "2",
+        0
+      ]
+    },
+    "class_type": "MiniMaxH3FusedModulation",
+    "_meta": {
+      "title": "Fused Modulation"
+    }
+  },
+  "4": {
+    "inputs": {
+      "enabled": true,
+      "tau": 1.3,
+      "min_tokens": 4096,
+      "strict": false,
+      "thresh_type": "diag",
+      "int8_qk": false,
+      "int8_pv": false,
+      "sink_conditioning": "exact_kv",
+      "dense_blocks": "",
+      "model": [
+        "3",
+        0
+      ]
+    },
+    "class_type": "MiniMaxH3MemoryEfficientSolAttentionPatch",
+    "_meta": {
+      "title": "Sol-Attn"
+    }
+  },
+  "5": {
+    "inputs": {
+      "clip_name": "qwen3vl-32B-MiniMax-H3-Q4_K_M.gguf",
+      "type": "minimax"
+    },
+    "class_type": "CLIPLoaderGGUF",
+    "_meta": {
+      "title": "H3 text encoder (GGUF)"
+    }
+  },
+  "6": {
+    "inputs": {
+      "vae_name": "minimax_h3_video_vae_fp16.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "H3 video VAE"
+    }
+  },
+  "7": {
+    "inputs": {
+      "vae_name": "minimax_h3_audio_vae_fp32.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "H3 audio VAE"
+    }
+  },
+  "9": {
+    "inputs": {
+      "aspect_ratio": "16:9 (Widescreen)",
+      "megapixels": 0.6,
+      "multiple": 32
+    },
+    "class_type": "ResolutionSelector",
+    "_meta": {
+      "title": "Resolution (0.27 MP = 704x384)"
+    }
+  },
+  "10": {
+    "inputs": {
+      "value": "subject_definitions:\n<Subject 1> is the young woman defined together by <Picture 1>, <Picture 2> and <Picture 3>. <Picture 1> supplies her face and head: mid-twenties, fair skin, a narrow face with high cheekbones and a straight nose, pale blue-grey eyes, dark eyebrows, faint freckling and dirt smudges across the cheekbone, and long rain-soaked warm golden-blonde hair hanging in separated wet ropes, plus a single small oval gold pendant on a fine chain at the base of her throat. <Picture 2> supplies the front of her wardrobe and body condition: one dirt-stained cream slip dress in fine crumpled lace-trimmed fabric, thin spaghetti shoulder straps, a fitted sweetheart bodice, a gathered skirt to mid-calf, a ragged asymmetric torn hem, bare feet, and smeared brown dirt with shallow reddened scratches on the forearms, shins and dress front. <Picture 3> supplies her back: the long wet warm golden-blonde hair falling down her back, the low scooped back of the same slip dress with its crossing straps, and the same dirt staining across the skirt.\n<Picture 1> is a large high-resolution face panel on a plain grey seamless studio backdrop, used as the single authoritative source of her facial identity.\n<Picture 2> is a headless full-length front wardrobe panel on the same grey backdrop, used only for garment cut, fabric, staining and body condition.\n<Picture 3> is a full-length rear panel on the same grey backdrop, used only for hair length and the back of the garment.\nNone of the three panels is a target frame or a composition reference. Their shared grey backdrop, flat frontal studio lighting and neutral standing pose are never reproduced in the target video.\n<Subject 2> is the film-world photographic look carried by <Picture 4>: a night exterior exposed very dark and heavily desaturated toward a cold green-grey cast, with crushed near-black shadows, hard straight high-density rain visible as bright streaks against the darkness, mirror-wet ground holding long broken reflections, scattered wet debris and rubble texture, weak dirty practical sources rather than any clean key light, and a low-contrast misted depth falling away behind the subject.\n<Picture 4> is a night-exterior grade and atmosphere reference from the same film world, showing a rain-lashed ruined lot at night. It defines photographic register only: exposure level, colour cast, rain density and hardness, wet-ground reflectivity and debris texture. Its subject, framing, camera height, action and composition are not used.\n\nsummary:\n[reference generation] The target video is a single continuous night exterior shot of <Subject 1> alone and frightened in a deserted, decrepit Hollywood backlot street in hard rain, photographed in the film-world look of <Subject 2>. Her identity and wardrobe come from the character reference panels and the photographic register comes from <Picture 4>; both are carried into a fully new environment, camera and performance. No studio backdrop, panel layout or reference pose appears.\n\nretention_analysis:\n<Subject 1> (appears in [Shot 1]): fully_preserved - her facial structure, eye colour, warm golden-blonde wet hair, gold pendant, dirt-stained torn cream slip dress and bare feet are retained exactly as defined.\n<Picture 1> (facial identity source only): weak_reference - only the face, hair and pendant information is used; the grey backdrop, flat studio lighting and framing are discarded.\n<Picture 2> (front wardrobe and body-condition source only): weak_reference - only garment cut, fabric, staining and bare feet are used; the headless mannequin presentation, backdrop and lighting are discarded.\n<Picture 3> (rear hair and garment-back source only): weak_reference - only hair length and the back of the dress are used; the backdrop, lighting and standing pose are discarded.\n<Subject 2> (applies to [Shot 1] throughout): attribute_transfer - the dark, desaturated cold green-grey night-rain grade, crushed shadows, hard rain and wet reflective ground are transferred onto a new backlot street, a new camera position and a new performance.\n<Picture 4> (grade and atmosphere source only): weak_reference - only exposure, colour cast, rain density and wet-ground reflectivity are used; its subject, framing and aspect ratio are discarded.\n\ndetailed_description:\nThe target video is graded to <Subject 2>: live-action cinematic horror realism at night, exposed very dark and heavily desaturated toward cold green-grey, with crushed near-black shadows, hard straight high-density rain streaking bright against the darkness, mirror-wet ground, scattered wet debris, and only weak dirty practical sources. Shallow depth of field, natural handheld weight. The picture fills the entire frame edge to edge: there are no black bars, no letterbox mattes and no dark bands along the top, bottom or side edges at any point.\n[Shot 1] A medium-wide handheld shot, camera at chest height roughly four metres away, drifting very slowly to the left with small organic instability. <Subject 1> stands alone near the centre-right of frame in the middle of a deserted, decrepit Hollywood backlot street at night. Rain falls hard and straight through the whole frame, striking the black asphalt and throwing up a fine ankle-level spray. Her warm golden-blonde hair is completely soaked and stuck to her neck, temples and collarbones in heavy separated ropes; water runs off her jaw and the ends of her hair in continuous threads. The cream slip dress is wet through, darkened and clinging along her ribs and thighs, the ragged hem heavy with water and dripping. The small gold pendant sits against her wet skin and catches one weak highlight. Her bare feet stand in a shallow sheet of standing water. Dead false-front facades line both sides of the street and fall out of focus: bleached plaster, boarded windows, a leaning storefront braced from behind with raw timber, one dented roll-up door, a fallen length of moulding half-submerged in the gutter, loose wet debris and broken board scattered across the ground. A dirty amber security lamp burns far down the lane at screen-left and lays a broken orange reflection across the wet asphalt; a weak cyan industrial fixture glows further back at screen-right. Deep in the background, small and thoroughly out of focus, one tiny red point burns steadily on a distant wall.\nFrom the opening frame she is already frightened and already still, holding her own upper arms with both hands, shoulders drawn up and forward, chest lifting in fast shallow breaths that fog visibly in the cold air. From roughly 00:00.600 she turns her head quickly to screen-left, scanning down the lane, the wet hair swinging and slapping wet against her shoulder. Her eyes are wide, the lower lids tight, water running into them so that she blinks hard twice. Around 00:02.200 she turns her head the other way, faster, looking back over her right shoulder toward the deeper darkness behind her; her whole upper body rotates a few degrees with the look and her weight shifts onto the ball of one bare foot. Around 00:03.600 she goes rigid, stops turning, and holds absolutely still while staring off screen-right into the dark, lips slightly parted, breath catching. The camera drifts a few inches closer through this hold, keeping her face sharp while the facades and lamps soften further. From roughly 00:05.000 to the end she does not move except to breathe and to blink rainwater away; her fingers tighten visibly on her own arms. She never speaks and no other figure enters frame.\n\noverall_soundscape:\nA wide continuous night-rain bed fills the stereo field for the entire video: dense close droplets ticking on asphalt and standing water spread hard left to hard right, a heavier splashing run-off sheeting off corrugated facade tin at screen-left, a thin far metallic drip line high at screen-right, and a low enclosed backlot reverberance behind everything. Her breathing is close and centred, fast, shallow and unsteady, with one audible catch when she goes rigid. Small wet contact sounds accompany her movement: the soaked hair slapping her shoulder on the first head turn, the heavy waterlogged hem shifting, and one small foot displacement in standing water. There is no thunder, no footsteps other than her own, and no voices. There is no music from any source inside the scene.\n\nnon_diegetic_music:\nN/A\n"
+    },
+    "class_type": "PrimitiveStringMultiline",
+    "_meta": {
+      "title": "PROMPT (H3 template)"
+    }
+  },
+  "11": {
+    "inputs": {
+      "value": 6.6
+    },
+    "class_type": "PrimitiveFloat",
+    "_meta": {
+      "title": "Duration (seconds)"
+    }
+  },
+  "12": {
+    "inputs": {
+      "expression": "max(5, round(a * 24)) + (5 - (max(5, round(a * 24)) % 17)) % 17",
+      "values.a": [
+        "11",
+        0
+      ]
+    },
+    "class_type": "ComfyMathExpression",
+    "_meta": {
+      "title": "frames = H3 17k+5 law"
+    }
+  },
+  "14": {
+    "inputs": {
+      "model": [
+        "4",
+        0
+      ],
+      "conditioning": [
+        "24",
+        0
+      ]
+    },
+    "class_type": "BasicGuider",
+    "_meta": {
+      "title": "Guider (CFG 1)"
+    }
+  },
+  "15": {
+    "inputs": {
+      "sampler_name": "euler"
+    },
+    "class_type": "KSamplerSelect",
+    "_meta": {
+      "title": "KSamplerSelect"
+    }
+  },
+  "16": {
+    "inputs": {
+      "scheduler": "bong_tangent",
+      "steps": 12,
+      "denoise": 1.0,
+      "model": [
+        "4",
+        0
+      ]
+    },
+    "class_type": "BasicScheduler",
+    "_meta": {
+      "title": "12 steps"
+    }
+  },
+  "17": {
+    "inputs": {
+      "noise_seed": 238045115649274
+    },
+    "class_type": "RandomNoise",
+    "_meta": {
+      "title": "Seed"
+    }
+  },
+  "18": {
+    "inputs": {
+      "noise": [
+        "17",
+        0
+      ],
+      "guider": [
+        "14",
+        0
+      ],
+      "sampler": [
+        "15",
+        0
+      ],
+      "sigmas": [
+        "16",
+        0
+      ],
+      "latent_image": [
+        "24",
+        1
+      ]
+    },
+    "class_type": "SamplerCustomAdvanced",
+    "_meta": {
+      "title": "Sample (single H3 pass)"
+    }
+  },
+  "19": {
+    "inputs": {
+      "samples": [
+        "18",
+        0
+      ],
+      "vae": [
+        "6",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "Decode video"
+    }
+  },
+  "20": {
+    "inputs": {
+      "samples": [
+        "18",
+        0
+      ],
+      "vae": [
+        "7",
+        0
+      ]
+    },
+    "class_type": "VAEDecodeAudio",
+    "_meta": {
+      "title": "Decode audio"
+    }
+  },
+  "21": {
+    "inputs": {
+      "fps": 24.0,
+      "bit_depth": 8,
+      "color_space": "sRGB",
+      "images": [
+        "19",
+        0
+      ],
+      "audio": [
+        "20",
+        0
+      ]
+    },
+    "class_type": "CreateVideo",
+    "_meta": {
+      "title": "Create video (24 fps)"
+    }
+  },
+  "22": {
+    "inputs": {
+      "filename_prefix": "video/ALPHA-T1",
+      "format": "auto",
+      "format.codec": "auto",
+      "codec": "auto",
+      "video-preview": "",
+      "video": [
+        "21",
+        0
+      ]
+    },
+    "class_type": "SaveVideo",
+    "_meta": {
+      "title": "Save"
+    }
+  },
+  "24": {
+    "inputs": {
+      "prompt": [
+        "10",
+        0
+      ],
+      "width": [
+        "9",
+        0
+      ],
+      "height": [
+        "9",
+        1
+      ],
+      "length": [
+        "12",
+        1
+      ],
+      "ref_image_size": "match",
+      "clip": [
+        "5",
+        0
+      ],
+      "vae": [
+        "6",
+        0
+      ],
+      "audio_vae": [
+        "7",
+        0
+      ],
+      "ref_images.ref_image_0": [
+        "27",
+        0
+      ],
+      "ref_images.ref_image_1": [
+        "28",
+        0
+      ],
+      "ref_images.ref_image_2": [
+        "29",
+        0
+      ],
+      "ref_images.ref_image_3": [
+        "30",
+        0
+      ]
+    },
+    "class_type": "MiniMaxH3ReferenceToVideo",
+    "_meta": {
+      "title": "MiniMax H3 Reference to Video"
+    }
+  },
+  "27": {
+    "inputs": {
+      "image": "h3w4_actress_face_panel.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    },
+    "is_changed": [
+      "fd2ad0b792c6628b0723b74fc29dbcfa3aca1c6dbb174e329c4564b5cc9663c8"
+    ]
+  },
+  "28": {
+    "inputs": {
+      "image": "h3w4_actress_wardrobe_front_panel.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    },
+    "is_changed": [
+      "5ce85d37adaaf1ded819dac374e2a999e99c61930e9cf989854d2656986d77e7"
+    ]
+  },
+  "29": {
+    "inputs": {
+      "image": "h3w4_actress_wardrobe_back_panel.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    },
+    "is_changed": [
+      "174c2d47de54e307d4335d95cbd11607357c385ab9e04c60263657164393b062"
+    ]
+  },
+  "30": {
+    "inputs": {
+      "image": "film-world-look-frame.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    },
+    "is_changed": [
+      "b4df00c4b72050b3f80b4993747387babe3a0ea7ab478bb0a3ab8188f4950d8b"
+    ]
+  },
+  "31": {
+    "inputs": {
+      "value": "subject_definitions:\n<Subject 1> is the young woman defined together by <Picture 1>, <Picture 2> and <Picture 3>. <Picture 1> supplies her face and head: mid-twenties, fair skin, a narrow face with high cheekbones and a straight nose, pale blue-grey eyes, dark eyebrows, faint freckling and dirt smudges across the cheekbone, and long rain-soaked warm golden-blonde hair hanging in separated wet ropes, plus a single small oval gold pendant on a fine chain at the base of her throat. <Picture 2> supplies the front of her wardrobe and body condition: one dirt-stained cream slip dress in fine crumpled lace-trimmed fabric, thin spaghetti shoulder straps, a fitted sweetheart bodice, a gathered skirt to mid-calf, a ragged asymmetric torn hem, bare feet, and smeared brown dirt with shallow reddened scratches on the forearms, shins and dress front. <Picture 3> supplies her back: the long wet warm golden-blonde hair falling down her back, the low scooped back of the same slip dress with its crossing straps, and the same dirt staining across the skirt.\n<Picture 1> is a large high-resolution face panel on a plain grey seamless studio backdrop, used as the single authoritative source of her facial identity.\n<Picture 2> is a headless full-length front wardrobe panel on the same grey backdrop, used only for garment cut, fabric, staining and body condition.\n<Picture 3> is a full-length rear panel on the same grey backdrop, used only for hair length and the back of the garment.\nNone of the three panels is a target frame or a composition reference. Their shared grey backdrop, flat frontal studio lighting and neutral standing pose are never reproduced in the target video.\n<Subject 2> is the film-world photographic look carried by <Picture 4>: a night exterior exposed very dark and heavily desaturated toward a cold green-grey cast, with crushed near-black shadows, hard straight high-density rain visible as bright streaks against the darkness, mirror-wet ground holding long broken reflections, scattered wet debris and rubble texture, weak dirty practical sources rather than any clean key light, and a low-contrast misted depth falling away behind the subject.\n<Picture 4> is a night-exterior grade and atmosphere reference from the same film world, showing a rain-lashed ruined lot at night. It defines photographic register only: exposure level, colour cast, rain density and hardness, wet-ground reflectivity and debris texture. Its subject, framing, camera height, action and composition are not used. It is supplied already cropped so that it contains no black bars of any kind. It contributes no letterbox matte, no black edge bands and no aspect-ratio change to the target video, which is filled edge to edge with picture.\n\nsummary:\n[reference generation] The target video is a single continuous night exterior shot of <Subject 1> alone and frightened in a deserted, decrepit Hollywood backlot street in hard rain, photographed in the film-world look of <Subject 2>. Her identity and wardrobe come from the character reference panels and the photographic register comes from <Picture 4>; both are carried into a fully new environment, camera and performance. No studio backdrop, panel layout, reference pose or letterbox matte appears.\n\nretention_analysis:\n<Subject 1> (appears in [Shot 1]): fully_preserved - her facial structure, eye colour, warm golden-blonde wet hair, gold pendant, dirt-stained torn cream slip dress and bare feet are retained exactly as defined.\n<Picture 1> (facial identity source only): weak_reference - only the face, hair and pendant information is used; the grey backdrop, flat studio lighting and framing are discarded.\n<Picture 2> (front wardrobe and body-condition source only): weak_reference - only garment cut, fabric, staining and bare feet are used; the headless mannequin presentation, backdrop and lighting are discarded.\n<Picture 3> (rear hair and garment-back source only): weak_reference - only hair length and the back of the dress are used; the backdrop, lighting and standing pose are discarded.\n<Subject 2> (applies to [Shot 1] throughout): attribute_transfer - the dark, desaturated cold green-grey night-rain grade, crushed shadows, hard rain and wet reflective ground are transferred onto a new backlot street, a new camera position and a new performance.\n<Picture 4> (grade and atmosphere source only): weak_reference - only exposure, colour cast, rain density and wet-ground reflectivity are used; its subject, framing, aspect ratio and any baked-in edge matting are discarded.\n\ndetailed_description:\nThe target video is graded to <Subject 2>: live-action cinematic horror realism at night, severely underexposed and almost monochrome, drained of nearly all colour and pushed hard toward a dirty olive-green and slate cast with no warm tones anywhere, with crushed near-black shadows, hard straight high-density rain streaking bright against the darkness, mirror-wet ground, scattered wet debris, and only weak dirty practical sources. Shallow depth of field, natural handheld weight. The picture fills the entire frame edge to edge: there are no black bars, no letterbox mattes and no dark bands along the top, bottom or side edges at any point.\n[Shot 1] One continuous handheld tracking shot, camera at chest height moving laterally to screen-right at running pace, holding <Subject 1> in the centre-left of frame in profile as she runs across a deserted, decrepit Hollywood backlot lot at night. She is running hard and badly, barefoot, at full panic: knees driving high, arms swinging loose and uncoordinated, her weight pitched forward, head turned slightly back over her shoulder toward whatever is behind her rather than toward where she is going. Her warm golden-blonde hair is soaked through and flies out behind her in heavy separated wet ropes, water shedding off the ends in visible threads with every stride. The dirt-stained cream slip dress is wet through and dark at the bodice, the gathered skirt whipping and twisting around her thighs, the ragged asymmetric hem flaring and dragging heavy with water. The small gold pendant lifts and slaps back against her chest as she runs. Her bare feet strike standing water and mud, each footfall blowing a wide flat splash sideways out of frame.\nThe rain is a torrential vertical downpour filling the entire frame with hard bright streaks, hammering the ground and raising a low boiling spray over everything. The lot she crosses is a wreck rather than a street: broken timber, torn roofing sheet, tangled dead branches, sodden paper, shattered board and half-collapsed set flats strewn across mud-fouled standing water, with the black hulks of dead facades and a leaning braced false front falling out of focus behind her. There are no warm lights anywhere in the shot. The only illumination is weak, dirty and blue-green, coming from somewhere off screen-left and low, so underpowered that most of the lot stays close to black and she reads mostly as a pale shape and a flash of wet skin against it.\nShe runs at the same flat-out pace for the entire video without ever slowing, tripping, stumbling, falling, touching the ground with her hands, crouching or changing direction. Her stride stays a clean repeating running cycle throughout: left foot, right foot, left foot, evenly spaced and unbroken from the first frame to the last. Around 00:02.400 the camera loses a little ground on her and then closes the gap again, which is the only change in the shot's rhythm. From roughly 00:05.400 she is running away from camera into the deeper dark at the far side of the lot, getting smaller and losing definition in the rain, her hair and the pale hem the last things still readable. She never speaks and no other figure enters frame.\n\noverall_soundscape:\nA torrential night-rain bed fills the stereo field for the entire video at high density: hard droplets hammering standing water and mud spread hard left to hard right, heavy run-off sheeting off torn roofing at screen-left, and a wide open enclosed-lot reverberance behind everything. Her running is the foreground: fast bare-footed splashing impacts into standing water, alternating left and right and travelling with her across the stereo field, the soaked skirt slapping wet against her thighs, and her breathing close and centred as ragged panicked gasps with no rhythm to them. The footfall rhythm is even and unbroken for the whole video with no interruption, no scramble and no hand impact. The splashes recede and thin as she runs away from camera toward the end. There is no thunder, no footsteps other than her own, and no voices. There is no music from any source inside the scene.\n\nnon_diegetic_music:\nN/A\n"
+    },
+    "class_type": "PrimitiveStringMultiline",
+    "_meta": {
+      "title": "PROMPT (H3 template)"
+    }
+  }
+}

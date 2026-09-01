@@ -1,0 +1,439 @@
+{
+  "1": {
+    "inputs": {
+      "unet_name": "minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+      "weight_dtype": "default"
+    },
+    "class_type": "UNETLoader",
+    "_meta": {
+      "title": "H3 diffusion model"
+    }
+  },
+  "2": {
+    "inputs": {
+      "lora_name": "minimax_h3_ref2v_lightx2v_turbo_4step_v0.1_resized_avg_rank_20_bf16.safetensors",
+      "strength_model": 0.5,
+      "model": [
+        "1",
+        0
+      ]
+    },
+    "class_type": "LoraLoaderModelOnly",
+    "_meta": {
+      "title": "Turbo LoRA (4-step) @ 0.5"
+    }
+  },
+  "3": {
+    "inputs": {
+      "enabled": true,
+      "model": [
+        "2",
+        0
+      ]
+    },
+    "class_type": "MiniMaxH3FusedModulation",
+    "_meta": {
+      "title": "Fused Modulation"
+    }
+  },
+  "4": {
+    "inputs": {
+      "enabled": true,
+      "tau": 1.3,
+      "min_tokens": 4096,
+      "strict": false,
+      "thresh_type": "diag",
+      "int8_qk": false,
+      "int8_pv": false,
+      "sink_conditioning": "exact_kv",
+      "dense_blocks": "",
+      "model": [
+        "3",
+        0
+      ]
+    },
+    "class_type": "MiniMaxH3MemoryEfficientSolAttentionPatch",
+    "_meta": {
+      "title": "Sol-Attn"
+    }
+  },
+  "5": {
+    "inputs": {
+      "clip_name": "qwen3vl-32B-MiniMax-H3-Q4_K_M.gguf",
+      "type": "minimax"
+    },
+    "class_type": "CLIPLoaderGGUF",
+    "_meta": {
+      "title": "H3 text encoder (GGUF)"
+    }
+  },
+  "6": {
+    "inputs": {
+      "vae_name": "minimax_h3_video_vae_fp16.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "H3 video VAE"
+    }
+  },
+  "7": {
+    "inputs": {
+      "vae_name": "minimax_h3_audio_vae_fp32.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "H3 audio VAE"
+    }
+  },
+  "9": {
+    "inputs": {
+      "aspect_ratio": "16:9 (Widescreen)",
+      "megapixels": 0.8,
+      "multiple": 32
+    },
+    "class_type": "ResolutionSelector",
+    "_meta": {
+      "title": "Resolution (0.27 MP = 704x384)"
+    }
+  },
+  "10": {
+    "inputs": {
+      "value": "subject_definitions:\n<Picture 1> is the exact first frame of [Shot 1], showing the established professional Foley soundstage from inside, with its far-left exterior entrance fully closed and four crew members occupied at their separate work positions.\n<Subject 1> is the young blonde woman whose facial and character reference comes from <Picture 2>, with wet warm golden-blonde hair, pale skin, a small pendant, a dirty tattered light cream dress, and bare feet.\n<Subject 2> is the short-haired middle-aged male Foley performer whose character reference comes from <Picture 3> and who appears at his established position in <Picture 1>, wearing his green work jacket, headphones, and jeans.\n<Subject 3> is the curly-haired bearded middle-aged male Foley performer whose character reference comes from <Picture 4> and who appears at his established position in <Picture 1>, wearing his rust work shirt over a navy T-shirt and jeans.\n<Subject 4> is the older grey-haired male director whose character reference comes from <Picture 5> and who appears at his established position in <Picture 1>, preserving his face and practical soundstage wardrobe.\n<Subject 5> is the male monitor operator whose character reference comes from <Picture 6> and who appears at his established console position in <Picture 1>, preserving his face, hair, and black practical soundstage wardrobe.\n<Subject 6> is the professional Foley soundstage whose full location reference comes from <Picture 7> and which appears from the interior angle in <Picture 1>, with the far-left exterior entrance, concrete floor, Foley pits, central prop slab, monitor cart, microphones, cables, equipment racks, baffles, workbenches, and warm practical lights.\n<Audio 1> is the prominent non-diegetic Backlot Shadows score segment continuing across the threshold.\n\nsummary:\n[keyframe completion + reference generation + audio reuse] Live-action cinematic horror, the target video begins exactly from <Picture 1> as the far-left exterior door opens inward into <Subject 6>, revealing rain and <Subject 1>, who begins stepping over the threshold while <Subject 2>, <Subject 3>, <Subject 4>, and <Subject 5> first notice her under <Audio 1>.\n\nretention_analysis:\n<Picture 1> ([Shot 1] first frame): fully_preserved - its exact interior camera, closed far-left entrance, four distinct crew identities and positions, Foley pits, central prop slab, monitor cart, equipment, room depth, warm practical light, and first physical state are retained as frame zero.\n<Subject 1> (appears as the door opens in [Shot 1]): fully_preserved - her facial identity, wet blonde hair, pendant, dirty torn cream dress, bare feet, frightened urgency, and rain-soaked physical state are retained.\n<Subject 2> (appears throughout [Shot 1]): fully_preserved - his identity, green jacket, headphones, jeans, station, and grounded reaction are retained.\n<Subject 3> (appears throughout [Shot 1]): fully_preserved - his identity, curly hair, beard, rust shirt, navy T-shirt, jeans, station, and grounded reaction are retained.\n<Subject 4> (appears throughout [Shot 1]): fully_preserved - his older grey-haired identity, wardrobe, station, and grounded reaction are retained.\n<Subject 5> (appears throughout [Shot 1]): fully_preserved - his identity, black wardrobe, console position, and grounded reaction are retained.\n<Subject 6> (location throughout [Shot 1]): fully_preserved - the soundstage geography, far-left exterior entrance, concrete floor, Foley pits, central prop slab, monitor cart, microphones, equipment, racks, baffles, benches, room depth, and practical lights remain spatially consistent.\n<Audio 1>: partially_copy - the supplied score segment is reused 1:1 from its beginning as the prominent complete audience-only music.\n\ndetailed_description:\nThe target video is live-action cinematic horror realism from inside a practical working soundstage, slightly underexposed and slightly desaturated. Dim neutral-warm work light shapes the room while cold rain and blue-black night emerge at the far-left entrance.\n[Shot 1] The shot's keyframe corresponds exactly to <Picture 1>. The scene is already in motion when the video starts. One continuous interior wide camera holds the exact position, lens, horizon, and framing of <Picture 1>. The far-left steel entrance begins opening inward into <Subject 6> as one rigid panel on its fixed hinges. A narrow wedge of cold rain and wet exterior pavement appears, then widens. <Subject 1> is revealed directly behind the moving door, soaked and frightened, controlling it with one hand. She pushes it farther into the room and begins one hurried step over the sill. By the final frame her leading bare foot has landed just inside on the concrete while her rear foot and most of her body remain within the rainy doorway. <Subject 2>, <Subject 3>, <Subject 4>, and <Subject 5> interrupt their separate work actions naturally and begin turning their attention toward the opening, establishing the first instant before the longer mutual look.\n\noverall_soundscape:\nDry soundstage ventilation, monitor-cart fan, lamp buzz, and subtle equipment movement continue. The latch settles, the heavy steel door gives one grounded hinge groan, and hard exterior rain grows louder as the opening widens. <Subject 1>'s wet breathing and one bare-foot threshold step enter from far left.\n\nnon_diegetic_music:\n<Audio 1> is reused from its beginning as the target video's prominent complete audience-only Backlot Shadows score.\n"
+    },
+    "class_type": "PrimitiveStringMultiline",
+    "_meta": {
+      "title": "PROMPT (H3 template)"
+    }
+  },
+  "11": {
+    "inputs": {
+      "value": 5.0
+    },
+    "class_type": "PrimitiveFloat",
+    "_meta": {
+      "title": "Duration (seconds)"
+    }
+  },
+  "12": {
+    "inputs": {
+      "expression": "max(5, round(a * 24)) + (5 - (max(5, round(a * 24)) % 17)) % 17",
+      "values.a": [
+        "11",
+        0
+      ]
+    },
+    "class_type": "ComfyMathExpression",
+    "_meta": {
+      "title": "frames = H3 17k+5 law"
+    }
+  },
+  "14": {
+    "inputs": {
+      "model": [
+        "4",
+        0
+      ],
+      "conditioning": [
+        "24",
+        0
+      ]
+    },
+    "class_type": "BasicGuider",
+    "_meta": {
+      "title": "Guider (CFG 1)"
+    }
+  },
+  "15": {
+    "inputs": {
+      "sampler_name": "euler"
+    },
+    "class_type": "KSamplerSelect",
+    "_meta": {
+      "title": "KSamplerSelect"
+    }
+  },
+  "16": {
+    "inputs": {
+      "scheduler": "bong_tangent",
+      "steps": 12,
+      "denoise": 1.0,
+      "model": [
+        "4",
+        0
+      ]
+    },
+    "class_type": "BasicScheduler",
+    "_meta": {
+      "title": "12 steps"
+    }
+  },
+  "17": {
+    "inputs": {
+      "noise_seed": 446636392120979
+    },
+    "class_type": "RandomNoise",
+    "_meta": {
+      "title": "Seed"
+    }
+  },
+  "18": {
+    "inputs": {
+      "noise": [
+        "17",
+        0
+      ],
+      "guider": [
+        "14",
+        0
+      ],
+      "sampler": [
+        "15",
+        0
+      ],
+      "sigmas": [
+        "16",
+        0
+      ],
+      "latent_image": [
+        "24",
+        1
+      ]
+    },
+    "class_type": "SamplerCustomAdvanced",
+    "_meta": {
+      "title": "Sample (single H3 pass)"
+    }
+  },
+  "19": {
+    "inputs": {
+      "samples": [
+        "18",
+        0
+      ],
+      "vae": [
+        "6",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "Decode video"
+    }
+  },
+  "20": {
+    "inputs": {
+      "samples": [
+        "18",
+        0
+      ],
+      "vae": [
+        "7",
+        0
+      ]
+    },
+    "class_type": "VAEDecodeAudio",
+    "_meta": {
+      "title": "Decode audio"
+    }
+  },
+  "21": {
+    "inputs": {
+      "fps": 24.0,
+      "bit_depth": 8,
+      "color_space": "sRGB",
+      "images": [
+        "19",
+        0
+      ],
+      "audio": [
+        "20",
+        0
+      ]
+    },
+    "class_type": "CreateVideo",
+    "_meta": {
+      "title": "Create video (24 fps)"
+    }
+  },
+  "22": {
+    "inputs": {
+      "filename_prefix": "video/ALPHA-T1",
+      "format": "auto",
+      "format.codec": "auto",
+      "codec": "auto",
+      "video": [
+        "21",
+        0
+      ]
+    },
+    "class_type": "SaveVideo",
+    "_meta": {
+      "title": "Save"
+    }
+  },
+  "24": {
+    "inputs": {
+      "prompt": [
+        "10",
+        0
+      ],
+      "width": [
+        "9",
+        0
+      ],
+      "height": [
+        "9",
+        1
+      ],
+      "length": [
+        "12",
+        1
+      ],
+      "ref_image_size": "match",
+      "clip": [
+        "5",
+        0
+      ],
+      "vae": [
+        "6",
+        0
+      ],
+      "audio_vae": [
+        "7",
+        0
+      ],
+      "ref_images.ref_image_0": [
+        "35",
+        0
+      ],
+      "ref_images.ref_image_1": [
+        "34",
+        0
+      ],
+      "ref_images.ref_image_2": [
+        "33",
+        0
+      ],
+      "ref_images.ref_image_3": [
+        "28",
+        0
+      ],
+      "ref_images.ref_image_4": [
+        "29",
+        0
+      ],
+      "ref_images.ref_image_5": [
+        "30",
+        0
+      ],
+      "ref_images.ref_image_6": [
+        "31",
+        0
+      ],
+      "ref_audios.ref_audio_0": [
+        "32",
+        0
+      ]
+    },
+    "class_type": "MiniMaxH3ReferenceToVideo",
+    "_meta": {
+      "title": "MiniMax H3 Reference to Video"
+    }
+  },
+  "28": {
+    "inputs": {
+      "image": "foley-lead-B-sheet.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    },
+    "is_changed": [
+      "01dce31b2ef5a6f2fe2e3cce034b8649e97e6f3756d109ea477be866906519cb"
+    ]
+  },
+  "29": {
+    "inputs": {
+      "image": "studio-operator-grayer-hair-sheet.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    },
+    "is_changed": [
+      "276b9dc5705e1e91214ebd2748e78cf0f73111b0d81c97205803670eb7cd499b"
+    ]
+  },
+  "30": {
+    "inputs": {
+      "image": "monitor-operator-character-sheet.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    },
+    "is_changed": [
+      "e2b9a212d15aa99647321efce81e59e545b83aebb8e2c7be365a056dedc567e7"
+    ]
+  },
+  "31": {
+    "inputs": {
+      "image": "foley-stage-interior-master-v1.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    },
+    "is_changed": [
+      "80b6127cde52a18b542ba1b0607a630a542b88ec3a62e3014d49ffd554dc4b11"
+    ]
+  },
+  "32": {
+    "inputs": {
+      "audio": "music-s12-full-build.wav"
+    },
+    "class_type": "LoadAudio",
+    "_meta": {
+      "title": "Load Audio"
+    },
+    "is_changed": [
+      "dd897f078fd2c567c7e0cb6ea954c1c2f09829e454c01adbb6d2350ce9456630"
+    ]
+  },
+  "33": {
+    "inputs": {
+      "image": "foley-lead-A-sheet.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    },
+    "is_changed": [
+      "55e9e3075bedadc60ccacb6b06c966b90ff31559e8cebc636009aefd82f2767f"
+    ]
+  },
+  "34": {
+    "inputs": {
+      "image": "lead-actress-character-sheet.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    },
+    "is_changed": [
+      "1891aa540dc6d3413f97147afb41846c589e21c6e3ed42cd6a08def8f123f7f0"
+    ]
+  },
+  "35": {
+    "inputs": {
+      "image": "s12-interior-pre-entry-closed-v1.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    },
+    "is_changed": [
+      "fb40e4f109936f654cc657faefa5f73a180dd9d729f9566f9e4fb290775668b1"
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+
+subject_definitions:
+<Picture 1> is the first frame of [Shot 1], showing the young woman standing in the rainy backlot street. 
+<Subject 1> is the young blonde woman whose facial and character reference comes from <Picture 2> and who appears as the primary subject in <Picture 1>, with wet blonde hair and the tattered, dirty light dress and bare feet.
+<Audio 1> is the non-diegetic music track for the shot.
+
+summary:
+[keyframe completion + reference generation + audio reuse] Live-action, cinematic, the target video shows <Subject 1> scared in the street, rain falling hard, lightning striking behind her, startling her, then building her resolve.
+
+retention_analysis:
+<Picture 1> ([Shot 1] first frame): fully_preserved - the backlot street, building facade, pouring rain, and scared young woman are retained.
+<Subject 1> (appears in [Shot 1], [Shot 2], [Shot 3]): fully_preserved - the blonde woman's identity, wet hair, tattered dress, and bare feet are retained.
+<Audio 1>: partially_copy - the beginning of <Audio 1> is reused 1:1 as the target video's complete final non-diegetic music track.
+
+detailed_description: 
+The target video is in a live-action cinematic horror realism style, underexposed dark lighting and a slightly desaturated color palette.
+[Shot 1] The shot's keyframe corresponds to <Picture 1>. the young woman <Subject 1> stands as shown in <Picture 1> in the backlot street, preserving her appearance, clothing, and location. The camera pushes in with small amplitude at slow speed toward her face as rain falls. Lightning flashes in the sky high frame-right, momentarily lighting the entire scene brightly and she flinches in response to it. 
+[Shot 2] At 00:02.600 the shot cuts to a close-up of <Subject 1>, capturing the fear in her eyes and her heavy breathing and startled reaction as the thunder follows the lightning. Rain continues.
+[Shot 3] At 00:04.000 the shot cuts to a dutch angle, canted angle, tilted horizon, diagonal shot, disorienting, focused on <Subject 1>. A second, double-stutter of lightning fires, a bit higher and further away, weaker and shorter than the first, silhouetting the facades again. Her fear heightens as she prepares to run. The rain intensifies.
+
+overall_soundscape:
+Sound of heavy rain on pavement throughout. The first thunder is deep, loud, and sustained, panning from right to left, slightly delayed behind the lightning. The second thunder is a cra-crack, double hit, not as loud as the first lightning overall but the second crack builds intensity over the first. The character's breathing is close and centered throughout, fast and unsteady.
+
+non_diegetic_music: <Audio 1> is directly reused as the complete audience-only score.

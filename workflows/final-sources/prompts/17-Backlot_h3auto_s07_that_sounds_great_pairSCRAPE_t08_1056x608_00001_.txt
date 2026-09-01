@@ -1,0 +1,36 @@
+subject_definitions:
+<Picture 1> is the exact first frame of [Shot 1], showing the working foley crew and monitor cart inside the soundstage.
+<Subject 1> is the professional foley soundstage whose location reference comes from <Picture 2> and which appears in <Picture 1>, including the foley pit, prop rigs, monitor cart, microphones, sound equipment, work lights, and exterior stage door.
+<Subject 2> is the middle-aged male foley performer with short hair whose character reference comes from <Picture 3> and who appears in <Picture 1>, wearing his green work jacket, headphones, and jeans.
+<Subject 3> (S2) is the middle-aged male foley performer with curly hair and a beard whose character reference comes from <Picture 4> and who appears in <Picture 1>, wearing his rust work shirt over a navy T-shirt and jeans. His speaking voice is referenced by <Audio 2>: an adult American man with a mild inland or Midwestern inflection, warm mid baritone, and thoughtful collaborative delivery.
+<Subject 4> is the older male director and studio operator whose character reference comes from <Picture 5> and who appears in <Picture 1>, preserving his grey hair, face, and practical soundstage wardrobe.
+<Subject 5> (S1) is the male monitor operator whose character reference comes from <Picture 6> and who appears in <Picture 1>. His speaking voice is referenced by <Audio 1>: an adult American man with a neutral General American accent, light conversational tenor, and dry genuinely pleased delivery.
+<Audio 1> is the voice identity, accent, register, and delivery reference for <Subject 5> (S1).
+<Audio 2> is the voice identity, accent, register, and delivery reference for <Subject 3> (S2).
+
+summary:
+[keyframe completion + reference generation + audio reference] Live-action cinematic documentary style, the target video begins exactly from <Picture 1>, breaks dynamically among speakers and reactions as <Subject 5> (S1) praises the scrape and <Subject 3> (S2) asks to draw it out, then shows the crew immediately performing a longer scrape and two wet boot plants.
+
+retention_analysis:
+<Picture 1> ([Shot 1] first frame): fully_preserved - its soundstage geography, initial crew blocking, monitor cart, foley pit, lighting, and first physical state are retained as frame zero.
+<Subject 1> (location throughout [Shot 1], [Shot 2], [Shot 3], [Shot 4]): fully_preserved - the professional stage geography, pit, cart, microphones, equipment, work lights, and exterior door are retained.
+<Subject 2> (appears in [Shot 1], [Shot 3], [Shot 4]): fully_preserved - his identity, short hair, green jacket, headphones, and jeans are retained.
+<Subject 3> (S2) (appears and speaks in [Shot 1], [Shot 2], [Shot 3]): fully_preserved - his identity, curly hair, beard, rust shirt, navy T-shirt, jeans, and collaborative working-note delivery are retained.
+<Subject 4> (appears silently in [Shot 1], [Shot 2], [Shot 3]): fully_preserved - his older grey-haired identity and practical wardrobe are retained.
+<Subject 5> (S1) (appears and speaks in [Shot 1], [Shot 2]): fully_preserved - his identity, wardrobe, pleased conversational tenor, accent, and delivery are retained.
+<Audio 1>: reference - the voice identity, American accent, light tenor register, pace, and pleased delivery guide <Subject 5> (S1)'s newly generated dialogue.
+<Audio 2>: reference - the voice identity, mild inland inflection, warm baritone register, pace, and collaborative delivery guide <Subject 3> (S2)'s newly generated dialogue.
+
+detailed_description:
+The target video is live-action cinematic realism in a working-documentary style, slightly underexposed and slightly desaturated. The four men behave like an active small professional crew, each maintaining subtle working motion at his station.
+[Shot 1] The shot's keyframe corresponds exactly to <Picture 1>. The scene is already in motion when the video starts. A medium-wide camera makes a slow small-amplitude move across the monitor cart in <Subject 1>. <Subject 5> (S1) watches the monitor, nods once, and says <d>[English] That sounds great.</d> in the voice referenced by <Audio 1>. <Subject 4> stays silent but shifts forward to listen. In the background <Subject 2> and <Subject 3> continue subtle prop preparation.
+[Shot 2] At 00:02.000, the shot cuts to a close conversational two-shot favoring <Subject 3> (S2). He tilts his head toward the monitor, glances toward the pit, and replies <d>[English] Yeah, almost, but I think we need to draw out the scrape.</d> in the voice referenced by <Audio 2>. <Subject 5> makes a small understanding reaction; <Subject 4> watches silently.
+[Shot 3] At 00:05.200, the shot cuts to <Subject 2> and <Subject 3> at the pit. <Subject 3> immediately drags the broad unfinished rod slowly across a wet coarse asphalt slab in one continuous weighted motion, longer and lower than before. <Subject 2> simultaneously positions a pair of heavy boots over a wet gravel tray.
+[Shot 4] At 00:07.200, a low close detail shows the last length of the rod drag and two deliberate boot plants into wet gravel. Each visible contact synchronizes to its own sound. The camera makes a brief medium-amplitude move from the rod tip to the second boot impact, ending on active hands and props rather than a static group pose.
+
+overall_soundscape:
+Dry soundstage room tone and monitor-cart fan continue. Dialogue is clear and centered toward the cart, with exact lip synchronization to the two tagged English lines. The monitor plays a thin, band-limited scrape quietly before the note. After <Subject 3> (S2) speaks, the live foley scrape is wide, heavy, and continuous, distinctly longer and lower, traveling with the rod from left to right. Two wet gravel boot plants land left of center, one per visible boot contact. Small prop handling and crew movement sit quietly beneath the hero scrape.
+
+non_diegetic_music:
+N/A
+

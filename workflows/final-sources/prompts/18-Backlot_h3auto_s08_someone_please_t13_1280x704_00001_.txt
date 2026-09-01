@@ -1,0 +1,25 @@
+subject_definitions:
+<Picture 1> is the first frame of [Shot 1], showing the young woman at a weathered wooden scene-shop door in the rainy backlot.
+<Subject 1> (S1) is the young blonde woman whose facial and character reference comes from <Picture 2> and who appears as the primary subject in <Picture 1>, with wet warm golden-blonde hair, pale skin, a small pendant, a dirt-stained tattered light cream dress, and bare feet. She speaks in the breathy, cracked, strained voice of a terrified young American woman with a neutral General American accent and clear light-mid register.
+<Audio 1> is the non-diegetic Backlot Shadows music track for the shot.
+
+summary:
+[keyframe completion + reference generation + audio reuse] Live-action cinematic horror, the target video begins exactly from <Picture 1> as <Subject 1> (S1) hammers the wooden scene-shop door with forceful full-body fist blows, screams for help, then turns and moves quickly toward the next building under <Audio 1>.
+
+retention_analysis:
+<Picture 1> ([Shot 1] first frame): fully_preserved - its wooden door, brick-and-timber building, rainy backlot, camera position, lighting, blocking, and first physical state are retained.
+<Subject 1> (S1) (appears and speaks throughout [Shot 1], [Shot 2], and [Shot 3]): fully_preserved - her facial identity, wet warm golden-blonde hair, pale skin, pendant, dirty torn cream dress, bare feet, General American accent, and distressed vocal character are retained.
+<Audio 1>: partially_copy - the beginning of <Audio 1> is reused 1:1 as the target video's complete final non-diegetic music track.
+
+detailed_description:
+The target video is live-action cinematic horror realism at night, underexposed and heavily desaturated toward cold green-grey, with hard rain, wet reflections, and weak dirty practical light. The building is an old wooden scene shop with a weathered paneled wooden door, blue-green night light, and rain-dark timber details.
+[Shot 1] The shot's keyframe corresponds to <Picture 1>. The scene is already in motion when the video starts. In a medium moving shot, <Subject 1> (S1) plants both bare feet wide on the wet pavement and drives three desperate alternating clenched-fist blows into the old wooden door. Before every blow, the active elbow and fist draw clearly back from the wood; her shoulder and torso rotate forward, her body weight follows through, her knuckles strike the panel hard, and the arm rebounds after contact. Each full-range impact makes the wooden leaf bow inward and the latch jump while her soaked hair and dress react to the force.
+[Shot 2] At 00:02.100, the camera cuts to a tight wet close-up of <Subject 1> (S1) against the door. She draws one clenched fist back beside her shoulder, slams it hard into the wood with another complete shoulder-and-torso follow-through, and screams <d>[English] Someone please!</d> in her breathy, cracked, terrified young American voice. Her knuckle contact, door shudder, mouth, breath, face, and shoulder recoil synchronize exactly to the line and impact.
+[Shot 3] At 00:03.700, the shot cuts to a wider rear three-quarter view. The unanswered <Subject 1> (S1) turns immediately away from the wooden door and runs toward the next building to frame-right. The handheld camera pans with medium amplitude at running speed for two or three splashing steps and ends on her forward movement.
+
+overall_soundscape:
+Hard exterior rain fills the stereo field. Four close, forceful clenched-fist impacts on old wood each have a hard knuckle transient, deep hollow wooden boom, visible panel flex, loose latch rattle, and shallow building slap-back. <Subject 1> (S1) breathes raggedly and screams <d>[English] Someone please!</d> with exact lip synchronization, then her barefoot steps splash and recede toward frame-right. The wooden door remains unanswered.
+
+non_diegetic_music:
+<Audio 1> is directly reused from its beginning as the target video's complete audience-only Backlot Shadows score.
+
